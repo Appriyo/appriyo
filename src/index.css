@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-/* Custom animations for the 3D hero */
+/* Custom animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
@@ -12,10 +12,90 @@
   50% { opacity: 0.8; }
 }
 
-.animate-float {
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+/* Custom utility classes */
+@utility animate-float {
   animation: float 3s ease-in-out infinite;
 }
 
-.animate-glow {
+@utility animate-glow {
   animation: glow 2s ease-in-out infinite alternate;
+}
+
+@utility animate-slide-down {
+  animation: slideDown 0.5s ease-out;
+}
+
+@utility animate-blob {
+  animation: blob 7s infinite;
+}
+
+@utility animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+@utility animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@utility animation-delay-6000 {
+  animation-delay: 6s;
+}
+
+@utility backdrop-blur-xs {
+  backdrop-filter: blur(2px);
+}
+
+/* DaisyUI theme configuration */
+@plugin "daisyui" {
+  themes: light dark cupcake --default: dark;
+  --color-primary: 139 92 246;  /* #8b5cf6 */
+  --color-secondary: 6 182 212; /* #06b6d4 */
+  --color-accent: 244 114 182;  /* #f472b6 */
+  --color-neutral: 31 41 55;    /* #1f2937 */
+  --color-base-100: 17 24 39;   /* #111827 */
+  --color-info: 59 130 246;     /* #3b82f6 */
+  --color-success: 16 185 129;  /* #10b981 */
+  --color-warning: 245 158 11;  /* #f59e0b */
+  --color-error: 239 68 68;     /* #ef4444 */
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #06b6d4, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #0891b2, #7c3aed);
 }
