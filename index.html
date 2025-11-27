@@ -1,26 +1,25 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <!-- Standard favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
-
-  <!-- High resolution -->
   <link rel="icon" sizes="192x192" href="/favicon_io/android-chrome-192x192.png">
   <link rel="icon" sizes="512x512" href="/favicon_io/android-chrome-512x512.png">
-
-  <!-- Shortcut fallback -->
   <link rel="shortcut icon" href="/favicon_io/favicon.ico" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Appriyo</title>
+  
+  <!-- Add this script for theme persistence -->
+  <script>
+    // Check for saved theme preference or use system preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
 </head>
-
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
-
 </html>
