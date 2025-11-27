@@ -23,21 +23,24 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-gray-900/95 backdrop-blur-xl border-b border-gray-800/50 shadow-2xl' 
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+          ? 'bg-gray-900/95 backdrop-blur-xl border-b border-gray-800/50 shadow-2xl'
           : 'bg-transparent'
-      }`}>
+        }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <a 
-                href="#hero" 
-                className="group relative flex items-center space-x-2"
+              <a
+                href="#hero"
+                className="group relative flex items-center space-x-3"
               >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <span className="text-white font-bold text-lg">A</span>
+                <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg overflow-hidden">
+                  <img
+                    src="/logo/AP Icon Transparent.png"
+                    alt="Appriyo Logo"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-white font-bold text-xl tracking-tight">Appriyo</span>
@@ -81,15 +84,12 @@ const Navbar = () => {
                 <span className="sr-only">Open main menu</span>
                 {/* Hamburger icon */}
                 <div className="w-6 h-6 flex flex-col justify-center items-center space-y-1">
-                  <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                    isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
-                  }`}></span>
-                  <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                    isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
-                  }`}></span>
-                  <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                    isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
-                  }`}></span>
+                  <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+                    }`}></span>
+                  <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
+                    }`}></span>
+                  <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
+                    }`}></span>
                 </div>
               </button>
             </div>
@@ -97,11 +97,10 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation Menu */}
-        <div className={`lg:hidden transition-all duration-500 ease-in-out overflow-hidden ${
-          isMobileMenuOpen 
-            ? 'max-h-96 opacity-100 bg-gray-900/95 backdrop-blur-xl border-t border-gray-800/50' 
+        <div className={`lg:hidden transition-all duration-500 ease-in-out overflow-hidden ${isMobileMenuOpen
+            ? 'max-h-96 opacity-100 bg-gray-900/95 backdrop-blur-xl border-t border-gray-800/50'
             : 'max-h-0 opacity-0'
-        }`}>
+          }`}>
           <div className="px-4 pt-2 pb-6 space-y-2">
             {navItems.map((item) => (
               <a
@@ -127,7 +126,7 @@ const Navbar = () => {
 
       {/* Background blur when mobile menu is open */}
       {isMobileMenuOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
           onClick={() => setIsMobileMenuOpen(false)}
         ></div>

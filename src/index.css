@@ -63,6 +63,18 @@
   backdrop-filter: blur(2px);
 }
 
+@utility bg-size-200 {
+  background-size: 200% 200%;
+}
+
+@utility bg-pos-0 {
+  background-position: 0% 0%;
+}
+
+@utility bg-pos-100 {
+  background-position: 100% 100%;
+}
+
 /* DaisyUI theme configuration */
 @plugin "daisyui" {
   themes: light dark cupcake --default: dark;
