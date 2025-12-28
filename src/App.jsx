@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-950">
+    <div>
       <Navbar />
       <Home />
     </div>
