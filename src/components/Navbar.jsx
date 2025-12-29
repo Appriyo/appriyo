@@ -3,15 +3,22 @@ import React, { useState, useEffect } from 'react';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [currentTheme, setCurrentTheme] = useState('dark');
+  const [currentTheme, setCurrentTheme] = useState(() => {
+    // Only run this on the client side
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      return savedTheme;
+    }
+    // Default value for SSR
+    return 'dark';
+  });
 
   // Initialize theme from localStorage or system preference
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 
-                      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    setCurrentTheme(savedTheme);
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  }, []);
+    // Apply the theme to the document
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  }, [currentTheme]);
 
   // Handle scroll effect
   useEffect(() => {
@@ -44,19 +51,18 @@ const Navbar = () => {
   return (
     <>
       {/* Navigation Bar */}
-      <nav 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          isScrolled 
-            ? 'bg-base-100/90 backdrop-blur-2xl border-b border-base-300/50 shadow-xl' 
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
+            ? 'bg-base-100/90 backdrop-blur-2xl border-b border-base-300/50 shadow-xl'
             : 'bg-transparent'
-        }`}
+          }`}
         role="navigation"
         aria-label="Main navigation"
       >
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo Section */}
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <a
                 href="#hero"
                 className="group relative flex items-center space-x-3"
@@ -73,13 +79,13 @@ const Navbar = () => {
                     height="40"
                   />
                 </div>
-                
+
                 {/* Stylized Logo Text */}
                 <div className="hidden sm:flex flex-col">
-                  <span className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight">
+                  <span className="text-2xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight">
                     Appriyo
                   </span>
-                  <div className="h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-primary to-secondary transition-all duration-500 mt-0.5"></div>
+                  <div className="h-0.5 w-0 group-hover:w-full bg-linear-to-r from-primary to-secondary transition-all duration-500 mt-0.5"></div>
                 </div>
               </a>
             </div>
@@ -97,8 +103,8 @@ const Navbar = () => {
                     <span className="relative z-10 text-base-content/80 group-hover:text-base-content transition-colors duration-300">
                       {item.name}
                     </span>
-                    <span className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300"></span>
-                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-3/4 transition-all duration-500"></span>
+                    <span className="absolute inset-0 bg-linear-to-r from-primary/10 to-secondary/10 rounded-xl scale-95 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300"></span>
+                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-linear-to-r from-primary to-secondary group-hover:w-3/4 transition-all duration-500"></span>
                   </a>
                 ))}
               </div>
@@ -117,7 +123,7 @@ const Navbar = () => {
                     <span className="relative z-10 text-base-content/80 group-hover:text-base-content transition-colors duration-300">
                       {item.name}
                     </span>
-                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-3/4 transition-all duration-500"></span>
+                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-linear-to-r from-primary to-secondary group-hover:w-3/4 transition-all duration-500"></span>
                   </a>
                 ))}
               </div>
@@ -133,10 +139,10 @@ const Navbar = () => {
               >
                 {currentTheme === 'light' ? (
                   // Moon icon for dark mode
-                  <svg 
-                    className="w-5 h-5 text-base-content group-hover:text-primary transition-colors duration-300" 
-                    fill="currentColor" 
-                    viewBox="0 0 20 20" 
+                  <svg
+                    className="w-5 h-5 text-base-content group-hover:text-primary transition-colors duration-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
@@ -144,10 +150,10 @@ const Navbar = () => {
                   </svg>
                 ) : (
                   // Sun icon for light mode
-                  <svg 
-                    className="w-5 h-5 text-base-content group-hover:text-primary transition-colors duration-300" 
-                    fill="currentColor" 
-                    viewBox="0 0 20 20" 
+                  <svg
+                    className="w-5 h-5 text-base-content group-hover:text-primary transition-colors duration-300"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
                   >
@@ -169,15 +175,12 @@ const Navbar = () => {
                 aria-expanded={isMobileMenuOpen}
               >
                 <div className="w-6 h-6 flex flex-col justify-center items-center">
-                  <span className={`block w-5 h-0.5 bg-base-content transition-all duration-300 ${
-                    isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
-                  }`}></span>
-                  <span className={`block w-5 h-0.5 bg-base-content transition-all duration-300 mt-1 ${
-                    isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
-                  }`}></span>
-                  <span className={`block w-5 h-0.5 bg-base-content transition-all duration-300 mt-1 ${
-                    isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
-                  }`}></span>
+                  <span className={`block w-5 h-0.5 bg-base-content transition-all duration-300 ${isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+                    }`}></span>
+                  <span className={`block w-5 h-0.5 bg-base-content transition-all duration-300 mt-1 ${isMobileMenuOpen ? 'opacity-0' : 'opacity-100'
+                    }`}></span>
+                  <span className={`block w-5 h-0.5 bg-base-content transition-all duration-300 mt-1 ${isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
+                    }`}></span>
                 </div>
               </button>
             </div>
@@ -185,11 +188,10 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation Menu */}
-        <div className={`lg:hidden transition-all duration-300 ease-out ${
-          isMobileMenuOpen 
-            ? 'max-h-screen opacity-100 bg-base-100/95 backdrop-blur-2xl border-t border-base-300/50 shadow-2xl' 
+        <div className={`lg:hidden transition-all duration-300 ease-out ${isMobileMenuOpen
+            ? 'max-h-screen opacity-100 bg-base-100/95 backdrop-blur-2xl border-t border-base-300/50 shadow-2xl'
             : 'max-h-0 opacity-0 overflow-hidden'
-        }`}>
+          }`}>
           <div className="container mx-auto px-4 py-6">
             {/* Mobile Logo & Close */}
             <div className="flex items-center justify-between mb-6">
@@ -201,7 +203,7 @@ const Navbar = () => {
                   width="32"
                   height="32"
                 />
-                <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <span className="text-xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">
                   Appriyo
                 </span>
               </div>

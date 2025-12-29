@@ -4,8 +4,13 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Trigger animation on mount
-    setIsVisible(true);
+    // requestAnimationFrame ensures the browser has painted the 
+    // initial state (opacity-0) before we switch to opacity-100
+    const raf = requestAnimationFrame(() => {
+      setIsVisible(true);
+    });
+
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   return (
