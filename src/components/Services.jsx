@@ -79,7 +79,7 @@ const Services = () => {
                   {service.title}
                 </h3>
                 
-                <p className="text-base-content/70 mb-6 flex-grow">
+                <p className="text-base-content/70 mb-6 grow">
                   {service.description}
                 </p>
                 
@@ -88,7 +88,7 @@ const Services = () => {
                     <li key={featureIndex} className="flex items-start">
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
-                        className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" 
+                        className="h-5 w-5 text-primary mr-3 mt-0.5 shrink-0" 
                         fill="none" 
                         viewBox="0 0 24 24" 
                         stroke="currentColor"

@@ -125,7 +125,7 @@ const Hero = () => {
 
         {/* Simplified visual separator */}
         <div 
-          className={`hidden lg:block absolute left-0 right-0 bottom-0 h-px bg-gradient-to-r from-transparent via-base-300 to-transparent transition-opacity duration-1000 ${
+          className={`hidden lg:block absolute left-0 right-0 bottom-0 h-px bg-linear-to-r from-transparent via-base-300 to-transparent transition-opacity duration-1000 ${
             isVisible ? 'opacity-100' : 'opacity-0'
           }`}
           aria-hidden="true"

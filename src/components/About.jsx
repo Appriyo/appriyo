@@ -1,188 +1,252 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 
 const About = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+  const highlights = [
+    {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      ),
+      title: 'Small Team, Focused Collaboration',
+      description: 'Work directly with the developers building your product — no middle layers.'
+    },
+    {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+      ),
+      title: 'Clear Communication',
+      description: 'Regular, straightforward updates — no surprises, no technical jargon.'
+    },
+    {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+      title: 'Clean & Maintainable Code',
+      description: 'Built to last — clean structure that\'s easy to update and extend.'
+    },
+    {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+      ),
+      title: 'Long-Term Support Mindset',
+      description: 'Solutions designed to evolve with your business over time.'
     }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
-  const stats = [
-    { number: '5+', label: 'Years Excellence', description: 'Pioneering digital innovation since 2019' },
-    { number: '50+', label: 'Team Experts', description: 'Top-tier developers & strategists' },
-    { number: '98%', label: 'Success Rate', description: 'Projects delivered on time and budget' },
-    { number: '24/7', label: 'Global Support', description: 'Always here for our clients' },
   ];
 
   const values = [
     {
-      icon: '🚀',
-      title: 'Innovation First',
-      description: 'We stay ahead of technology trends to deliver cutting-edge solutions that give you competitive advantage.'
+      title: 'Transparency',
+      description: 'Clear communication about progress, challenges, and timelines.'
     },
     {
-      icon: '💎',
-      title: 'Quality Obsessed',
-      description: 'Every line of code, every design element is crafted with precision and attention to detail.'
+      title: 'Responsibility',
+      description: 'Taking ownership of projects from start to ongoing support.'
     },
     {
-      icon: '🤝',
-      title: 'Partnership Driven',
-      description: 'We work as an extension of your team, understanding your business goals as our own.'
+      title: 'Quality Over Speed',
+      description: 'Balancing timely delivery with well-considered solutions.'
     },
     {
-      icon: '⚡',
-      title: 'Agile Execution',
-      description: 'Rapid prototyping and iterative development to bring your vision to life faster.'
+      title: 'Continuous Improvement',
+      description: 'Regularly refining our processes based on what works best.'
     }
   ];
 
   return (
-    <section id="about" ref={sectionRef} className="relative min-h-screen bg-gray-900 py-20 overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 right-1/4 w-80 h-80 bg-purple-600/10 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-cyan-600/10 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-blue-600/5 rounded-full mix-blend-soft-light filter blur-3xl animate-pulse delay-500"></div>
-        
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,black,transparent)]"></div>
-      </div>
+    <section id="about" className="py-16 lg:py-24 bg-base-100">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+        {/* Hidden SEO content */}
+        <p className="sr-only">
+          Appriyo is a software development company providing web and business application solutions.
+        </p>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 lg:mb-20">
-          <div className={`inline-flex items-center gap-2 px-6 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 mb-6 backdrop-blur-sm transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium text-cyan-400 tracking-wider">WHO WE ARE</span>
+        <header className="text-center mb-12 lg:mb-16 max-w-3xl mx-auto">
+          <div className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium tracking-wide mb-6">
+            About Us
           </div>
-
-          <h2 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            Building The Future,
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400">
-              Today
-            </span>
+          
+          <h2 className="text-3xl lg:text-4xl font-bold text-base-content mb-6">
+            Building Reliable Software for Real Businesses
           </h2>
-
-          <p className={`text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed transition-all duration-1000 delay-300 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}>
-            We're not just developers; we're digital architects crafting intelligent solutions 
-            that transform businesses and shape tomorrow's technology landscape.
+          
+          <p className="text-base-content/70 text-lg leading-relaxed">
+            Appriyo is a software development company focused on creating practical, 
+            well-built applications that help businesses operate more effectively.
           </p>
-        </div>
+        </header>
 
-        {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
-          {/* Left Column - Mission Statement */}
-          <div className={`space-y-6 transition-all duration-1000 delay-500 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
-          }`}>
-            <div className="p-8 rounded-2xl border border-gray-700/50 bg-gray-800/20 backdrop-blur-lg shadow-2xl">
-              <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="text-cyan-400">✨</span>
-                Our Mission
+        {/* Main Content - Two Column Layout */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-16 lg:mb-20">
+          {/* Left Column - About Text */}
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-xl font-semibold text-base-content mb-4">
+                Our Approach
               </h3>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                To empower businesses with cutting-edge digital solutions that drive growth, 
-                enhance efficiency, and create meaningful impact in an ever-evolving technological world.
+              <p className="text-base-content/70 leading-relaxed mb-6">
+                We focus on understanding the problem first, then building solutions that are 
+                practical, maintainable, and aligned with business goals. We believe good 
+                software solves real problems without unnecessary complexity.
+              </p>
+              
+              <p className="text-base-content/70 leading-relaxed">
+                Our process emphasizes clear communication, thoughtful planning, and attention 
+                to the details that matter for long-term success. We work with you to ensure 
+                what we build today will still serve you well in the future.
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl border border-gray-700/50 bg-gray-800/20 backdrop-blur-lg shadow-2xl">
-              <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                <span className="text-purple-400">🎯</span>
-                Why Trust Us?
+            <div>
+              <h3 className="text-xl font-semibold text-base-content mb-4">
+                Who We Work With
               </h3>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                With a proven track record of delivering complex projects for global clients, 
-                we combine technical expertise with strategic thinking to ensure your digital 
-                success is not just achieved, but sustained.
+              <p className="text-base-content/70 leading-relaxed mb-6">
+                We primarily work with small to mid-sized businesses, startups, 
+                and service providers who want to improve operations, 
+                automate workflows, or build reliable digital products.
               </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-base-content mb-4">
+                How We Work
+              </h3>
+              <ul className="space-y-3">
+                <li className="flex items-start">
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="h-5 w-5 text-primary mr-3 mt-0.5 shrink-0" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-base-content/70">Clear communication throughout the project</span>
+                </li>
+                <li className="flex items-start">
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="h-5 w-5 text-primary mr-3 mt-0.5 shrink-0" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-base-content/70">Thoughtful planning and requirement analysis</span>
+                </li>
+                <li className="flex items-start">
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="h-5 w-5 text-primary mr-3 mt-0.5 shrink-0" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-base-content/70">Focus on maintainable, clean code structure</span>
+                </li>
+                <li className="flex items-start">
+                  <svg 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    className="h-5 w-5 text-primary mr-3 mt-0.5 shrink-0" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span className="text-base-content/70">Long-term support and iterative improvement</span>
+                </li>
+              </ul>
             </div>
           </div>
 
-          {/* Right Column - Stats Grid */}
-          <div className={`grid grid-cols-2 gap-6 transition-all duration-1000 delay-700 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
-          }`}>
-            {stats.map((stat, index) => (
-              <div 
+          {/* Right Column - Highlights */}
+          <div className="grid gap-6">
+            {highlights.map((highlight, index) => (
+              <article 
                 key={index}
-                className="group p-6 rounded-2xl border border-gray-700/50 bg-gray-800/20 backdrop-blur-lg shadow-xl hover:shadow-2xl transition-all duration-500 hover:border-cyan-500/30 hover:scale-105"
+                className="card bg-base-100 border border-base-300 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                <div className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {stat.number}
+                <div className="card-body p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary">
+                      {highlight.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-base-content mb-2">
+                        {highlight.title}
+                      </h3>
+                      <p className="text-base-content/70">
+                        {highlight.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div className="text-lg font-semibold text-white mb-1">{stat.label}</div>
-                <div className="text-sm text-gray-400">{stat.description}</div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
 
-        {/* Core Values */}
-        <div className={`transition-all duration-1000 delay-900 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <h3 className="text-3xl font-bold text-center text-white mb-12">
-            Our <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Core Values</span>
+        {/* Values Section */}
+        <div className="mb-16 lg:mb-20">
+          <h3 className="text-2xl lg:text-3xl font-bold text-base-content text-center mb-8 lg:mb-12">
+            Our Working Principles
           </h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <div 
+              <article 
                 key={index}
-                className="group p-6 rounded-2xl border border-gray-700/50 bg-gray-800/20 backdrop-blur-lg shadow-xl hover:shadow-2xl transition-all duration-500 hover:border-purple-500/30 hover:scale-105"
+                className="card bg-base-100 border border-base-300 border-t-2 border-t-primary/40 shadow-sm hover:shadow-md transition-shadow duration-300"
               >
-                <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {value.icon}
+                <div className="card-body p-6">
+                  <h4 className="text-lg font-semibold text-base-content mb-3">
+                    {value.title}
+                  </h4>
+                  <p className="text-base-content/70 text-sm">
+                    {value.description}
+                  </p>
                 </div>
-                <h4 className="text-xl font-bold text-white mb-3">{value.title}</h4>
-                <p className="text-gray-300 leading-relaxed">{value.description}</p>
-              </div>
+              </article>
             ))}
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className={`text-center mt-16 transition-all duration-1000 delay-1100 ${
-          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}>
-          <div className="p-8 rounded-2xl border border-cyan-500/20 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-lg shadow-2xl">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Ready to Transform Your Digital Presence?
-            </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Join 50+ successful companies who trust us with their digital transformation journey.
+        {/* Soft CTA */}
+        <div className="text-center">
+          <div className="max-w-2xl mx-auto">
+            <p className="text-lg text-base-content/70 mb-8">
+              If you're looking for a reliable development partner who focuses on building 
+              solutions that last, we'd be happy to talk.
             </p>
-            <button className="btn btn-primary btn-lg group relative overflow-hidden border-0 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 text-white">
-              <span className="relative z-10">Start Your Project Today</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a 
+                href="#contact" 
+                className="btn btn-primary px-8"
+                aria-label="Contact us to discuss your project"
+              >
+                Contact Us
+              </a>
+              <a 
+                href="#services" 
+                className="btn btn-outline border-base-300 text-base-content hover:border-primary hover:text-primary px-8"
+                aria-label="View our services"
+              >
+                View Our Services
+              </a>
+            </div>
           </div>
         </div>
       </div>
