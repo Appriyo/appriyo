@@ -93,33 +93,6 @@ const Hero = () => {
                 View Our Services
               </a>
             </div>
-
-            {/* Updated services line - more realistic positioning */}
-            <div 
-              className={`transition-opacity duration-700 delay-400 ${
-                isVisible ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <p className="text-sm text-base-content/60 font-medium mb-3">
-                Core focus areas:
-              </p>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-                {[
-                  'Custom Web Applications',
-                  'Business Process Automation',
-                  'Mobile Solutions',
-                  'System Integration',
-                  'AI-Assisted Workflows'
-                ].map((service) => (
-                  <span
-                    key={service}
-                    className="inline-flex items-center px-3 py-2 bg-base-200/60 hover:bg-base-300/60 rounded-lg text-sm font-medium transition-colors duration-200"
-                  >
-                    {service}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
 
@@ -130,18 +103,6 @@ const Hero = () => {
           }`}
           aria-hidden="true"
         />
-      </div>
-
-      {/* Minimal scroll indicator */}
-      <div 
-        className={`hidden lg:block absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 ${
-          isVisible ? 'opacity-100' : 'opacity-0'
-        }`}
-        aria-hidden="true"
-      >
-        <div className="w-6 h-10 border border-base-300/50 rounded-full flex justify-center p-1">
-          <div className="w-1 h-3 bg-base-content/40 rounded-full animate-bounce" />
-        </div>
       </div>
     </section>
   );
