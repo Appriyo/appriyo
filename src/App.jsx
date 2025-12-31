@@ -1,14 +1,5 @@
-import React from "react";
-import Home from "./pages/Home";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import AppRouter from "./routes/AppRouter";
 
 export default function App() {
-  return (
-    <div>
-      <Navbar />
-      <Home />
-      <Footer />
-    </div>
-  );
+  return <AppRouter />;
 }
