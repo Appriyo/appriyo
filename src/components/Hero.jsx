@@ -1,108 +1,91 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const Hero = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    // requestAnimationFrame ensures the browser has painted the 
-    // initial state (opacity-0) before we switch to opacity-100
-    const raf = requestAnimationFrame(() => {
-      setIsVisible(true);
-    });
-
-    return () => cancelAnimationFrame(raf);
-  }, []);
-
   return (
     <section 
       id="hero" 
-      className="relative overflow-hidden bg-base-100 text-base-content"
-      role="banner"
-      aria-label="Hero section"
+      className="bg-base-100 text-base-content min-h-[85vh] flex items-center"
+      aria-label="Main introduction"
     >
-      {/* Simplified background pattern */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 right-10 w-64 h-64 bg-primary/3 rounded-full blur-3xl opacity-50" />
-        <div className="absolute bottom-20 left-10 w-64 h-64 bg-secondary/3 rounded-full blur-3xl opacity-50" />
-      </div>
-
-      <div className="relative z-10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
-          <div className="max-w-3xl mx-auto text-center lg:text-left lg:max-w-4xl">
-            {/* Updated trust badge - more realistic for early-stage company */}
-            <div 
-              className={`inline-flex items-center gap-2 px-4 py-2 mb-6 lg:mb-8 bg-base-200/50 backdrop-blur-sm rounded-full border border-base-300 transition-opacity duration-500 ${
-                isVisible ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-sm font-medium text-base-content/70">
-                Professional IT solutions, delivered with care
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <div className="max-w-4xl mx-auto">
+          {/* Trust indicator */}
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-base-200 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-primary" />
+              <span className="text-sm font-medium text-base-content/80">
+                A reliable software development team for business solutions
               </span>
-            </div>
-
-            {/* Refined headline - more concrete and outcome-focused */}
-            <h1 
-              className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight transition-opacity duration-700 ${
-                isVisible ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <span className="block text-base-content">
-                We build practical software
-              </span>
-              <span className="block">
-                that improves{' '}
-                <span className="text-primary font-semibold">
-                  business efficiency
-                </span>
-              </span>
-            </h1>
-
-            {/* Tightened subheading - focused on practical solutions */}
-            <p 
-              className={`text-lg sm:text-xl text-base-content/80 mb-8 lg:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed transition-opacity duration-700 delay-200 ${
-                isVisible ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              We help businesses streamline operations through custom software 
-              and intelligent automation. Our solutions are designed to save time, 
-              reduce errors, and drive measurable results.
-            </p>
-
-            {/* CTA Buttons - simplified animations */}
-            <div 
-              className={`flex flex-col sm:flex-row gap-4 mb-10 lg:mb-12 transition-opacity duration-700 delay-300 ${
-                isVisible ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              {/* Primary CTA */}
-              <a
-                href="#contact"
-                className="btn btn-primary btn-lg min-w-[200px] sm:min-w-[180px] hover:scale-[1.02] transition-transform duration-200"
-                aria-label="Schedule a free consultation"
-              >
-                Get a Free Consultation
-              </a>
-
-              {/* Secondary CTA */}
-              <a
-                href="#services"
-                className="btn btn-outline btn-lg min-w-[200px] sm:min-w-[180px] border-base-content/30 hover:border-primary hover:bg-base-200"
-                aria-label="Browse our services"
-              >
-                View Our Services
-              </a>
             </div>
           </div>
-        </div>
 
-        {/* Simplified visual separator */}
-        <div 
-          className={`hidden lg:block absolute left-0 right-0 bottom-0 h-px bg-linear-to-r from-transparent via-base-300 to-transparent transition-opacity duration-1000 ${
-            isVisible ? 'opacity-100' : 'opacity-0'
-          }`}
-          aria-hidden="true"
-        />
+          {/* Main headline */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 lg:mb-8 leading-tight">
+            <span className="block text-base-content">
+              Custom Software That Solves
+            </span>
+            <span className="block">
+              Real <span className="text-primary">Business Problems</span>
+            </span>
+          </h1>
+
+          {/* Supporting paragraph */}
+          <p className="text-xl lg:text-2xl text-base-content/80 mb-8 lg:mb-12 max-w-3xl leading-relaxed">
+            We build custom software solutions designed for long-term maintainability 
+            and measurable business impact. Our focus is on reliable development 
+            that drives efficiency and supports sustainable growth.
+          </p>
+
+          {/* Value proposition */}
+          <div className="mb-10 lg:mb-14">
+            <div className="flex flex-col sm:flex-row gap-6 text-base-content/70">
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Tailored to your specific requirements</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Engineered for long-term maintainability</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <svg className="w-5 h-5 text-primary shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Clear process with consistent updates</span>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/contact"
+              className="btn btn-primary btn-lg min-w-[220px] hover:bg-primary/90 transition-colors duration-200"
+              aria-label="Schedule a consultation about custom software development"
+            >
+              Schedule Consultation
+            </a>
+            <a
+              href="/services"
+              className="btn btn-outline btn-lg min-w-[220px] border-base-content/30 hover:border-primary hover:bg-base-200"
+              aria-label="View our custom software development services"
+            >
+              View Services
+            </a>
+          </div>
+
+          {/* Secondary trust signal */}
+          <div className="mt-12 pt-8 border-t border-base-300">
+            <p className="text-base-content/60 text-sm">
+              We partner with business leaders to develop custom software 
+              that addresses operational challenges and delivers measurable results.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

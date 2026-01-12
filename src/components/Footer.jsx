@@ -148,11 +148,6 @@ const Footer = () => {
             <div className="text-base-content/50 order-2 md:order-1">
               © {currentYear} Appriyo Technologies. All rights reserved.
             </div>
-            
-            <div className="text-base-content/50 order-1 md:order-2 text-center">
-              Built with care by Appriyo Team
-            </div>
-            
             <div className="flex space-x-6 order-3">
               <a 
                 href="/privacy-policy" 
