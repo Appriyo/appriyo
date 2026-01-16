@@ -1,3 +1,4 @@
+import TeamSection from "../components/about/TeamSection";
 import Hero from "../components/Hero";
 import AboutOverview from "../components/home/AboutOverview";
 import HomeCTA from "../components/home/HomeCTA";
@@ -14,6 +15,7 @@ const Home = () => {
       <SolutionsOverview />
       <WhyAppriyo />
       <AboutOverview />
+      <TeamSection />
       <WorkPreview />
       <HomeCTA />
     </>
