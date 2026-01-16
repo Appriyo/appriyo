@@ -83,7 +83,7 @@ const TeamSection = () => {
           <h2 className="text-4xl font-bold text-slate-900 mb-8 tracking-tight leading-[1.1]">
             Direct accountability through senior leadership.
           </h2>
-          <div className="w-12 h-[2px] bg-slate-900 mb-8"></div>
+          <div className="w-12 h-0.5 bg-slate-900 mb-8"></div>
           <p className="text-lg text-slate-600 leading-relaxed font-normal">
             We are a small, focused collective of career engineers. We avoid the 
             traditional agency model of over-leveraging junior talent, ensuring 

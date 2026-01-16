@@ -7,6 +7,7 @@ import SolutionsPage from "../pages/SolutionsPage";
 import WorkPage from "../pages/WorkPage";
 import AboutPage from "../pages/AboutPage";
 import ContactPage from "../pages/ContactPage";
+import ServiceDetailsPage from "../pages/ServiceDetailsPage";
 
 const AppRouter = () => {
   return (
@@ -15,6 +16,7 @@ const AppRouter = () => {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/:id" element={<ServiceDetailsPage />} />
           <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/work" element={<WorkPage />} />
           <Route path="/about" element={<AboutPage />} />
