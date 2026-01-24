@@ -14,42 +14,41 @@ export const teamData = [
         }
     },
     {
-        name: "Anika Tasnim",
-        role: "Lead Frontend Engineer",
+        name: "Preota saha",
+        role: "Lead frontend Engineer",
         expertise: "Scalable Web Architectures, Design Systems",
         background: "Specialist in long-term enterprise UI maintenance",
         philosophy: "Believes clarity in state management comes before code.",
         techStack: ["React", "TypeScript", "Tailwind"],
-        image: "",
-        links: { 
-            github: "#",
-            linkedin: "#" ,
+        image: "/img/team_img/preota profile.jpg",
+        links: {
+            github: "https://github.com/Preota-Saha",
+            linkedin: "https://www.linkedin.com/in/preota-saha-66b035396/",
         }
     },
     {
-        name: "Tanvir Ahmed",
-        role: "Mobile Engineering Lead",
-        expertise: "Android & Cross-Platform Systems",
-        background: "Focused on high-performance mobile commerce apps",
-        philosophy: "Designs mobile systems for long-term reliability.",
-        techStack: ["Kotlin", "Flutter", "Firebase"],
-        image: "",
-        links: { 
-            github: "#",
-            linkedin: "#" ,
+        name: "Munna Sardar",
+        role: "Lead of Testing & Frontend Development",
+        expertise: "Software Testing, Frontend Development, Android Application Development",
+        background: "Worked as the lead for testing and frontend development, focusing on application quality, UI consistency, and user experience. Has hands-on experience developing Android applications and modern frontend interfaces, collaborating through version control and structured workflows.",
+        philosophy: "Build practical solutions that work reliably in real environments, not just in theory.",
+        techStack: ["Kotlin", " Jetpack Compose", "JavaScript", "React"],
+        image: "/img/team_img/munna profile.jpeg",
+        links: {
+            github: "https://github.com/Mdmunnasardar",
+            linkedin: "https://www.linkedin.com/in/md-munna-sardar",
         }
     },
     {
-        name: "Rifat Hasan",
-        role: "QA & Systems Reliability Engineer",
-        expertise: "Automated Testing, CI/CD Pipelines",
-        background: "Experience with financial-grade security audits",
-        philosophy: "Quality is an engineering constraint, not a final phase.",
-        techStack: ["Cypress", "Docker", "Terraform"],
-        image: "",
-        links: { 
-            github: "#",
-            linkedin: "#" ,
+        name: "Hazera Islam Mim",
+        role: "Social Media & Creative Lead",
+        expertise: "Brand Communication, Content Strategy, Visual Storytelling, UI Support",
+        background: "Manages Appriyo’s social media presence and visual branding while gradually contributing to frontend and Flutter-based UI development.",
+        philosophy: "Believes strong digital products are created when design, communication, and technology work together with clarity and purpose.",
+        techStack: ["Canva", "CapCut", "HTML", "CSS", "Flutter", "Dart"],
+        image: "/img/team_img/mim profile.jpeg",
+        links: {
+            github: "https://github.com/hazeramim",
         }
     }
 ];
