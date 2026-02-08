@@ -17,25 +17,25 @@ const ServicesOverview = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <header className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-sm font-semibold tracking-widest uppercase text-primary mb-4">
+        <header className="text-center max-w-3xl mx-auto mb-14">
+          <p className="text-xs font-bold tracking-widest uppercase text-primary mb-3">
             {eyebrow}
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-5">
             {heading}
           </h2>
-          <p className="text-lg text-base-content/70">
+          <p className="text-base sm:text-lg text-base-content/70">
             {description}
           </p>
         </header>
 
         {/* Services Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5 mb-14">
           {services.map((service) => (
             <article
               key={service.id}
-              className="rounded-2xl border border-base-300 bg-base-100 p-6
-                         hover:shadow-lg hover:-translate-y-1 transition-all"
+              className="rounded-2xl border border-base-300 bg-base-100 p-5
+                         hover:shadow-md transition-all"
             >
               <div
                 className={`mb-4 inline-flex rounded-xl p-3 ${toneClasses[service.tone]}`}
@@ -43,11 +43,11 @@ const ServicesOverview = () => {
                 <ServiceIcon name={service.icon} />
               </div>
 
-              <h3 className="text-lg font-semibold mb-3">
+              <h3 className="text-base font-semibold mb-2">
                 {service.title}
               </h3>
 
-              <p className="text-sm text-base-content/70 leading-relaxed">
+              <p className="text-sm text-base-content/65 leading-relaxed">
                 {service.description}
               </p>
             </article>
@@ -56,13 +56,10 @@ const ServicesOverview = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <a
-            href={cta.href}
-            className="btn btn-outline btn-lg px-10"
-          >
+          <a href={cta.href} className="btn btn-outline btn-lg px-10">
             {cta.label}
           </a>
-          <p className="mt-4 text-sm text-base-content/50">
+          <p className="mt-3 text-sm text-base-content/50">
             {cta.helper}
           </p>
         </div>
