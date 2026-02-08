@@ -4,51 +4,59 @@ import { solutionsData } from "../data/solutionsData";
 
 const Solutions = () => {
   return (
-    <section className="py-16 lg:py-24 bg-base-100">
-      <div className="container mx-auto px-4 max-w-7xl">
+    <section className="py-20 lg:py-28 bg-base-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Header */}
-        <header className="text-center mb-14 max-w-3xl mx-auto">
-          <div className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
+        <header className="text-center max-w-3xl mx-auto mb-16">
+          <p className="text-xs font-bold tracking-widest uppercase text-primary mb-4">
             Solutions
-          </div>
+          </p>
 
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Practical Solutions for Real Business Problems
-          </h2>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+            Solving Real Business Problems with Technology
+          </h1>
 
-          <p className="text-base-content/70 text-lg">
-            Each solution is designed to solve a specific operational challenge
-            with measurable business impact.
+          <p className="text-lg text-base-content/70">
+            Our solutions are built around operational challenges — not tools.
+            Each one is designed to deliver measurable efficiency, clarity, and scalability.
           </p>
         </header>
 
-        {/* Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Solutions Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {solutionsData.map((solution) => (
             <article
               key={solution.id}
-              className="border border-base-300 rounded-xl p-8 hover:shadow-md transition"
+              className="group border border-base-300 rounded-2xl p-8 bg-base-100
+                         hover:shadow-lg transition-all"
             >
               <h3 className="text-xl font-semibold mb-4">
                 {solution.title}
               </h3>
 
-              <p className="text-base-content/70 mb-6">
+              <p className="text-base-content/70 mb-6 leading-relaxed">
                 {solution.shortDescription}
               </p>
 
               <Link
                 to={`/solutions/${solution.id}`}
-                className="text-primary font-medium text-sm inline-flex items-center group"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-primary"
               >
-                View solution details
-                <span className="ml-2 group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
+                <span>Explore solution</span>
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
               </Link>
             </article>
           ))}
         </div>
+
+        {/* Bottom Trust Line */}
+        <div className="mt-16 text-center">
+          <p className="text-sm text-base-content/50">
+            Strategy-led • Custom-built • Focused on long-term business value
+          </p>
+        </div>
+
       </div>
     </section>
   );

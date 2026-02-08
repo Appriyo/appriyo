@@ -3,63 +3,68 @@ export const solutionsData = [
     id: "business-process-automation",
     title: "Business Process Automation",
     shortDescription:
-      "Automate manual workflows to reduce delays, errors, and operational costs.",
+      "Replace paper work and repetitive manual tasks with simple, reliable automation.",
     fullDescription:
-      "We help businesses eliminate repetitive manual tasks by designing automation systems tailored to their workflows. The result is faster execution, fewer errors, and improved operational consistency.",
-    forWhom: "Operations teams, service providers, SMEs",
+      "Many local businesses still rely on paper, WhatsApp messages, and manual tracking. We study how your business actually operates and build automation that reduces daily workload, minimizes mistakes, and saves time — without overcomplicating things.",
+    forWhom:
+      "Local businesses, service shops, SMEs, operations-heavy teams",
     approach:
-      "Workflow analysis, automation design, and system integration",
+      "On-site understanding, workflow mapping, and practical automation",
     features: [
-      "Workflow automation",
-      "System integration",
-      "Error reduction",
+      "Manual task automation",
+      "Simple dashboards & reports",
+      "Integration with existing tools",
     ],
     benefits: [
-      "40–60% time savings",
-      "Lower operational cost",
-      "Improved consistency",
+      "Less daily effort",
+      "Fewer errors",
+      "More time for real business work",
     ],
   },
+
   {
     id: "mvp-development",
-    title: "MVP Development",
+    title: "Startup MVP Development",
     shortDescription:
-      "Validate ideas quickly without overspending on full-scale development.",
+      "Build and launch a working product fast — without wasting money.",
     fullDescription:
-      "We build lean MVPs that focus only on core functionality. This allows you to test ideas, gather real user feedback, and make informed product decisions fast.",
-    forWhom: "Startups, founders, product teams",
+      "We help founders and startups turn ideas into usable products quickly. Instead of building everything at once, we focus only on what matters most so you can validate your idea, get real feedback, and grow with confidence.",
+    forWhom:
+      "Startup founders, early-stage teams, first-time entrepreneurs",
     approach:
-      "Lean development with rapid iteration and feedback loops",
+      "Lean planning, fast development, and continuous iteration",
     features: [
-      "Core feature focus",
-      "Rapid development",
-      "User feedback loops",
+      "Core feature prioritization",
+      "Web or mobile MVPs",
+      "Scalable foundation",
     ],
     benefits: [
-      "Faster validation",
-      "Lower initial cost",
-      "Reduced risk",
+      "Faster market entry",
+      "Lower development cost",
+      "Clear direction for future growth",
     ],
   },
+
   {
-    id: "custom-web-platforms",
-    title: "Custom Web Platforms",
+    id: "custom-business-software",
+    title: "Custom Business Software",
     shortDescription:
-      "Tailored web systems designed around your business processes.",
+      "Software built around how your business works — not the other way around.",
     fullDescription:
-      "We build custom web platforms that match how your business actually works—no forced workflows, no unnecessary features.",
-    forWhom: "Growing businesses, service companies",
+      "Off-the-shelf software often forces businesses to change their workflow. We build custom systems that fit your existing process, whether it’s a web app, mobile app, or both — focused purely on solving your specific problems.",
+    forWhom:
+      "Growing businesses, service providers, process-driven teams",
     approach:
-      "Custom architecture aligned with business workflows",
+      "Problem-first design with flexible technology choices",
     features: [
-      "Custom admin panels",
-      "API integrations",
-      "Scalable architecture",
+      "Custom web or mobile apps",
+      "Internal management systems",
+      "Future-ready architecture",
     ],
     benefits: [
-      "Operational control",
-      "Scalable growth",
-      "Better visibility",
+      "Better control over operations",
+      "Clear visibility into data",
+      "Technology that grows with the business",
     ],
   },
 ];
