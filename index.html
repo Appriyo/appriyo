@@ -9,14 +9,7 @@
   <link rel="shortcut icon" href="/favicon_io/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Appriyo</title>
-  
-  <!-- Add this script for theme persistence -->
-  <script>
-    // Check for saved theme preference or use system preference
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedTheme = localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  </script>
+
 </head>
 <body>
   <div id="root"></div>
