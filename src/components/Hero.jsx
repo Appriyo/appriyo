@@ -5,19 +5,19 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-[92vh] lg:min-h-screen flex items-center bg-base-100 text-base-content overflow-hidden"
+      className="relative pt-28 sm:pt-32 min-h-screen flex items-center bg-base-100 text-base-content overflow-hidden"
       aria-label="Main introduction"
     >
-      {/* Subtle Background Accents */}
+      {/* Background Accents */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
-        <div className="absolute -top-24 -left-24 w-[420px] h-[420px] rounded-full bg-primary/10 blur-[140px]" />
-        <div className="absolute bottom-0 right-0 w-[360px] h-[360px] rounded-full bg-secondary/10 blur-[120px]" />
+        <div className="absolute -top-24 -left-24 w-[320px] sm:w-[420px] h-[320px] sm:h-[420px] rounded-full bg-primary/10 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[280px] sm:w-[360px] h-[280px] sm:h-[360px] rounded-full bg-secondary/10 blur-[120px]" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 items-center">
+      <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 xl:gap-16 items-center">
 
-          {/* LEFT: Core Message */}
+          {/* LEFT */}
           <div className="lg:col-span-7 text-center lg:text-left">
 
             {/* Trust Badge */}
@@ -31,7 +31,7 @@ const Hero = () => {
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] tracking-tight mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.05] tracking-tight mb-6">
               <span className="block opacity-90">
                 {HERO_CONTENT.headline.top}
               </span>
@@ -41,15 +41,15 @@ const Hero = () => {
             </h1>
 
             {/* Description */}
-            <p className="max-w-2xl mx-auto lg:mx-0 text-lg lg:text-xl text-base-content/70 leading-relaxed mb-10">
+            <p className="max-w-2xl mx-auto lg:mx-0 text-base sm:text-lg lg:text-xl text-base-content/70 leading-relaxed mb-10">
               {HERO_CONTENT.description}
             </p>
 
-            {/* CTA Buttons */}
+            {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <a
                 href={HERO_CONTENT.ctas.primary.href}
-                className="btn btn-primary btn-lg px-10 shadow-lg shadow-primary/20"
+                className="btn btn-primary btn-lg px-8 sm:px-10 shadow-lg shadow-primary/20"
                 aria-label={HERO_CONTENT.ctas.primary.aria}
               >
                 {HERO_CONTENT.ctas.primary.text}
@@ -57,7 +57,7 @@ const Hero = () => {
 
               <a
                 href={HERO_CONTENT.ctas.secondary.href}
-                className="btn btn-outline btn-lg px-10"
+                className="btn btn-outline btn-lg px-8 sm:px-10"
                 aria-label={HERO_CONTENT.ctas.secondary.aria}
               >
                 {HERO_CONTENT.ctas.secondary.text}
@@ -65,9 +65,9 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* RIGHT: Value Card */}
+          {/* RIGHT */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-3xl bg-base-200/60 backdrop-blur-md border border-base-content/10 p-6 lg:p-8 shadow-xl">
+            <div className="relative rounded-3xl bg-base-200/60 backdrop-blur-md border border-base-content/10 p-6 sm:p-8 shadow-xl">
 
               <h3 className="text-sm font-bold tracking-widest uppercase opacity-50 mb-6">
                 Why Appriyo
@@ -75,10 +75,7 @@ const Hero = () => {
 
               <div className="space-y-4">
                 {HERO_CONTENT.benefits.map((benefit, idx) => (
-                  <div
-                    key={idx}
-                    className="flex items-start gap-4"
-                  >
+                  <div key={idx} className="flex items-start gap-4">
                     <div className="mt-1 w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
                       <svg
                         className="w-5 h-5"
