@@ -59,7 +59,7 @@ const Navbar = () => {
           <div className="navbar-start">
             <NavLink to="/" className="flex items-center gap-2">
               <img
-                src="/logo/appriyo_nav_logo.png"
+                src="logo/appriyo_logo.png"
                 alt="Appriyo"
                 className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
               />
