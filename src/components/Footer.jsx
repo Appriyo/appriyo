@@ -89,7 +89,7 @@ const Footer = () => {
               <h3 className="font-semibold text-base-content mb-5 text-base uppercase tracking-wider">Contact</h3>
               <ul className="space-y-2 text-sm text-base-content/70">
                 <li><a href="mailto:contact@appriyo.com" className="hover:text-primary transition-colors">contact@appriyo.com</a></li>
-                <li><a href="tel:+8801902182656" className="hover:text-primary transition-colors">+880 1902182656</a></li>
+                <li><a href="tel:+8801902182656" className="hover:text-primary transition-colors">+88 01410394038</a></li>
                 <li>Khulna, Bangladesh</li>
               </ul>
             </div>

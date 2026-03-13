@@ -14,7 +14,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  const phoneNumber = "8801902182656";
+  const phoneNumber = "8801410394038";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=Hello Appriyo, I'm interested in your services!`;
 
   useEffect(() => {
