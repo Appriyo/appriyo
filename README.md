@@ -210,7 +210,7 @@ appriyo-website/
 | **Industry**     | Software Development & IT Solutions          |
 | **Location**     | Khulna, Bangladesh                           |
 | **Service Area** | Remote services worldwide                    |
-| **Email**        | <contact@appriyo.com>                          |
+| **Email**        | <contact@appriyo.com>                        |
 | **Phone**        | +880 1902182656                              |
 | **Office Hours** | Sunday – Thursday, 9:00 AM – 6:00 PM (GMT+6) |
 
@@ -295,8 +295,8 @@ We build systems that remain maintainable long after launch. We partner with bus
 
 | Method       | Details                                                     |
 | ------------ | ----------------------------------------------------------- |
-| **Email**    | <contact@appriyo.com>                                         |
-| **Phone**    | +880 1902182656                                             |
+| **Email**    | <contact@appriyo.com>                                       |
+| **Phone**    | +880 1410394038                                             |
 | **LinkedIn** | [Appriyo on LinkedIn](https://linkedin.com/company/appriyo) |
 | **GitHub**   | [github.com/Appriyo](https://github.com/Appriyo)            |
 
