@@ -1,0 +1,29 @@
+Appriyo Proprietary License
+
+Copyright (c) 2026 Appriyo. All rights reserved.
+
+This software and associated documentation files (the "Software") are the exclusive property of Appriyo.
+
+Permission is NOT granted to any person to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, in whole or in part, without explicit prior written permission from Appriyo.
+
+Unauthorized use, reproduction, or distribution of this Software, or any portion of it, may result in severe civil and criminal penalties, and will be prosecuted to the maximum extent possible under law.
+
+You MAY:
+- View the source code for educational or reference purposes only.
+- Fork the repository for personal, non-commercial use (without redistribution).
+
+You MAY NOT:
+- Use this project or any part of it for commercial purposes.
+- Redistribute this project (modified or unmodified).
+- Claim this work as your own.
+- Use Appriyo branding, assets, or identity without permission.
+
+All rights not expressly granted in this license are reserved by Appriyo.
+
+For licensing inquiries, permissions, or commercial usage requests, please contact:
+
+📧 contact@appriyo.com
+
+---
+
+This project represents the official web presence of Appriyo and reflects proprietary design, branding, and business logic.
