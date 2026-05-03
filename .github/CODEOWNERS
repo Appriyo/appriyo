@@ -1,0 +1,29 @@
+# CODEOWNERS for Appriyo website
+
+# These owners will be automatically requested for review on PRs
+
+# Default owner for everything
+
+- @Shahjalal-Mahmud
+
+# UI/Design related changes (components, styles, Tailwind, DaisyUI)
+
+_.css @Preota
+_.jsx @Preota @Shahjalal-Mahmud
+src/components/ @Preota @Shahjalal-Mahmud
+src/styles/ @Preota
+
+# Security-related files
+
+SECURITY.md @Shahjalal-Mahmud
+.github/ISSUE_TEMPLATE/security_vulnerability.md @Shahjalal-Mahmud
+
+# Documentation
+
+\*.md @Shahajalal-Mahmud
+README.md @Shahajalal-Mahmud
+
+# Configuration files
+
+\*.config.js @Shahjalal-Mahmud
+package.json @Shahjalal-Mahmud
