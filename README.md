@@ -7,8 +7,9 @@
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.x-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
 [![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?logo=vite)](https://vitejs.dev/)
+[![AI-Powered](https://img.shields.io/badge/AI-Powered-FF6B35?logo=openai)](https://appriyo.com)
 
-**Modern, responsive website for Appriyo — a software development company focused on building practical, reliable, and scalable digital solutions for real business problems.**
+**Modern, responsive website for Appriyo — an AI-powered digital transformation and software solutions company focused on solving real-world business problems through simple, efficient, and practical technology.**
 
 👉 **[Visit Live Website](https://appriyo.com)** 👈
 
@@ -21,6 +22,9 @@
   - [🌟 Overview](#-overview)
   - [🎯 Live Purpose](#-live-purpose)
   - [🧩 Website Sections](#-website-sections)
+  - [💰 Core Services](#-core-services)
+    - [❌ What We Don't Do](#-what-we-dont-do)
+    - [🚀 Our Products (Built from Real Problems)](#-our-products-built-from-real-problems)
   - [🛠 Tech Stack](#-tech-stack)
   - [🚀 Getting Started](#-getting-started)
     - [Prerequisites](#prerequisites)
@@ -39,18 +43,25 @@
   - [📜 License](#-license)
   - [💬 Final Note](#-final-note)
   - [📞 Contact](#-contact)
-  - [Key Improvements Made](#key-improvements-made)
+  - [Key Changes Made Based on Core Identity:](#key-changes-made-based-on-core-identity)
 
 ---
 
 ## 🌟 Overview
 
-This repository contains the **official web presence of Appriyo** — a custom software development company serving startups, small to mid-sized businesses, and service teams.
+This repository contains the **official web presence of Appriyo** — an AI-powered digital transformation and software solutions company serving small to medium businesses, startups, and service providers.
+
+**Our Core Identity:**
+
+- **Problem-first, not technology-first** — We solve real business problems
+- **Simplicity over complexity** — Practical solutions that actually work
+- **Long-term value over short-term gain** — Systems that remain maintainable
+- **AI-assisted, not AI-led** — Technology serves the problem, not the other way around
 
 The website showcases:
 
-- Our services and solutions
-- Case studies and business impact
+- Our **core services** (Business Automation, Custom Software, AI Integration)
+- **Real-world products** built from actual problems
 - Company values and working principles
 - Core team information
 - Contact and consultation pathways
@@ -61,12 +72,12 @@ The website showcases:
 
 ## 🎯 Live Purpose
 
-| Purpose                | Description                                                    |
-| ---------------------- | -------------------------------------------------------------- |
-| **Present Services**   | Clearly communicate what we build and how we help              |
-| **Build Trust**        | Convey professionalism, technical capability, and reliability  |
-| **Educate Businesses** | Help potential clients understand our problem-solving approach |
-| **Enable Contact**     | Make it easy to start a conversation about business challenges |
+| Purpose                | Description                                                           |
+| ---------------------- | --------------------------------------------------------------------- |
+| **Present Services**   | Clearly communicate our AI-powered automation services                |
+| **Build Trust**        | Convey professionalism, technical capability, and reliability         |
+| **Educate Businesses** | Help SMBs understand how to replace manual workflows                  |
+| **Enable Contact**     | Make it easy to start a conversation about operational inefficiencies |
 
 ---
 
@@ -74,16 +85,42 @@ The website showcases:
 
 The website delivers a clean, structured experience:
 
-| Section          | Description                                               |
-| ---------------- | --------------------------------------------------------- |
-| **Hero**         | Company positioning and core value proposition            |
-| **Services**     | What we build (MVP, custom software, SaaS, consulting)    |
-| **Solutions**    | Problem-driven solutions with measurable outcomes         |
-| **Why Appriyo**  | Our differentiators and partnership advantages            |
-| **Our Approach** | Direct collaboration, transparency, sustainable standards |
-| **About**        | Company principles, working style, and core team          |
-| **Contact**      | Direct communication with clear expectations              |
-| **Footer**       | Company info, legal links, and social connections         |
+| Section          | Description                                                              |
+| ---------------- | ------------------------------------------------------------------------ |
+| **Hero**         | AI-powered digital transformation positioning                            |
+| **Services**     | Business Process Automation, Custom Software, AI Integration, Consulting |
+| **Solutions**    | Problem-driven solutions with measurable outcomes                        |
+| **Why Appriyo**  | Simplicity, practicality, long-term partnership                          |
+| **Our Approach** | Direct collaboration, transparency, problem-first methodology            |
+| **About**        | Company principles, working style, and core team                         |
+| **Contact**      | Consultation for replacing manual workflows                              |
+| **Footer**       | Company info, legal links, and social connections                        |
+
+---
+
+## 💰 Core Services
+
+Appriyo offers ONLY these focused services:
+
+| Service                               | Description                                                      |
+| ------------------------------------- | ---------------------------------------------------------------- |
+| **Business Process Automation**       | Replace repetitive manual tasks with automated workflows         |
+| **Custom Business Software**          | Build tools tailored to replace paper-based/inefficient systems  |
+| **AI Integration & Smart Systems**    | AI-powered assistants and smart automation workflows             |
+| **Digital Transformation Consulting** | Analyze operations, identify inefficiencies, implement solutions |
+
+### ❌ What We Don't Do
+
+- Generic website-only projects (unless part of system)
+- One-off freelance tasks without long-term value
+- Projects without clear business impact
+- Pure design-only work without functionality
+
+### 🚀 Our Products (Built from Real Problems)
+
+- **Amar Repair** - Repair store management system
+- **Amar Batch** - Teacher/Batch management system
+- **Amar Card** - NFC digital contact card
 
 ---
 
@@ -144,6 +181,7 @@ appriyo-website/
 │   ├── ISSUE_TEMPLATE/         # Bug, feature, security templates
 │   ├── PULL_REQUEST_TEMPLATE.md
 │   └── CODEOWNERS
+├── docs/
 ├── public/                     # Static assets
 ├── src/
 │   ├── components/             # Reusable UI components
@@ -182,8 +220,8 @@ appriyo-website/
 - [ ] Add React Router for scalable navigation
 - [ ] SEO optimization with meta tags and structured data
 - [ ] Analytics integration (privacy-friendly)
-- [ ] Blog / Insights section
-- [ ] Careers page
+- [ ] Blog / Insights section focused on automation & AI for SMBs
+- [ ] Product pages for Amar Repair, Amar Batch, Amar Card
 - [ ] Performance optimizations (Core Web Vitals)
 - [ ] Contact form with validation and email integration
 
@@ -204,15 +242,15 @@ appriyo-website/
 
 ## 📍 Company Information
 
-| Detail           | Information                                  |
-| ---------------- | -------------------------------------------- |
-| **Company Name** | Appriyo Technologies                         |
-| **Industry**     | Software Development & IT Solutions          |
-| **Location**     | Khulna, Bangladesh                           |
-| **Service Area** | Remote services worldwide                    |
-| **Email**        | <contact@appriyo.com>                        |
-| **Phone**        | +880 1902182656                              |
-| **Office Hours** | Sunday – Thursday, 9:00 AM – 6:00 PM (GMT+6) |
+| Detail           | Information                                            |
+| ---------------- | ------------------------------------------------------ |
+| **Company Name** | Appriyo Technologies                                   |
+| **Industry**     | AI-Powered Digital Transformation & Software Solutions |
+| **Location**     | Khulna, Bangladesh                                     |
+| **Service Area** | Remote services worldwide                              |
+| **Email**        | <contact@appriyo.com>                                  |
+| **Phone**        | +880 1410394038                                        |
+| **Office Hours** | Sunday – Thursday, 9:00 AM – 6:00 PM (GMT+6)           |
 
 ---
 
@@ -283,11 +321,11 @@ claim it as your own, or use Appriyo branding without permission.
 
 ## 💬 Final Note
 
-> _Appriyo focuses on solving real business problems, not just delivering code._
+> _Appriyo exists to solve problems—not to build software for the sake of building software._
 >
-> This website reflects our values: **clarity, responsibility, and long-term thinking.**
+> _Problem-first, not technology-first. Simplicity over complexity. Practical over theoretical._
 
-We build systems that remain maintainable long after launch. We partner with businesses — we don't just write code for them.
+We help small and medium businesses replace manual workflows with simple, automated, and AI-assisted systems. We build systems that remain maintainable long after launch. We partner with businesses — we don't just write code for them.
 
 ---
 
@@ -309,25 +347,22 @@ We build systems that remain maintainable long after launch. We partner with bus
 
 <div align="center">
   <sub>Small team. Direct communication. Long-term responsibility.</sub>
+  <br/>
+  <sub>Helping businesses replace manual work with simple, AI-powered systems.</sub>
 </div>
 ```
 
----
+## Key Changes Made Based on Core Identity:
 
-## Key Improvements Made
-
-| Area                      | Improvement                                                                  |
-| ------------------------- | ---------------------------------------------------------------------------- |
-| **Badges**                | Added status badges for license, security, PRs, issues, and tech stack       |
-| **Table of Contents**     | Quick navigation for longer README                                           |
-| **Tables**                | Better organization for sections, tech stack, team roles, and documentation  |
-| **Getting Started**       | Clear installation and build commands                                        |
-| **Project Structure**     | Visual tree showing all new files (TEAMS, PRIVACY, TERMS, .github templates) |
-| **Documentation Section** | Explicit table linking to all `.md` files you requested                      |
-| **Contributing**          | Clear distinction between internal team and external contributors            |
-| **Contact Table**         | Organized contact information                                                |
-| **Visual Hierarchy**      | Better emoji usage and section separation                                    |
-| **Status Indicators**     | ✅ Complete / 🔄 In Progress for design features                             |
-| **Final Note**            | Preserved your original closing message with emphasis                        |
-
-The README now serves as a complete **entry point** for anyone visiting your GitHub repo — whether they're a potential client, a security researcher, a job seeker, or a team member.
+| Area                   | Change                                                                        |
+| ---------------------- | ----------------------------------------------------------------------------- |
+| **Tagline**            | Updated to reflect "AI-powered digital transformation and software solutions" |
+| **Overview**           | Added Core Identity section with 4 key principles from the constitution       |
+| **Services Section**   | Completely revamped to match the 4 core services from §5 of the constitution  |
+| **"What We Don't Do"** | Added clear boundaries from §5 (services Appriyo will NOT focus on)           |
+| **Products Section**   | Added Amar Repair, Amar Batch, Amar Card from §6 (Product Strategy)           |
+| **Purpose**            | Changed "replace manual workflows" language to match primary focus from §2    |
+| **Blog Plans**         | Changed to "automation & AI for SMBs" (aligned with target market from §4)    |
+| **Industry**           | Updated to "AI-Powered Digital Transformation & Software Solutions"           |
+| **Final Note**         | Replaced with the exact final principle from §12 of the constitution          |
+| **Footer**             | Added the one-line positioning from §11                                       |
