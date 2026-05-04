@@ -1,176 +1,261 @@
 # Terms of Service
 
-**Effective Date:** January 1, 2026  
-**Last Updated:** May 3, 2026
+**Effective Date:** January 1, 2026
+**Last Updated:** May 5, 2026
 
 ---
 
-## 1. Acceptance of Terms
+## 1. Introduction and Acceptance
 
-By accessing or using the Appriyo website (the "Site") or our services, you agree to be bound by these Terms of Service ("Terms"). If you do not agree, please do not use our Site or services.
+These Terms of Service ("Terms") govern your access to and use of the Appriyo Technologies website ([appriyo.com](https://appriyo.com)) and our services (collectively, the "Services").
 
----
+By visiting our website, submitting a contact form, or engaging our services, you confirm that:
+- You have read and understood these Terms
+- You agree to be legally bound by them
+- You have the authority to enter into this agreement (on behalf of yourself or your organization)
 
-## 2. Our Services
-
-Appriyo provides:
-
-- Custom software development
-- Startup MVP development
-- Digital transformation consulting
-- SaaS product development
-- System integration
-- Technical strategy consulting
-
-Service details are described on our website. All services are subject to separate **Service Agreements** signed by both parties.
+If you do not agree with any part of these Terms, please do not use our website or services.
 
 ---
 
-## 3. Intellectual Property
+## 2. About Appriyo
 
-### 3.1 Our IP
+**Appriyo Technologies** is an AI-powered digital transformation and software solutions company based in Khulna, Bangladesh. We help small and medium businesses replace manual workflows with simple, automated, and AI-assisted systems.
 
-The following are owned exclusively by Appriyo and protected by copyright, trademark, and other laws:
+Our philosophy is problem-first, not technology-first. We build practical, efficient solutions — not software for the sake of it.
 
-- Website design, layout, and code
-- Branding, logos, and trademarks ("Appriyo" name and mark)
-- Proprietary methodologies and internal tools
-- Content, graphics, and written material (unless otherwise noted)
+---
 
-**You may not:** copy, modify, distribute, reproduce, or create derivative works of our IP without explicit written permission.
+## 3. Our Services
 
-### 3.2 Client IP
+Appriyo offers the following core services:
 
-Code, designs, and deliverables created specifically for you under a Service Agreement belong to you upon full payment, subject to:
+| Service                               | Description                                                                  |
+|---------------------------------------|------------------------------------------------------------------------------|
+| **Business Process Automation**       | Replacing repetitive manual tasks with automated workflows                   |
+| **Custom Business Software**          | Building tailored tools to replace paper-based or inefficient systems        |
+| **AI Integration & Smart Systems**    | AI-powered assistants and smart automation workflows                         |
+| **Digital Transformation Consulting** | Analyzing operations, identifying inefficiencies, and implementing solutions |
 
-- Appriyo's right to use non-identifiable, aggregated project data for portfolio or improvement purposes
-- License for Appriyo to retain a copy for support and maintenance
+### 3.1 What We Do Not Offer
+
+Appriyo does not provide:
+- Generic website-only projects unconnected to a broader system
+- One-off freelance tasks without long-term purpose or business impact
+- Pure design-only work without functional outcome
+- Services without a clear, real-world business problem to solve
+
+### 3.2 Service Agreements
+
+All paid engagements are governed by a separate **Service Agreement** signed by both parties, which will specify scope, deliverables, timelines, payment terms, and project-specific conditions. In case of any conflict between these Terms and a Service Agreement, the **Service Agreement prevails**.
 
 ---
 
 ## 4. Website Use
 
-You agree to use the Site only for lawful purposes. You may not:
+### 4.1 Permitted Use
 
-- Attempt to gain unauthorized access to our systems
-- Introduce malware, viruses, or harmful code
-- Scrape, crawl, or extract data without permission
-- Interfere with Site functionality or performance
+You may use our website for lawful purposes, including:
+- Learning about our services and products
+- Submitting inquiries or consultation requests
+- Accessing publicly available information about Appriyo
 
-Violation may result in immediate termination of access and legal action.
+### 4.2 Prohibited Conduct
 
----
+You agree **not** to:
+- Attempt to gain unauthorized access to our systems, servers, or data
+- Introduce malware, viruses, trojans, or any harmful code
+- Scrape, crawl, or systematically extract data from our website without written permission
+- Interfere with or disrupt the website's functionality, performance, or infrastructure
+- Impersonate Appriyo, its team members, or any third party
+- Use the website to transmit spam, harassment, or unlawful content
+- Attempt to reverse-engineer, decompile, or extract proprietary methodology from our website
 
-## 5. Third-Party Links
-
-Our Site may link to external sites (GitHub, LinkedIn). We do not control or endorse these sites and are not responsible for their content or practices.
-
----
-
-## 6. Disclaimer of Warranties
-
-**THE SITE AND SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE."**
-
-To the fullest extent permitted by law, Appriyo disclaims all warranties, express or implied, including:
-
-- Merchantability
-- Fitness for a particular purpose
-- Non-infringement
-- Error-free or uninterrupted operation
-
-We do not warrant that the Site will meet your requirements or that defects will be corrected.
+Violations may result in immediate suspension of access and legal action.
 
 ---
 
-## 7. Limitation of Liability
+## 5. Intellectual Property
 
-**TO THE MAXIMUM EXTENT PERMITTED BY LAW:**
+### 5.1 Appriyo's Intellectual Property
 
-- Appriyo is not liable for indirect, incidental, special, consequential, or punitive damages
-- Our total liability for any claim arising from these Terms or your use of the Site shall not exceed **$100 USD** or the amount you paid us in the prior 6 months (if any)
+All content on our website and within our products is owned by Appriyo Technologies and protected under applicable intellectual property laws. This includes, but is not limited to:
 
-This limitation applies regardless of the legal theory (contract, tort, negligence, etc.).
+- Website design, layout, code, and structure
+- Brand name ("Appriyo"), logos, trademarks, and visual identity
+- Proprietary methodologies, internal tools, and processes
+- Written content, graphics, illustrations, and documentation
+- Product names: Amar Repair, Amar Batch, Amar Card
+
+**You may not:** copy, modify, reproduce, distribute, publicly display, create derivative works from, or commercially exploit any of our intellectual property without our explicit written permission.
+
+You **may** view our public source code repositories for educational or reference purposes as defined in our License.
+
+### 5.2 Client Deliverables
+
+Code, designs, and deliverables created specifically for you under a Service Agreement become your property upon **receipt of full payment**, subject to:
+- Appriyo's right to retain a copy for internal support and maintenance purposes
+- Appriyo's right to reference the engagement type (not client-confidential details) in anonymized portfolio or case studies, unless agreed otherwise
+- Any open-source components within deliverables remain subject to their respective licenses
 
 ---
 
-## 8. Indemnification
+## 6. Products
 
-You agree to indemnify and hold harmless Appriyo and its team members from any claims, damages, losses, or expenses arising from:
+Appriyo builds and maintains SaaS products developed from real business problems. Current products include:
 
+- **Amar Repair** – Repair store management system
+- **Amar Batch** – Teacher and batch management system
+- **Amar Card** – NFC digital contact card
+
+Use of these products is subject to their individual product-specific terms, which will be provided at the point of access or purchase.
+
+---
+
+## 7. Confidentiality
+
+Any business information, workflows, processes, or requirements you share with Appriyo during consultations or engagements are treated as **confidential**. We will not disclose this information to third parties except as necessary to deliver your services or as required by law.
+
+Project-specific confidentiality obligations are detailed in your Service Agreement.
+
+---
+
+## 8. Payment Terms
+
+Payment terms for services are defined in individual Service Agreements. General principles:
+
+- Invoices are due as specified in the Service Agreement
+- Late payments may result in a pause of work until outstanding amounts are cleared
+- Appriyo reserves the right to withhold delivery of final deliverables until full payment is received
+- Refund eligibility is governed by the specific Service Agreement
+
+---
+
+## 9. Disclaimer of Warranties
+
+**THE WEBSITE AND SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE."**
+
+To the fullest extent permitted by applicable law, Appriyo disclaims all warranties, express or implied, including:
+- Warranties of merchantability and fitness for a particular purpose
+- Warranties of non-infringement
+- Warranties that the website will be error-free, uninterrupted, or secure
+- Warranties regarding the accuracy or completeness of website content
+
+We do not warrant that the website will meet your specific requirements.
+
+---
+
+## 10. Limitation of Liability
+
+**TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW:**
+
+Appriyo and its team members shall not be liable for:
+- Indirect, incidental, special, consequential, or punitive damages
+- Loss of profits, revenue, data, business, or goodwill
+- Damages arising from unauthorized access to or alteration of your data
+- Damages resulting from third-party services or links
+
+**Our total cumulative liability** for any claim arising from these Terms or your use of the website shall not exceed **USD $100** or the total amount you paid Appriyo in the **six (6) months preceding the claim**, whichever is greater.
+
+This limitation applies regardless of the legal theory (contract, tort, negligence, strict liability, or otherwise) and even if we have been advised of the possibility of such damages.
+
+---
+
+## 11. Indemnification
+
+You agree to defend, indemnify, and hold harmless Appriyo Technologies and its team members from and against any claims, damages, losses, liabilities, costs, and expenses (including reasonable legal fees) arising from:
 - Your violation of these Terms
-- Your misuse of the Site or services
-- Your violation of any law or third-party rights
+- Your misuse of our website or services
+- Your violation of any applicable law or regulation
+- Your violation of any third-party rights
 
 ---
 
-## 9. Termination
+## 12. Termination
 
-We may terminate or suspend your access to the Site immediately, without notice, for any violation of these Terms.
+### 12.1 Website Access
 
-For ongoing service agreements, termination terms are governed by the specific Service Agreement.
+We reserve the right to suspend or terminate your access to the website at any time, without prior notice, for any violation of these Terms or for any other reason at our discretion.
 
----
+### 12.2 Service Engagements
 
-## 10. Governing Law & Dispute Resolution
+Termination of ongoing service engagements is governed by the relevant Service Agreement, including notice periods and any applicable termination fees.
 
-### 10.1 Governing Law
-
-These Terms are governed by the laws of **Bangladesh**, without regard to conflict of law principles.
-
-### 10.2 Dispute Resolution
-
-**Step 1 – Informal Resolution:** Contact us at <contact@appriyo.com>. Most disputes are resolved informally within 30 days.
-
-**Step 2 – Binding Arbitration:** If not resolved informally, disputes shall be resolved by binding arbitration in **Khulna, Bangladesh**, conducted in English, by a single arbitrator. Judgment on the arbitration award may be entered in any court of competent jurisdiction.
-
-**Exceptions:** Either party may seek injunctive relief in court to protect intellectual property or confidential information.
-
-No class actions or class arbitrations are permitted.
+Upon termination, rights granted to you under these Terms cease immediately. Provisions that by their nature should survive termination (including intellectual property, liability limitations, and dispute resolution) will remain in effect.
 
 ---
 
-## 11. Service Agreements vs. These Terms
+## 13. Governing Law
 
-These Terms govern general website use and informational interactions.
-
-**For paid services** (software development, consulting, etc.), a separate **Service Agreement** will govern, including:
-
-- Project scope and deliverables
-- Payment terms and schedules
-- Warranties specific to deliverables
-- Liability limitations (may differ from Section 7)
-- Confidentiality provisions
-- Project-specific intellectual property terms
-
-In case of conflict, the Service Agreement prevails.
+These Terms are governed by and construed in accordance with the laws of **Bangladesh**, without regard to its conflict of law provisions.
 
 ---
 
-## 12. Changes to Terms
+## 14. Dispute Resolution
 
-We may update these Terms periodically. Changes are effective immediately upon posting. Continued use of the Site after changes means you accept the new Terms.
+We prefer resolving disputes amicably and quickly.
 
-Material changes will be notified via website notice or email if you have an ongoing relationship with us.
+### Step 1 — Informal Resolution (Required First Step)
+
+Contact us at **contact@appriyo.com** with a description of your concern. We will make a good-faith effort to resolve the issue within **30 days**.
+
+### Step 2 — Binding Arbitration
+
+If informal resolution fails, disputes shall be submitted to **binding arbitration** in Khulna, Bangladesh. Arbitration shall be:
+- Conducted in English
+- Decided by a single arbitrator
+- Resolved under applicable arbitration rules
+
+The arbitrator's decision shall be final and binding. Judgment may be entered in any court of competent jurisdiction.
+
+### Exceptions
+
+Either party may seek **emergency injunctive or equitable relief** in a court of law to protect intellectual property rights or confidential information without first going through arbitration.
+
+### No Class Actions
+
+All disputes must be brought on an individual basis. Class actions and class arbitrations are not permitted.
 
 ---
 
-## 13. Contact Information
+## 15. Changes to These Terms
 
-**Appriyo**  
-Khulna, Bangladesh  
-📧 <contact@appriyo.com>  
-📞 +880 1410394038  
+We may revise these Terms periodically. When we do:
+- The "Last Updated" date at the top will be updated
+- Material changes will be announced via a website notice
+- Clients with active engagements will be notified by email
+
+Continued use of the website after changes are posted constitutes your acceptance of the revised Terms.
+
+---
+
+## 16. Miscellaneous
+
+| Provision            | Detail                                                                                                                                                          |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Severability**     | If any provision is found unenforceable, the remaining provisions continue in full effect                                                                       |
+| **No Waiver**        | Failure to enforce a right does not constitute a waiver of that right                                                                                           |
+| **Entire Agreement** | These Terms, together with any applicable Service Agreement, constitute the full agreement between you and Appriyo                                              |
+| **Assignment**       | Appriyo may assign or transfer these Terms without notice. You may not assign your rights or obligations without our written consent                            |
+| **Force Majeure**    | Neither party is liable for delays or failures caused by circumstances beyond reasonable control (natural disasters, government action, internet outages, etc.) |
+| **Language**         | These Terms are written in English. In case of translation, the English version prevails                                                                        |
+
+---
+
+## 17. Contact Information
+
+For questions, concerns, or legal notices related to these Terms:
+
+**Appriyo Technologies**
+Khulna, Bangladesh
+
+📧 **contact@appriyo.com**
+📞 **+880 1410394038**
 🕘 Sunday – Thursday, 9:00 AM – 6:00 PM (GMT+6)
+🔗 [appriyo.com](https://appriyo.com)
 
 ---
 
-## 14. Miscellaneous
+*These Terms were written to be clear, fair, and enforceable — for both Appriyo and the businesses we serve.*
 
-- **Severability:** If any provision is unenforceable, the remaining provisions remain in effect.
-- **No Waiver:** Failure to enforce a right does not waive that right.
-- **Entire Agreement:** These Terms (plus any applicable Service Agreement) constitute the entire agreement between you and Appriyo regarding website use.
-- **Assignment:** Appriyo may assign these Terms without notice. You may not assign them.
-
----
-
-_These Terms were drafted to balance transparency, legal protection, and fair treatment for both Appriyo and its clients._
+*© 2026 Appriyo Technologies. All rights reserved.*
