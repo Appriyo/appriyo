@@ -17,7 +17,7 @@
 
 ## 📋 Table of Contents
 
-- [ Appriyo – Official Website](#-appriyo--official-website)
+- [ Appriyo – Official Website](https://appriyo.com)
   - [📋 Table of Contents](#-table-of-contents)
   - [🌟 Overview](#-overview)
   - [🎯 Live Purpose](#-live-purpose)
@@ -73,7 +73,7 @@ The website showcases:
 ## 🎯 Live Purpose
 
 | Purpose                | Description                                                           |
-| ---------------------- | --------------------------------------------------------------------- |
+|------------------------|-----------------------------------------------------------------------|
 | **Present Services**   | Clearly communicate our AI-powered automation services                |
 | **Build Trust**        | Convey professionalism, technical capability, and reliability         |
 | **Educate Businesses** | Help SMBs understand how to replace manual workflows                  |
@@ -86,7 +86,7 @@ The website showcases:
 The website delivers a clean, structured experience:
 
 | Section          | Description                                                              |
-| ---------------- | ------------------------------------------------------------------------ |
+|------------------|--------------------------------------------------------------------------|
 | **Hero**         | AI-powered digital transformation positioning                            |
 | **Services**     | Business Process Automation, Custom Software, AI Integration, Consulting |
 | **Solutions**    | Problem-driven solutions with measurable outcomes                        |
@@ -103,7 +103,7 @@ The website delivers a clean, structured experience:
 Appriyo offers ONLY these focused services:
 
 | Service                               | Description                                                      |
-| ------------------------------------- | ---------------------------------------------------------------- |
+|---------------------------------------|------------------------------------------------------------------|
 | **Business Process Automation**       | Replace repetitive manual tasks with automated workflows         |
 | **Custom Business Software**          | Build tools tailored to replace paper-based/inefficient systems  |
 | **AI Integration & Smart Systems**    | AI-powered assistants and smart automation workflows             |
@@ -127,7 +127,7 @@ Appriyo offers ONLY these focused services:
 ## 🛠 Tech Stack
 
 | Technology            | Purpose                              |
-| --------------------- | ------------------------------------ |
+|-----------------------|--------------------------------------|
 | **React 18**          | UI Library                           |
 | **Vite**              | Build tool & development server      |
 | **Tailwind CSS**      | Utility-first styling                |
@@ -202,12 +202,12 @@ appriyo-website/
 ## 🎨 Design & UI
 
 | Feature                                    | Status         |
-| ------------------------------------------ | -------------- |
-| Fully responsive (desktop, tablet, mobile) | ✅ Complete    |
-| Dark / Light theme support                 | ✅ Complete    |
-| Clean typography and spacing               | ✅ Complete    |
-| Readability and trust focus                | ✅ Complete    |
-| Cross-browser compatibility                | ✅ Complete    |
+|--------------------------------------------|----------------|
+| Fully responsive (desktop, tablet, mobile) | ✅ Complete     |
+| Dark / Light theme support                 | ✅ Complete     |
+| Clean typography and spacing               | ✅ Complete     |
+| Readability and trust focus                | ✅ Complete     |
+| Cross-browser compatibility                | ✅ Complete     |
 | Accessibility (WCAG 2.1 AA)                | 🔄 In Progress |
 
 **Design Collaboration:** UI/UX design by Preota, implemented in code with pixel-level attention.
@@ -230,7 +230,7 @@ appriyo-website/
 ## 🤝 Team & Collaboration
 
 | Role                           | Team Member       | Main Responsibilities                                 |
-| ------------------------------ | ----------------- | ----------------------------------------------------- |
+|--------------------------------|-------------------|-------------------------------------------------------|
 | **Development & Architecture** | Shahajalal Mahmud | Tech decisions, code review, security, architecture   |
 | **UI & Design**                | Preota Saha       | Frontend architecture, design systems, themes         |
 | **Testing & QA**               | Md Munna Sardar   | Quality assurance, testing strategy, bug verification |
@@ -243,7 +243,7 @@ appriyo-website/
 ## 📍 Company Information
 
 | Detail           | Information                                            |
-| ---------------- | ------------------------------------------------------ |
+|------------------|--------------------------------------------------------|
 | **Company Name** | Appriyo Technologies                                   |
 | **Industry**     | AI-Powered Digital Transformation & Software Solutions |
 | **Location**     | Khulna, Bangladesh                                     |
@@ -257,7 +257,7 @@ appriyo-website/
 ## 📚 Documentation
 
 | File                       | Description                                           |
-| -------------------------- | ----------------------------------------------------- |
+|----------------------------|-------------------------------------------------------|
 | [TEAMS.md](TEAMS.md)       | Core team member profiles and responsibilities        |
 | [PRIVACY.md](PRIVACY.md)   | Privacy policy covering data collection and usage     |
 | [TERMS.md](TERMS.md)       | Terms of service for website use                      |
@@ -267,7 +267,7 @@ appriyo-website/
 ### Issue & Pull Request Templates
 
 | Template                    | Purpose                                  |
-| --------------------------- | ---------------------------------------- |
+|-----------------------------|------------------------------------------|
 | `bug_report.md`             | Report bugs or unexpected behavior       |
 | `feature_request.md`        | Suggest improvements or new features     |
 | `security_vulnerability.md` | Private security vulnerability reporting |
@@ -332,7 +332,7 @@ We help small and medium businesses replace manual workflows with simple, automa
 ## 📞 Contact
 
 | Method       | Details                                                     |
-| ------------ | ----------------------------------------------------------- |
+|--------------|-------------------------------------------------------------|
 | **Email**    | <contact@appriyo.com>                                       |
 | **Phone**    | +880 1410394038                                             |
 | **LinkedIn** | [Appriyo on LinkedIn](https://linkedin.com/company/appriyo) |
@@ -355,7 +355,7 @@ We help small and medium businesses replace manual workflows with simple, automa
 ## Key Changes Made Based on Core Identity:
 
 | Area                   | Change                                                                        |
-| ---------------------- | ----------------------------------------------------------------------------- |
+|------------------------|-------------------------------------------------------------------------------|
 | **Tagline**            | Updated to reflect "AI-powered digital transformation and software solutions" |
 | **Overview**           | Added Core Identity section with 4 key principles from the constitution       |
 | **Services Section**   | Completely revamped to match the 4 core services from §5 of the constitution  |
