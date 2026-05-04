@@ -1,82 +1,103 @@
 # Appriyo Core Team
 
-Appriyo is a small, focused engineering team. You work directly with the people designing, building, and maintaining your system — no layers, no delegation.
+**Small team. Direct communication. Long-term responsibility.**
+
+Appriyo operates with a lean, focused team — each member owning a clear domain, working directly on the systems we build and maintain. When you work with Appriyo, you work with the people actually building your solution. No layers. No delegation to unknown contractors.
 
 ---
 
-## 👨‍💻 Core Team Members
+## Our Working Principles
+
+| Principle                    | What It Means in Practice                                                         |
+|------------------------------|-----------------------------------------------------------------------------------|
+| **Direct Collaboration**     | You speak directly with the engineers and leads building your system              |
+| **Clear Communication**      | Honest updates on progress, risks, and decisions — no fluff                       |
+| **Maintainable Systems**     | We build clean architecture that is easy to extend, support, and evolve over time |
+| **Long-Term Responsibility** | We design for the future, not just delivery day                                   |
+| **Problem-First**            | We understand your business before writing a single line of code                  |
+
+---
+
+## Core Team Members
+
+---
 
 ### Md Shahajalal Mahmud
 
 **Founder & Technical Project Lead**
 
-_Specialties:_ Android Systems, Full-Stack Architecture
+Shahajalal leads end-to-end technical delivery at Appriyo. He is responsible for architectural decisions, production quality, and ensuring that every system built solves a real problem with the simplest possible solution. He is the primary technical point of contact for all client engagements.
 
-Leads end-to-end delivery of production software for real businesses. Builds systems with clarity first, so they remain maintainable long after launch.
+With a background in Android systems and full-stack development, Shahajalal focuses on building software that remains maintainable and valuable long after launch.
+
+**Specialties:** Android Systems · Full-Stack Architecture · System Design · Production Engineering
 
 **Tech Stack:**
+- Kotlin & Jetpack Compose (Android)
+- React (Frontend)
+- Firebase (Backend & Real-time Systems)
+- Node.js
 
-- Kotlin
-- Jetpack Compose
-- Firebase
-- React
-
-**Role in this project:**
-
-- Development & Architecture
-- Technical decision making
+**Responsibilities:**
+- End-to-end technical architecture and delivery
+- Technical decision-making and direction
 - Code review and merge authority
-- Security vulnerability response
+- Security vulnerability assessment and response
+- Client technical communication
+
+📧 Available via [contact@appriyo.com](mailto:contact@appriyo.com)
 
 ---
 
 ### Preota Saha
 
-**Lead Frontend Engineer**
+**Lead Frontend Engineer & UI/UX Lead**
 
-_Specialties:_ Scalable Web Architectures, Design Systems
+Preota leads frontend architecture and the visual design system at Appriyo. She believes that clarity in state management and component structure comes before aesthetics — good UI starts with good architecture. She is responsible for ensuring that every interface Appriyo ships is intuitive, accessible, and scalable.
 
-Specialist in long-term enterprise UI maintenance. Believes clarity in state management comes before code.
+Preota specializes in long-term frontend maintainability, building design systems that can evolve with the product rather than fighting against it.
+
+**Specialties:** Scalable Web Architectures · Design Systems · Component-Driven UI · Accessibility
 
 **Tech Stack:**
+- React & TypeScript
+- Tailwind CSS & DaisyUI
+- Figma (Design Collaboration)
+- Responsive & Accessible UI Patterns
 
-- React
-- TypeScript
-- Tailwind CSS
-- DaisyUI
-
-**Role in this project:**
-
-- UI/UX design implementation
-- Frontend architecture
-- Design system maintenance
-- Theme (light/dark) implementation
+**Responsibilities:**
+- UI/UX design and implementation
+- Frontend architecture and component library
+- Design system creation and maintenance
+- Light/dark theme implementation
+- Visual consistency across all Appriyo products
 
 ---
 
-### Munna Sardar
+### Md Munna Sardar
 
-**Lead of Testing & Frontend Development**
+**Lead — Testing & Frontend Development**
 
-_Specialties:_ Software Testing, Frontend Development, Android Application Development
+Munna ensures that what Appriyo ships actually works — in real environments, not just controlled test scenarios. He leads quality assurance across all projects, bringing a mindset that practical reliability matters more than theoretical perfection.
 
-Worked as the lead for testing and frontend development, focusing on application quality, UI consistency, and user experience. Has hands-on experience developing Android applications and modern frontend interfaces, collaborating through version control and structured workflows.
+With hands-on experience in both Android development and modern frontend interfaces, Munna contributes across the stack while maintaining ownership of quality and testing standards.
 
-> _"Build practical solutions that work reliably in real environments, not just in theory."_
+> *"Build practical solutions that work reliably in real environments, not just in theory."*
+
+**Specialties:** Software Testing · Frontend Development · Android Application Development · QA Strategy
 
 **Tech Stack:**
+- Kotlin & Jetpack Compose (Android)
+- JavaScript & React (Frontend)
+- Manual & Structured Testing Workflows
+- Version Control (Git/GitHub)
 
-- Kotlin
-- Jetpack Compose
-- JavaScript
-- React
-
-**Role in this project:**
-
-- Quality Assurance (QA)
-- Testing strategy
-- Frontend validation
-- Bug verification
+**Responsibilities:**
+- Quality assurance strategy and execution
+- Frontend validation and UI consistency checks
+- Bug identification, documentation, and verification
+- Regression testing across releases
+- Android development support
 
 ---
 
@@ -84,56 +105,41 @@ Worked as the lead for testing and frontend development, focusing on application
 
 **Social Media & Creative Lead**
 
-_Specialties:_ Brand Communication, Content Strategy, Visual Storytelling, UI Support
+Mim manages Appriyo's external presence — how the company communicates, what it looks like, and how it is perceived by the people it wants to serve. She leads brand communication, content strategy, and social media while also contributing to frontend and Flutter-based UI development.
 
-Manages Appriyo's social media presence and visual branding while gradually contributing to frontend and Flutter-based UI development.
+She believes that great digital products are built when design, communication, and technology work together with shared purpose and clarity.
 
-> _"Believes strong digital products are created when design, communication, and technology work together with clarity and purpose."_
+> *"Strong digital products are created when design, communication, and technology work together with clarity and purpose."*
+
+**Specialties:** Brand Communication · Content Strategy · Visual Storytelling · Social Media Management · UI Support
 
 **Tech Stack:**
+- Canva & CapCut (Visual Content Creation)
+- HTML & CSS (Frontend Support)
+- Flutter & Dart (Mobile UI Contribution)
 
-- Canva
-- CapCut
-- HTML
-- CSS
-- Flutter
-- Dart
-
-**Role in this project:**
-
-- Marketing & social media handling
-- Brand communication
-- Content strategy
-- Visual assets
+**Responsibilities:**
+- Social media strategy and management
+- Brand communication and tone of voice
+- Visual content creation and asset management
+- Content calendar and publishing
+- Frontend and Flutter UI support
 
 ---
 
-## 🤝 How We Work Together
+## How to Reach Us
 
-| Principle                    | Description                                                        |
-| ---------------------------- | ------------------------------------------------------------------ |
-| **Direct Collaboration**     | You work directly with the engineers building your system          |
-| **Clear Communication**      | Straightforward updates focused on progress, risks, and decisions  |
-| **Maintainable Systems**     | Clean architecture that is easy to extend, support, and evolve     |
-| **Long-Term Responsibility** | We design systems with future changes, growth, and support in mind |
+| Purpose                               | Contact                                                            |
+|---------------------------------------|--------------------------------------------------------------------|
+| **General Inquiries & Consultations** | contact@appriyo.com                                                |
+| **Technical Support**                 | contact@appriyo.com — available Sunday–Thursday, 9 AM–6 PM (GMT+6) |
+| **Security Vulnerability Reports**    | security@appriyo.com — or follow [SECURITY.md](SECURITY.md)        |
+| **Partnerships & Collaborations**     | contact@appriyo.com                                                |
 
----
-
-## 📞 Contact the Team
-
-**General Inquiries:** <contact@appriyo.com>
-
-**Technical Support:** Technical team members are available during office hours (Sunday–Thursday, 9:00 AM – 6:00 PM GMT+6)
-
-**Security Reports:** <security@appriyo.com> (or follow [SECURITY.md](SECURITY.md) process)
+**Office Hours:** Sunday – Thursday, 9:00 AM – 6:00 PM (GMT+6)
+**Location:** Khulna, Bangladesh · Remote services worldwide
+**Website:** [appriyo.com](https://appriyo.com)
 
 ---
 
-## 🌍 Location
-
-Khulna, Bangladesh  
-Remote services worldwide
-
----
-
-_Small team. Direct communication. Long-term responsibility._
+*© 2026 Appriyo Technologies. All rights reserved.*
