@@ -17,7 +17,7 @@
 
 ## 📋 Table of Contents
 
-- [ Appriyo – Official Website](https://appriyo.com)
+- [Appriyo – Official Website](https://appriyo.com)
   - [📋 Table of Contents](#-table-of-contents)
   - [🌟 Overview](#-overview)
   - [🎯 Live Purpose](#-live-purpose)
@@ -177,24 +177,92 @@ npm run preview
 
 ```
 appriyo-website/
-├── .github/                    # GitHub templates & workflows
-│   ├── ISSUE_TEMPLATE/         # Bug, feature, security templates
-│   ├── PULL_REQUEST_TEMPLATE.md
-│   └── CODEOWNERS
-├── docs/
-├── public/                     # Static assets
+│
+├── docs/                        # 📚 ALL documentation lives here
+│   │
+│   ├── 01-foundation/           # Core identity & non-changing docs
+│   │   ├── appriyo_constitution.md
+│   │   ├── design.md
+│   │   └── content.md
+│   │
+│   ├── 02-product/              # What we are building
+│   │   ├── product.md
+│   │   ├── sitemap.md
+│   │   ├── pages.md
+│   │   └── user_flow.md
+│   │
+│   ├── 03-engineering/          # How we build it
+│   │   ├── architecture.md
+│   │   ├── components.md
+│   │   ├── coding_guidelines.md
+│   │   └── performance.md
+│   │
+│   ├── 04-operations/           # Process & execution
+│   │   ├── roadmap.md
+│   │   ├── testing.md
+│   │   └── deployment.md
+│   │
+│   ├── 05-legal/                # Legal & compliance
+│   │   ├── terms.md
+│   │   ├── privacy.md
+│   │
+│   └── 06-company/              # Internal company info
+│       └── teams.md
+│
+├── public/                      # Static assets
+│   ├── images/
+│   ├── icons/
+│   └── logo/
+│
 ├── src/
-│   ├── components/             # Reusable UI components
-│   ├── sections/               # Page sections (Hero, Services, etc.)
-│   ├── styles/                 # Global styles & Tailwind config
-│   └── App.jsx                 # Main application
-├── README.md                   # You are here
-├── TEAMS.md                    # Core team information
-├── PRIVACY.md                  # Privacy policy
-├── TERMS.md                    # Terms of service
-├── SECURITY.md                 # Security vulnerability policy
-├── LICENSE.txt                 # Proprietary license
-└── ...
+│   │
+│   ├── components/              # Reusable UI components
+│   │   ├── ui/                  # Buttons, cards, inputs
+│   │   ├── layout/              # Navbar, footer, containers
+│   │   └── common/              # Shared small components
+│   │
+│   ├── sections/                # Page sections (Hero, Services)
+│   │   ├── home/
+│   │   ├── services/
+│   │   ├── products/
+│   │   └── shared/
+│   │
+│   ├── pages/                   # Route-level pages
+│   │   ├── Home.jsx
+│   │   ├── Services.jsx
+│   │   ├── Products.jsx
+│   │   ├── About.jsx
+│   │   └── Contact.jsx
+│   │
+│   ├── data/                    # Static content/data
+│   │   ├── services.js
+│   │   ├── products.js
+│   │   └── navigation.js
+│   │
+│   ├── styles/                  # Tailwind + global styles
+│   │   ├── globals.css
+│   │   └── theme.js
+│   │
+│   ├── utils/                   # Helper functions
+│   │
+│   └── App.jsx                  # Main application
+│
+├── .github/                     # GitHub templates & workflows
+│   ├── ISSUE_TEMPLATE/          # Bug, feature, security templates
+│   │   ├── bug_report.md
+│   │   ├── feature_request.md
+│   │   └── security.md
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   ├── CODEOWNERS
+│   └── workflows/
+│
+├── README.md                    # Project overview (you are here)
+├── LICENSE.txt                  # Proprietary license
+├── TEAMS.md                     # Core team information
+├── PRIVACY.md                   # Privacy policy
+├── TERMS.md                     # Terms of service
+├── SECURITY.md                  # Security policy
+└── package.json
 ```
 
 ---
@@ -352,7 +420,7 @@ We help small and medium businesses replace manual workflows with simple, automa
 </div>
 ```
 
-## Key Changes Made Based on Core Identity:
+## Key Changes Made Based on Core Identity
 
 | Area                   | Change                                                                        |
 |------------------------|-------------------------------------------------------------------------------|
