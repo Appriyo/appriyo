@@ -1,28 +1,29 @@
+// src/data/heroContent.js
+// Aligned with: hero.md v1.0 · pages.md v1.0 · content.md v1.0
+
 export const HERO_CONTENT = {
-  trustBadge: "Trusted Software Engineering Partner for Business Leaders",
-  headline: {
-    top: "Expertly Engineered",
-    accent: "Custom Software",
-    bottom: "Built for Reliability, Maintainability, and Long-Term Success"
-  },
-  description:
-    "Appriyo delivers software solutions with discipline and precision. We combine senior-level software engineering practices with deep business understanding to create maintainable, scalable systems designed for reliability and long-term operational impact.",
-  benefits: [
-    "Tailored to your specific requirements",
-    "Engineered for long-term maintainability",
-    "Structured process with clear milestones"
-  ],
+  preHeading: "AI-Powered Digital Transformation",
+
+  headline: "Still Running Your Business Manually?",
+
+  subheadline:
+    "Appriyo replaces paper, WhatsApp threads, and spreadsheets with simple, automated systems built for your business.",
+
+  supportingLine:
+    "We work with small businesses and local service providers to eliminate repetitive work — no tech knowledge required.",
+
   ctas: {
     primary: {
-      text: "Schedule a Technical Consultation",
-      href: "/contact",
-      aria: "Schedule a strategic technical consultation with Appriyo IT"
+      text: "Let's Talk About Your Business",
+      href: "#contact",
+      aria: "Start a conversation with Appriyo about your business",
     },
     secondary: {
-      text: "View Services",
-      href: "/services",
-      aria: "View Appriyo IT's software development services"
-    }
+      text: "See What We Build",
+      href: "#products",
+      aria: "See what Appriyo has built for real businesses",
+    },
   },
-  footerText: "Structured processes, transparent collaboration, and a long-term partnership mindset."
+
+  microTrust: "Real software. Real businesses. No complexity.",
 };
