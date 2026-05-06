@@ -1,8 +1,8 @@
 // pages/AmarBatch.jsx
-import ProductHero from "../sections/product-detail/ProductHero";
+import ProductHero from "../sections/products/ProductHero";
 import ProductProblem from "../sections/product-detail/ProductProblem";
 import ProductFeatures from "../sections/product-detail/ProductFeatures";
-import { ProductAudience, ProductCTA } from "../sections/product-detail/ProductAudienceAndCTA";
+import { ProductAudience, ProductCTA } from "../sections/product-detail/ProductAudience";
 
 export default function AmarBatch() {
   return (
