@@ -34,7 +34,7 @@ Follow `architecture.md §2` exactly. No new folders are created without team di
 ## 2.2 File Naming
 
 | Type              | Convention               | Examples                             |
-|-------------------|--------------------------|--------------------------------------|
+| ----------------- | ------------------------ | ------------------------------------ |
 | React components  | PascalCase               | `ServiceCard.jsx`, `HeroSection.jsx` |
 | Hooks             | camelCase, `use` prefix  | `useScrolled.js`, `useFormSubmit.js` |
 | Data files        | camelCase                | `services.js`, `navigation.js`       |
@@ -63,10 +63,10 @@ Each component folder has an `index.js` that re-exports everything:
 
 ```js
 // src/components/ui/index.js
-export { Button } from './Button';
-export { Card } from './Card';
-export { Badge } from './Badge';
-export { Divider } from './Divider';
+export { Button } from "./Button";
+export { Card } from "./Card";
+export { Badge } from "./Badge";
+export { Divider } from "./Divider";
 ```
 
 This allows clean imports: `import { Button, Card } from '@/components/ui'`
@@ -79,13 +79,13 @@ This allows clean imports: `import { Button, Card } from '@/components/ui'`
 
 ```jsx
 // ✅ CORRECT
-import { Button } from '@/components/ui';
-import { services } from '@/data/services';
-import { cn } from '@/utils/cn';
+import { Button } from "@/components/ui";
+import { services } from "@/data/services";
+import { cn } from "@/utils/cn";
 
 // ❌ WRONG — relative paths beyond 1 level
-import { Button } from '../../components/ui/Button';
-import { services } from '../../../data/services';
+import { Button } from "../../components/ui/Button";
+import { services } from "../../../data/services";
 ```
 
 ## 3.2 Import Order
@@ -94,31 +94,31 @@ Imports are always grouped in this order, with a blank line between groups:
 
 ```jsx
 // 1. React and React-related
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 // 2. External libraries
-import { Cog, ArrowRight } from 'lucide-react';
+import { Cog, ArrowRight } from "lucide-react";
 
 // 3. Internal — components
-import { Button, Card } from '@/components/ui';
-import { CTABlock } from '@/components/common';
+import { Button, Card } from "@/components/ui";
+import { CTABlock } from "@/components/common";
 
 // 4. Internal — data, hooks, utils
-import { services } from '@/data/services';
-import { useScrolled } from '@/hooks/useScrolled';
-import { cn } from '@/utils/cn';
+import { services } from "@/data/services";
+import { useScrolled } from "@/hooks/useScrolled";
+import { cn } from "@/utils/cn";
 ```
 
 ## 3.3 No Default Imports from Data Files
 
 ```js
 // ❌ WRONG
-import services from '@/data/services';
+import services from "@/data/services";
 
 // ✅ CORRECT
-import { services } from '@/data/services';
+import { services } from "@/data/services";
 ```
 
 ---
@@ -188,6 +188,7 @@ export function Button({ label, variant = 'primary', href = null, onClick = null
 ## 4.5 Component Length Limit
 
 **Max 150 lines per component file.** If a component exceeds this:
+
 - Extract sub-components
 - Move logic to a custom hook
 - Move static data to `data/` files
@@ -198,18 +199,20 @@ export function Button({ label, variant = 'primary', href = null, onClick = null
 // ❌ WRONG — logic inline in JSX
 return (
   <div>
-    {services.filter(s => s.active).map(s => (
-      <ServiceCard key={s.id} {...s} />
-    ))}
+    {services
+      .filter((s) => s.active)
+      .map((s) => (
+        <ServiceCard key={s.id} {...s} />
+      ))}
   </div>
 );
 
 // ✅ CORRECT — logic before return
-const activeServices = services.filter(s => s.active);
+const activeServices = services.filter((s) => s.active);
 
 return (
   <div>
-    {activeServices.map(s => (
+    {activeServices.map((s) => (
       <ServiceCard key={s.id} {...s} />
     ))}
   </div>
@@ -262,7 +265,12 @@ import { cn } from '@/utils/cn';
 // All UI components must accept and apply a className prop for external overrides
 export function Card({ children, className }) {
   return (
-    <div className={cn('rounded-xl border border-border bg-surface p-6', className)}>
+    <div
+      className={cn(
+        "rounded-xl border border-border bg-surface p-6",
+        className,
+      )}
+    >
       {children}
     </div>
   );
@@ -289,7 +297,7 @@ export function Card({ children, className }) {
 <div className="w-80 mt-3">
 
 // Acceptable exception — document it
-<div className="h-[1px]"> {/* Thin divider — no scale equivalent */}
+<div className="h-px"> {/* Thin divider — no scale equivalent */}
 ```
 
 ---
@@ -300,10 +308,10 @@ export function Card({ children, className }) {
 
 ```js
 // ✅ CORRECT
-const activeServices = services.filter(s => s.active);
+const activeServices = services.filter((s) => s.active);
 
 // ❌ WRONG — let when const works
-let activeServices = services.filter(s => s.active);
+let activeServices = services.filter((s) => s.active);
 ```
 
 ## 6.2 Avoid Mutation
@@ -324,12 +332,12 @@ const updatedServices = [...services, newService];
 
 ```js
 // ✅ Arrow function for callbacks
-const active = services.filter(s => s.active);
-const names = services.map(s => s.title);
+const active = services.filter((s) => s.active);
+const names = services.map((s) => s.title);
 
 // ✅ Named function for top-level logic
 function getActiveServices(services) {
-  return services.filter(s => s.active);
+  return services.filter((s) => s.active);
 }
 ```
 
@@ -337,11 +345,11 @@ function getActiveServices(services) {
 
 ```js
 // ✅ CORRECT
-const title = service?.title ?? 'Untitled';
+const title = service?.title ?? "Untitled";
 const features = product?.features ?? [];
 
 // ❌ WRONG — verbose null checks
-const title = service && service.title ? service.title : 'Untitled';
+const title = service && service.title ? service.title : "Untitled";
 ```
 
 ## 6.6 No Magic Numbers or Strings
@@ -363,14 +371,14 @@ if (status === STATUS.ACTIVE) { ... }
 
 ```jsx
 // ❌ WRONG — index as key (unstable on reorder)
-{services.map((service, index) => (
-  <ServiceCard key={index} {...service} />
-))}
+{
+  services.map((service, index) => <ServiceCard key={index} {...service} />);
+}
 
 // ✅ CORRECT — stable ID from data
-{services.map(service => (
-  <ServiceCard key={service.id} {...service} />
-))}
+{
+  services.map((service) => <ServiceCard key={service.id} {...service} />);
+}
 ```
 
 ## 7.2 useEffect Rules
@@ -399,7 +407,7 @@ useEffect(() => {
 state.items.push(newItem);
 
 // ✅ CORRECT — immutable update
-setItems(prev => [...prev, newItem]);
+setItems((prev) => [...prev, newItem]);
 ```
 
 ## 7.4 Fragment Over Unnecessary Wrappers
@@ -426,16 +434,24 @@ return (
 
 ```jsx
 // ✅ CORRECT — ternary for true/false render
-{isLoading ? <Spinner /> : <Content />}
+{
+  isLoading ? <Spinner /> : <Content />;
+}
 
 // ✅ CORRECT — && for single condition
-{hasError && <ErrorMessage />}
+{
+  hasError && <ErrorMessage />;
+}
 
 // ❌ WRONG — 0 renders "0" in JSX
-{items.length && <List />}   // Bug if items.length is 0
+{
+  items.length && <List />;
+} // Bug if items.length is 0
 
 // ✅ CORRECT — explicit boolean
-{items.length > 0 && <List />}
+{
+  items.length > 0 && <List />;
+}
 ```
 
 ---
@@ -443,7 +459,7 @@ return (
 # 8. NAMING CONVENTIONS (COMPLETE REFERENCE)
 
 | Thing                       | Convention           | Example                             |
-|-----------------------------|----------------------|-------------------------------------|
+| --------------------------- | -------------------- | ----------------------------------- |
 | React component             | PascalCase           | `ServiceCard`, `HeroSection`        |
 | Page component              | PascalCase           | `Home`, `Contact`                   |
 | Custom hook                 | camelCase + `use`    | `useScrolled`, `useFormSubmit`      |
@@ -467,11 +483,15 @@ return (
 ```jsx
 // ✅ Comment when WHY is non-obvious, not WHAT
 // Using aria-hidden here because the icon is decorative — label provides context
-<span aria-hidden="true"><Icon /></span>
+<span aria-hidden="true">
+  <Icon />
+</span>;
 
 // ❌ Comment that states the obvious — delete it
 // Map over services array
-{services.map(service => <ServiceCard key={service.id} {...service} />)}
+{
+  services.map((service) => <ServiceCard key={service.id} {...service} />);
+}
 ```
 
 ## 9.2 Comment Format
@@ -523,8 +543,8 @@ try {
 try {
   await submitForm(data);
 } catch (error) {
-  setSubmitError('Something went wrong. Please contact us directly.');
-  console.error('Form submission failed:', error);
+  setSubmitError("Something went wrong. Please contact us directly.");
+  console.error("Form submission failed:", error);
 }
 ```
 
@@ -532,7 +552,7 @@ try {
 
 ```jsx
 // ✅ Always guard data from external sources
-<p>{product?.tagline ?? 'No description available'}</p>
+<p>{product?.tagline ?? "No description available"}</p>
 ```
 
 ---
@@ -575,10 +595,10 @@ const handleServiceClick = () => handleClick(service.id);
 
 ```jsx
 // src/App.jsx
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense } from "react";
 
-const Services = lazy(() => import('@/pages/Services'));
-const Products = lazy(() => import('@/pages/Products'));
+const Services = lazy(() => import("@/pages/Services"));
+const Products = lazy(() => import("@/pages/Products"));
 
 // Wrap in Suspense with fallback
 <Suspense fallback={<PageLoader />}>
@@ -586,7 +606,7 @@ const Products = lazy(() => import('@/pages/Products'));
     <Route path="/services" element={<Services />} />
     <Route path="/products" element={<Products />} />
   </Routes>
-</Suspense>
+</Suspense>;
 ```
 
 ---
@@ -667,7 +687,7 @@ const serviceId = process.env.VITE_EMAILJS_SERVICE_ID;
 
 ```js
 // ❌ NEVER — hardcoded API key in source
-const key = 'pk_live_abc123xyz789';
+const key = "pk_live_abc123xyz789";
 
 // ✅ ALWAYS — from environment
 const key = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -724,7 +744,7 @@ PERFORMANCE
 # 15. FORBIDDEN PATTERNS (QUICK REFERENCE)
 
 | Pattern                                  | Why Forbidden                   |
-|------------------------------------------|---------------------------------|
+| ---------------------------------------- | ------------------------------- |
 | `style={{}}` in JSX                      | Breaks design system            |
 | `var` declarations                       | Use `const` or `let`            |
 | `index` as map key                       | Unstable on reorder             |
@@ -741,7 +761,7 @@ PERFORMANCE
 
 ---
 
-*Document version: 1.0*
-*Owner: Shahajalal Mahmud (Development & Architecture)*
-*Enforced by: ESLint config + PR review checklist*
-*Aligned with: architecture.md v1.0 · design.md v1.0*
+_Document version: 1.0_
+_Owner: Shahajalal Mahmud (Development & Architecture)_
+_Enforced by: ESLint config + PR review checklist_
+_Aligned with: architecture.md v1.0 · design.md v1.0_
