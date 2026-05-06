@@ -21,7 +21,7 @@ The Appriyo website has one job: convert business owners with manual workflow pr
 ## 1.2 What Analytics Is For at Appriyo
 
 | Use                    | Example question                                                 |
-|------------------------|------------------------------------------------------------------|
+| ---------------------- | ---------------------------------------------------------------- |
 | Conversion measurement | "How many people reach the contact form and actually submit it?" |
 | Flow identification    | "Where do people drop off before contacting us?"                 |
 | Content effectiveness  | "Which solution card gets the most clicks?"                      |
@@ -43,51 +43,21 @@ The Appriyo website has one job: convert business owners with manual workflow pr
 
 **Why Plausible over Google Analytics:**
 
-| Criteria                     | Plausible                   | Google Analytics 4                |
-|------------------------------|-----------------------------|-----------------------------------|
+| Criteria                     | Plausible                    | Google Analytics 4                |
+| ---------------------------- | ---------------------------- | --------------------------------- |
 | Privacy-friendly             | ✅ GDPR compliant by default | ⚠️ Requires cookie consent banner |
-| Cookie consent banner needed | ❌ No                        | ✅ Yes                             |
-| Data ownership               | ✅ Your data                 | ❌ Google's servers                |
-| Setup complexity             | Simple 1-script install     | Complex event schema              |
-| Performance impact           | ~1kb script                 | ~45kb script                      |
-| Price                        | ~$9/month                   | Free                              |
+| Cookie consent banner needed | ❌ No                        | ✅ Yes                            |
+| Data ownership               | ✅ Your data                 | ❌ Google's servers               |
+| Setup complexity             | Simple 1-script install      | Complex event schema              |
+| Performance impact           | ~1kb script                  | ~45kb script                      |
+| Price                        | ~$9/month                    | Free                              |
 | Bangladesh accessibility     | ✅                           | Sometimes blocked                 |
 
 **Decision:** Use Plausible. The cookie banner alone is worth the cost — it removes friction from the first impression of the site, which directly impacts conversion.
 
 **Alternative:** If budget is a constraint in Phase 1 — use Google Analytics 4 with minimal configuration and add the cookie banner. Migrate to Plausible in Phase 4.
 
-## 2.2 Implementation (Plausible)
-
-```html
-<!-- Add to index.html <head> -->
-<script
-  defer
-  data-domain="appriyo.com"
-  src="https://plausible.io/js/script.tagged-events.js"
-></script>
-```
-
 The `tagged-events` version enables custom event tracking.
-
-## 2.3 Custom Event Tracking (JavaScript)
-
-```js
-// Helper function — add to src/utils/analytics.js
-export function trackEvent(eventName, props = {}) {
-  if (typeof window !== 'undefined' && window.plausible) {
-    window.plausible(eventName, { props });
-  }
-}
-```
-
-Usage:
-```js
-import { trackEvent } from '@/utils/analytics';
-
-// In a component
-trackEvent('contact_form_submit', { businessType: 'Repair Shop' });
-```
 
 ---
 
@@ -108,21 +78,12 @@ These directly measure the site's primary job.
 **When tracked:** User successfully submits the contact form (after server confirms)
 
 **Properties:**
-| Property | Values | Why |
-|---|---|---|
-| `businessType` | `repair_shop`, `coaching`, `retail`, `startup`, `other` | Which customer type converts most |
-| `contactMethod` | `whatsapp`, `email`, `call` | Preferred contact method distribution |
-| `source_page` | `homepage`, `contact_page` | Which form instance converts more |
 
-**Implementation:**
-```js
-// In ContactForm.jsx, after successful submission
-trackEvent('contact_form_submit', {
-  businessType: data.businessType,
-  contactMethod: data.contactMethod,
-  source_page: isHomepage ? 'homepage' : 'contact_page',
-});
-```
+| Property        | Values                                                  | Why                                   |
+| --------------- | ------------------------------------------------------- | ------------------------------------- |
+| `businessType`  | `repair_shop`, `coaching`, `retail`, `startup`, `other` | Which customer type converts most     |
+| `contactMethod` | `whatsapp`, `email`, `call`                             | Preferred contact method distribution |
+| `source_page`   | `homepage`, `contact_page`                              | Which form instance converts more     |
 
 ---
 
@@ -133,20 +94,10 @@ trackEvent('contact_form_submit', {
 **When tracked:** Click on any WhatsApp direct link
 
 **Properties:**
-| Property | Values | Why |
-|---|---|---|
-| `location` | `contact_page`, `contact_section`, `error_message` | Where WhatsApp is used most |
 
-**Implementation:**
-```jsx
-// In ContactDetails.jsx
-<a
-  href="https://wa.me/8801410394038"
-  onClick={() => trackEvent('whatsapp_click', { location: 'contact_page' })}
->
-  WhatsApp
-</a>
-```
+| Property   | Values                                             | Why                         |
+| ---------- | -------------------------------------------------- | --------------------------- |
+| `location` | `contact_page`, `contact_section`, `error_message` | Where WhatsApp is used most |
 
 ---
 
@@ -171,10 +122,11 @@ These measure whether the site content is working.
 **When tracked:** Click on either hero CTA button
 
 **Properties:**
-| Property | Values | Why |
-|---|---|---|
-| `cta_type` | `primary`, `secondary` | Which CTA is used more |
-| `destination` | `contact`, `products` | Validates CTA mapping |
+
+| Property      | Values                 | Why                    |
+| ------------- | ---------------------- | ---------------------- |
+| `cta_type`    | `primary`, `secondary` | Which CTA is used more |
+| `destination` | `contact`, `products`  | Validates CTA mapping  |
 
 ---
 
@@ -185,10 +137,11 @@ These measure whether the site content is working.
 **When tracked:** Click on any solution card CTA link
 
 **Properties:**
-| Property | Values | Why |
-|---|---|---|
-| `solution` | `amar_repair`, `amar_batch`, `amar_card`, `automation`, `consulting` | Which problem is most common |
-| `source_page` | `homepage`, `solutions_page` | Which placement is more effective |
+
+| Property      | Values                                                               | Why                               |
+| ------------- | -------------------------------------------------------------------- | --------------------------------- |
+| `solution`    | `amar_repair`, `amar_batch`, `amar_card`, `automation`, `consulting` | Which problem is most common      |
+| `source_page` | `homepage`, `solutions_page`                                         | Which placement is more effective |
 
 ---
 
@@ -199,10 +152,11 @@ These measure whether the site content is working.
 **When tracked:** Click on any product card CTA
 
 **Properties:**
-| Property | Values | Why |
-|---|---|---|
-| `product` | `amar_repair`, `amar_batch`, `amar_card` | Product interest ranking |
-| `source_page` | `homepage`, `products_page` | Where product clicks come from |
+
+| Property      | Values                                   | Why                            |
+| ------------- | ---------------------------------------- | ------------------------------ |
+| `product`     | `amar_repair`, `amar_batch`, `amar_card` | Product interest ranking       |
+| `source_page` | `homepage`, `products_page`              | Where product clicks come from |
 
 ---
 
@@ -213,8 +167,9 @@ These measure whether the site content is working.
 **When tracked:** Click on "See full service details →" or individual service CTAs
 
 **Properties:**
-| Property | Values | Why |
-|---|---|---|
+
+| Property  | Values                                                          | Why                      |
+| --------- | --------------------------------------------------------------- | ------------------------ |
 | `service` | `automation`, `custom_software`, `ai_integration`, `consulting` | Service interest ranking |
 
 ---
@@ -226,8 +181,9 @@ These measure whether the site content is working.
 **When tracked:** Click on the Contact button in the navbar
 
 **Properties:**
-| Property | Values | Why |
-|---|---|---|
+
+| Property      | Values                | Why                                        |
+| ------------- | --------------------- | ------------------------------------------ |
 | `source_page` | The current page path | Where navbar contact clicks come from most |
 
 ---
@@ -251,8 +207,9 @@ These diagnose why the form is or isn't converting.
 **When tracked:** Form submission attempt fails validation
 
 **Properties:**
-| Property | Values | Why |
-|---|---|---|
+
+| Property      | Values                                                      | Why                                         |
+| ------------- | ----------------------------------------------------------- | ------------------------------------------- |
 | `error_field` | `name`, `businessType`, `problem`, `phone`, `contactMethod` | Which field causes most validation failures |
 
 ---
@@ -274,16 +231,11 @@ These diagnose why the form is or isn't converting.
 **When tracked:** User scrolls past key section thresholds
 
 **Properties:**
-| Property | Values | Why |
-|---|---|---|
-| `section` | `services`, `solutions`, `products`, `why_appriyo`, `contact` | Which sections are actually seen |
-| `depth_percent` | `25`, `50`, `75`, `100` | Overall scroll depth |
 
-**Implementation:**
-```js
-// Use Intersection Observer on section elements
-// Track when each section enters the viewport
-```
+| Property        | Values                                                        | Why                              |
+| --------------- | ------------------------------------------------------------- | -------------------------------- |
+| `section`       | `services`, `solutions`, `products`, `why_appriyo`, `contact` | Which sections are actually seen |
+| `depth_percent` | `25`, `50`, `75`, `100`                                       | Overall scroll depth             |
 
 ---
 
@@ -294,8 +246,9 @@ These diagnose why the form is or isn't converting.
 **When tracked:** User lands on the 404 page
 
 **Properties:**
-| Property | Values | Why |
-|---|---|---|
+
+| Property        | Values                          | Why                     |
+| --------------- | ------------------------------- | ----------------------- |
 | `attempted_url` | The URL the user tried to visit | Identifies broken links |
 
 ---
@@ -305,7 +258,7 @@ These diagnose why the form is or isn't converting.
 Plausible automatically tracks these without custom events:
 
 | Metric               | What It Shows                       |
-|----------------------|-------------------------------------|
+| -------------------- | ----------------------------------- |
 | **Page views**       | Which pages get traffic             |
 | **Unique visitors**  | Real people, not repeat hits        |
 | **Session duration** | How long people stay                |
@@ -326,7 +279,7 @@ Not all data is equally important. This is the prioritized list.
 ## Tier 1 — Primary Metrics (Check Weekly)
 
 | Metric                   | How to Find It                    | Target                |
-|--------------------------|-----------------------------------|-----------------------|
+| ------------------------ | --------------------------------- | --------------------- |
 | Contact form submissions | `contact_form_submit` event count | 3–5/month (Month 1–3) |
 | Form conversion rate     | submissions ÷ form starts         | > 40% of starts       |
 | WhatsApp clicks          | `whatsapp_click` event count      | Track, no target yet  |
@@ -335,7 +288,7 @@ Not all data is equally important. This is the prioritized list.
 ## Tier 2 — Flow Metrics (Check Monthly)
 
 | Metric                                    | How to Find It                           | What Action to Take                          |
-|-------------------------------------------|------------------------------------------|----------------------------------------------|
+| ----------------------------------------- | ---------------------------------------- | -------------------------------------------- |
 | Homepage bounce rate                      | Plausible → bounce rate on `/`           | If > 70%, review hero copy                   |
 | Session duration on homepage              | Plausible → duration                     | If < 90s, content isn't engaging             |
 | Scroll depth: does anyone reach #contact? | `scroll_depth` event → `contact` section | If < 40%, shorten page or improve flow       |
@@ -345,7 +298,7 @@ Not all data is equally important. This is the prioritized list.
 ## Tier 3 — Traffic Metrics (Check Monthly)
 
 | Metric                   | What It Tells You                                  |
-|--------------------------|----------------------------------------------------|
+| ------------------------ | -------------------------------------------------- |
 | Traffic source breakdown | Which channels to invest in                        |
 | Mobile vs desktop split  | Layout priority                                    |
 | Country breakdown        | Confirm Bangladesh is primary, check for surprises |
@@ -355,7 +308,7 @@ Not all data is equally important. This is the prioritized list.
 ## Tier 4 — Diagnostic Metrics (Check When Something Seems Off)
 
 | Metric                          | When to Look                                   |
-|---------------------------------|------------------------------------------------|
+| ------------------------------- | ---------------------------------------------- |
 | `contact_form_error` by field   | If conversion suddenly drops                   |
 | `contact_form_submission_error` | If email delivery stops                        |
 | `404_reached` + `attempted_url` | After any route change or deployment           |
@@ -367,37 +320,31 @@ Not all data is equally important. This is the prioritized list.
 
 ## Weekly Check (10 minutes — Hazera Islam Mim)
 
-```
-[ ] How many contact form submissions this week?
-[ ] How many WhatsApp clicks?
-[ ] Any 404_reached events? What URLs?
-[ ] Any contact_form_submission_error events?
-[ ] Top traffic sources this week
-```
+- [ ] How many contact form submissions this week?
+- [ ] How many WhatsApp clicks?
+- [ ] Any 404_reached events? What URLs?
+- [ ] Any contact_form_submission_error events?
+- [ ] Top traffic sources this week
 
 ## Monthly Review (30 minutes — Full team)
 
-```
-[ ] Total consultations generated this month
-[ ] Form start → submission conversion rate
-[ ] Which solution/product generated the most clicks
-[ ] Homepage: bounce rate and session duration trends
-[ ] Traffic source quality (are LinkedIn visitors more likely to submit than Google visitors?)
-[ ] Lighthouse scores — any degradation?
-[ ] Any patterns in contact_form_error by field?
-[ ] Which pages have the highest exit rates?
-[ ] Action items based on data
-```
+- [ ] Total consultations generated this month
+- [ ] Form start → submission conversion rate
+- [ ] Which solution/product generated the most clicks
+- [ ] Homepage: bounce rate and session duration trends
+- [ ] Traffic source quality (are LinkedIn visitors more likely to submit than Google visitors?)
+- [ ] Lighthouse scores — any degradation?
+- [ ] Any patterns in contact_form_error by field?
+- [ ] Which pages have the highest exit rates?
+- [ ] Action items based on data
 
 ## Quarterly Review (60 minutes — Shahajalal Mahmud leads)
 
-```
-[ ] Review against product.md success metrics §6
-[ ] Are we hitting Month 1–3 targets? Month 4–6 targets?
-[ ] What content or page changes are supported by the data?
-[ ] Should any roadmap.md Phase 4 items be accelerated?
-[ ] Any dead pages (< 5 visitors/month) that should be removed?
-```
+- [ ] Review against product.md success metrics §6
+- [ ] Are we hitting Month 1–3 targets? Month 4–6 targets?
+- [ ] What content or page changes are supported by the data?
+- [ ] Should any roadmap.md Phase 4 items be accelerated?
+- [ ] Any dead pages (< 5 visitors/month) that should be removed?
 
 ---
 
@@ -406,12 +353,14 @@ Not all data is equally important. This is the prioritized list.
 Set up this custom dashboard view in Plausible:
 
 **Goals to configure:**
+
 1. `contact_form_submit` → primary conversion goal
 2. `whatsapp_click` → secondary conversion goal
 3. `contact_form_start` → micro-conversion
 4. `hero_cta_click` → engagement goal
 
 **Filters to save:**
+
 - "Mobile visitors only" — to monitor mobile conversion separately
 - "Bangladesh visitors only" — primary market check
 - "From LinkedIn" — referral quality check
@@ -423,7 +372,7 @@ Set up this custom dashboard view in Plausible:
 ## 8.1 What We Never Track
 
 | Never Track                   | Reason                                            |
-|-------------------------------|---------------------------------------------------|
+| ----------------------------- | ------------------------------------------------- |
 | Individual user identity      | Privacy — we're not building profiles             |
 | Form field content            | Never log what someone typed in the problem field |
 | Precise location (city-level) | Country only — respect user privacy               |
@@ -437,11 +386,10 @@ Plausible retains anonymized aggregate data indefinitely. No personal data is st
 ## 8.3 Privacy Policy Statement
 
 The privacy policy must include:
-```
-We use Plausible Analytics, a privacy-friendly analytics service.
-Plausible does not use cookies and does not collect or store any personally
-identifiable information. No data is shared with third parties.
-```
+
+> We use Plausible Analytics, a privacy-friendly analytics service.
+> Plausible does not use cookies and does not collect or store any personally
+> identifiable information. No data is shared with third parties.
 
 ---
 
@@ -450,7 +398,7 @@ identifiable information. No data is shared with third parties.
 Expected patterns for a healthy site in Month 2–3:
 
 | Metric                                           | Healthy                           | Needs Attention |
-|--------------------------------------------------|-----------------------------------|-----------------|
+| ------------------------------------------------ | --------------------------------- | --------------- |
 | Homepage bounce rate                             | 40–60%                            | > 70%           |
 | Session duration                                 | 2–4 minutes                       | < 90 seconds    |
 | Pages per session                                | 2–3                               | < 1.5           |
@@ -467,30 +415,31 @@ Expected patterns for a healthy site in Month 2–3:
 
 Before launch and after any major change:
 
-```
-PRE-LAUNCH
-[ ] Plausible script added to index.html
-[ ] Plausible domain configured to appriyo.com
-[ ] trackEvent() utility function added to src/utils/analytics.js
-[ ] contact_form_submit event fires on successful form submission
-[ ] Test: submit form → verify event appears in Plausible dashboard
-[ ] contact_form_start event fires on first field focus
-[ ] whatsapp_click event fires on WhatsApp link click
-[ ] hero_cta_click fires on both hero buttons
-[ ] Plausible Goal configured: contact_form_submit
-[ ] Privacy policy updated to mention Plausible
+**PRE-LAUNCH**
 
-POST-LAUNCH (Week 1)
-[ ] Verify real data is appearing in Plausible
-[ ] Verify all configured Goals are counting
-[ ] Check 404_reached — any unexpected URLs?
-[ ] First data check: any obvious issues?
+- [ ] Plausible script added to index.html
+- [ ] Plausible domain configured to appriyo.com
+- [ ] trackEvent() utility function added to src/utils/analytics.js
+- [ ] contact_form_submit event fires on successful form submission
+- [ ] Test: submit form → verify event appears in Plausible dashboard
+- [ ] contact_form_start event fires on first field focus
+- [ ] whatsapp_click event fires on WhatsApp link click
+- [ ] hero_cta_click fires on both hero buttons
+- [ ] Plausible Goal configured: contact_form_submit
+- [ ] Privacy policy updated to mention Plausible
 
-MONTH 1
-[ ] Review all Tier 1 metrics
-[ ] Set Plausible email digest (weekly summary to team)
-[ ] Confirm form submissions are matching actual email arrivals
-```
+**POST-LAUNCH (Week 1)**
+
+- [ ] Verify real data is appearing in Plausible
+- [ ] Verify all configured Goals are counting
+- [ ] Check 404_reached — any unexpected URLs?
+- [ ] First data check: any obvious issues?
+
+**MONTH 1**
+
+- [ ] Review all Tier 1 metrics
+- [ ] Set Plausible email digest (weekly summary to team)
+- [ ] Confirm form submissions are matching actual email arrivals
 
 ---
 
@@ -499,7 +448,7 @@ MONTH 1
 This table connects data to actions. Review it during monthly meetings.
 
 | If this data shows...                     | Then do this                                         |
-|-------------------------------------------|------------------------------------------------------|
+| ----------------------------------------- | ---------------------------------------------------- |
 | Homepage bounce rate > 70%                | Test a different hero headline (A/B in Phase 4)      |
 | < 10% of homepage visitors reach /contact | Add a mid-page CTA (after Why Appriyo section)       |
 | Form start rate < 40%                     | Reduce friction — check if form is visible on mobile |
@@ -512,7 +461,7 @@ This table connects data to actions. Review it during monthly meetings.
 
 ---
 
-*Document version: 1.0*
-*Owner: Hazera Islam Mim (Marketing & Social Media)*
-*Implementation: Shahajalal Mahmud (Development & Architecture)*
-*Aligned with: product.md v1.0 · user_flow.md v1.0 · roadmap.md v1.0*
+_Document version: 1.0_
+_Owner: Hazera Islam Mim (Marketing & Social Media)_
+_Implementation: Shahajalal Mahmud (Development & Architecture)_
+_Aligned with: product.md v1.0 · user_flow.md v1.0 · roadmap.md v1.0_
