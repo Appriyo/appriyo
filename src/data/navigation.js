@@ -1,3 +1,5 @@
+// src/data/navigation.js
+
 export const navLinks = [
   { label: "Services",  href: "/services"  },
   { label: "Solutions", href: "/solutions" },
@@ -27,10 +29,11 @@ export const footerColumns = [
   {
     heading: "Company",
     links: [
-      { label: "Privacy Policy",   href: "/privacy"                              },
-      { label: "Terms of Service", href: "/terms"                                },
-      { label: "LinkedIn",         href: "https://linkedin.com/company/appriyo", external: true },
-      { label: "GitHub",           href: "https://github.com/Appriyo",           external: true },
+      { label: "Privacy Policy",   href: "/privacy"  },
+      { label: "Terms of Service", href: "/terms"    },
+      { label: "Security",         href: "/security" },
+      { label: "LinkedIn", href: "https://linkedin.com/company/appriyo", external: true },
+      { label: "GitHub",   href: "https://github.com/Appriyo",           external: true },
     ],
   },
 ];

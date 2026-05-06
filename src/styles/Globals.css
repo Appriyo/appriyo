@@ -1,7 +1,5 @@
+/* src/styles/globals.css */
 @import "tailwindcss";
-@plugin "daisyui" {
-  themes: false;
-}
 
 :root {
   --color-primary:         #2563eb;
