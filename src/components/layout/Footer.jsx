@@ -1,13 +1,14 @@
+// src/components/layout/Footer.jsx
 import { Link } from "react-router-dom";
 import { footerColumns } from "../../data/navigation";
 
 export default function Footer() {
   return (
-    <footer style={{ borderTop: "1px solid var(--color-border)", background: "var(--color-surface)", fontFamily: "var(--font-sans)" }}>
+    <footer style={{ borderTop: "1px solid var(--color-border)", background: "var(--color-surface)" }}>
       <div className="site-container" style={{ paddingBlock: "clamp(48px, 6vw, 80px)" }}>
 
-        {/* Top grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "40px 32px" }}>
+        {/* Grid */}
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: "40px 32px" }}>
 
           {/* Brand */}
           <div>
