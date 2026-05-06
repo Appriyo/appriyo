@@ -1,3 +1,4 @@
+// src/hooks/useScrolled.js
 import { useState, useEffect } from "react";
 
 export function useScrolled(threshold = 10) {

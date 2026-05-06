@@ -1,4 +1,7 @@
-// Lightweight class merge — no extra deps needed at this scale
-export function cn(...classes) {
-  return classes.filter(Boolean).join(" ");
+// src/utils/cn.js
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs) {
+  return twMerge(clsx(inputs));
 }
