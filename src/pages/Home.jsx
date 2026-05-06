@@ -1,21 +1,24 @@
-import Hero from "../components/Hero";
-import AboutOverview from "../components/home/AboutOverview";
-import HomeCTA from "../components/home/HomeCTA";
-import ServicesOverview from "../components/home/ServicesOverview";
-import SolutionsOverview from "../components/home/SolutionsOverview";
-import WhyAppriyo from "../components/home/WhyAppriyo";
+// pages/Home.jsx
+import HeroSection      from "../sections/home/HeroSection";
+import ServicesOverview from "../sections/home/ServicesOverview";
+import SolutionsOverview from "../sections/home/SolutionsOverview";
+import ProductsOverview from "../sections/home/ProductsOverview";
+import WhyAppriyo       from "../sections/home/WhyAppriyo";
+import ApproachSection  from "../sections/home/ApproachSection";
+import AboutPreview     from "../sections/home/AboutPreview";
+import ContactSection   from "../sections/home/ContactSection";
 
-const Home = () => {
+export default function Home() {
   return (
     <>
-      <Hero />
+      <HeroSection />
       <ServicesOverview />
       <SolutionsOverview />
+      <ProductsOverview />
       <WhyAppriyo />
-      <AboutOverview />
-      <HomeCTA />
+      <ApproachSection />
+      <AboutPreview />
+      <ContactSection />
     </>
   );
-};
-
-export default Home;
+}

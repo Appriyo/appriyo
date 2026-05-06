@@ -1,0 +1,42 @@
+/* src/styles/globals.css */
+@import "tailwindcss";
+
+:root {
+  --color-primary:         #2563eb;
+  --color-primary-dark:    #1e40af;
+  --color-primary-light:   #3b82f6;
+  --color-accent:          #7c3aed;
+  --color-accent-light:    #a78bfa;
+  --color-bg:              #0b0f19;
+  --color-surface:         #111827;
+  --color-border:          #1f2937;
+  --color-text-primary:    #f9fafb;
+  --color-text-secondary:  #9ca3af;
+  --color-text-muted:      #6b7280;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --site-max-width: 1200px;
+  --site-padding: clamp(16px, 4vw, 24px);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body { min-height: 100vh; }
+
+.site-container {
+  width: 100%;
+  max-width: var(--site-max-width);
+  margin-inline: auto;
+  padding-inline: var(--site-padding);
+}
+
+.section-spacing {
+  padding-block: clamp(64px, 8vw, 120px);
+}
