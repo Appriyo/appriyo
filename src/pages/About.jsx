@@ -1,5 +1,5 @@
 // pages/About.jsx
-import { AboutHeader, WhoWeAre, Philosophy, TeamGrid, HowWeWork } from "../sections/about/AboutSections";
+import { AboutHeader, WhoWeAre, Philosophy, TeamGrid, HowWeWork } from "../sections/about/AboutHeader";
 import { Link } from "react-router-dom";
 
 export default function About() {
