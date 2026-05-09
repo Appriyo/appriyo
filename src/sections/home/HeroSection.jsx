@@ -1,13 +1,7 @@
 // sections/home/HeroSection.jsx
 // Full implementation per design-system v2.0 + hero.md v2.0
-// "Same brain. Better face." — Structured Energy
 
 import { useEffect, useRef, useState, useCallback } from "react";
-
-// ─── Google Fonts preload (add to your index.html <head>) ─────────────────
-// <link rel="preconnect" href="https://fonts.googleapis.com" />
-// <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-// <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 // ─── Reduced-motion hook ───────────────────────────────────────────────────
 function useReducedMotion() {
