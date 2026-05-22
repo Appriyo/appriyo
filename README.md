@@ -7,9 +7,9 @@
 [![React](https://img.shields.io/badge/React-18.x-61DAFB?logo=react)](https://reactjs.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.x-06B6D4?logo=tailwindcss)](https://tailwindcss.com/)
 [![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?logo=vite)](https://vitejs.dev/)
-[![AI-Powered](https://img.shields.io/badge/AI-Powered-FF6B35?logo=openai)](https://appriyo.com)
+[![Problem First](https://img.shields.io/badge/Approach-Problem%20First-orange.svg)](https://appriyo.com)
 
-**Modern, responsive website for Appriyo — an AI-powered digital transformation and software solutions company focused on solving real-world business problems through simple, efficient, and practical technology.**
+> **Appriyo is a technology-driven problem-solving company helping businesses improve operations through practical software, automation, and digital systems.**
 
 👉 **[Visit Live Website](https://appriyo.com)** 👈
 
@@ -17,136 +17,297 @@
 
 ## 📋 Table of Contents
 
-- [Appriyo – Official Website](https://appriyo.com)
+- [ Appriyo – Official Website](#-appriyo--official-website)
   - [📋 Table of Contents](#-table-of-contents)
-  - [🌟 Overview](#-overview)
-  - [🎯 Live Purpose](#-live-purpose)
-  - [🧩 Website Sections](#-website-sections)
-  - [💰 Core Services](#-core-services)
-    - [❌ What We Don't Do](#-what-we-dont-do)
-    - [🚀 Our Products (Built from Real Problems)](#-our-products-built-from-real-problems)
-  - [🛠 Tech Stack](#-tech-stack)
-  - [🚀 Getting Started](#-getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-    - [Build for Production](#build-for-production)
-  - [📁 Project Structure](#-project-structure)
-  - [🎨 Design \& UI](#-design--ui)
-  - [🔧 Planned Improvements](#-planned-improvements)
-  - [🤝 Team \& Collaboration](#-team--collaboration)
-  - [📍 Company Information](#-company-information)
-  - [📚 Documentation](#-documentation)
-    - [Issue \& Pull Request Templates](#issue--pull-request-templates)
-  - [🤝 Contributing](#-contributing)
-    - [For Team Members (Internal)](#for-team-members-internal)
-    - [For External Contributors](#for-external-contributors)
-  - [📜 License](#-license)
-  - [💬 Final Note](#-final-note)
-  - [📞 Contact](#-contact)
-  - [Key Changes Made Based on Core Identity:](#key-changes-made-based-on-core-identity)
+- [🌟 Overview](#-overview)
+- [🎯 Why Appriyo Exists](#-why-appriyo-exists)
+- [🧠 Core Philosophy](#-core-philosophy)
+- [🎯 Current Focus](#-current-focus)
+- [🧩 Website Sections](#-website-sections)
+- [💼 Core Services](#-core-services)
+  - [1. Custom Software Development](#1-custom-software-development)
+  - [2. Web \& Mobile Applications](#2-web--mobile-applications)
+  - [3. Business Automation](#3-business-automation)
+  - [4. AI Integration \& AI-Assisted Systems](#4-ai-integration--ai-assisted-systems)
+  - [5. SaaS Product Development](#5-saas-product-development)
+  - [❌ What We Avoid](#-what-we-avoid)
+- [🚀 Product Strategy](#-product-strategy)
+  - [Product Philosophy](#product-philosophy)
+- [🛠 Tech Stack](#-tech-stack)
+  - [Engineering Philosophy](#engineering-philosophy)
+- [🚀 Getting Started](#-getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Production Build](#production-build)
+- [📁 Project Structure](#-project-structure)
+- [🎨 Design \& UI](#-design--ui)
+  - [Design Goals](#design-goals)
+- [🔧 Planned Improvements](#-planned-improvements)
+- [🤝 Team \& Collaboration](#-team--collaboration)
+  - [Team Philosophy](#team-philosophy)
+- [📍 Company Information](#-company-information)
+- [📚 Documentation](#-documentation)
+  - [GitHub Templates](#github-templates)
+- [🤝 Contributing](#-contributing)
+  - [Internal Contributors](#internal-contributors)
+  - [External Contributors](#external-contributors)
+- [📜 License](#-license)
+- [💬 Final Note](#-final-note)
+- [📞 Contact](#-contact)
+    - [Small Team • Real Products • Long-Term Thinking](#small-team--real-products--long-term-thinking)
 
 ---
 
-## 🌟 Overview
+# 🌟 Overview
 
-This repository contains the **official web presence of Appriyo** — an AI-powered digital transformation and software solutions company serving small to medium businesses, startups, and service providers.
+This repository contains the **official website of Appriyo** — a student-led technology company focused on solving real-world business problems through practical software solutions, automation, AI integration, and digital systems.
 
-**Our Core Identity:**
+Appriyo does not define itself by a single technology stack.
 
-- **Problem-first, not technology-first** — We solve real business problems
-- **Simplicity over complexity** — Practical solutions that actually work
-- **Long-term value over short-term gain** — Systems that remain maintainable
-- **AI-assisted, not AI-led** — Technology serves the problem, not the other way around
+We focus on:
+- Understanding operational problems
+- Building practical solutions
+- Helping businesses improve efficiency
+- Learning through real-world execution
+- Turning repeated problems into scalable products
 
-The website showcases:
+Whether the solution requires:
+- Web applications
+- Mobile apps
+- Cross-platform systems
+- Automation workflows
+- AI integrations
+- SaaS platforms
 
-- Our **core services** (Business Automation, Custom Software, AI Integration)
-- **Real-world products** built from actual problems
-- Company values and working principles
-- Core team information
-- Contact and consultation pathways
+the technology itself is secondary.
 
-**Built with clarity, responsibility, and long-term thinking.**
-
----
-
-## 🎯 Live Purpose
-
-| Purpose                | Description                                                           |
-|------------------------|-----------------------------------------------------------------------|
-| **Present Services**   | Clearly communicate our AI-powered automation services                |
-| **Build Trust**        | Convey professionalism, technical capability, and reliability         |
-| **Educate Businesses** | Help SMBs understand how to replace manual workflows                  |
-| **Enable Contact**     | Make it easy to start a conversation about operational inefficiencies |
+> **The real goal is solving problems.**
 
 ---
 
-## 🧩 Website Sections
+# 🎯 Why Appriyo Exists
 
-The website delivers a clean, structured experience:
+Appriyo exists because we believe the best way to learn technology and business is by building real systems for real people.
 
-| Section          | Description                                                              |
-|------------------|--------------------------------------------------------------------------|
-| **Hero**         | AI-powered digital transformation positioning                            |
-| **Services**     | Business Process Automation, Custom Software, AI Integration, Consulting |
-| **Solutions**    | Problem-driven solutions with measurable outcomes                        |
-| **Why Appriyo**  | Simplicity, practicality, long-term partnership                          |
-| **Our Approach** | Direct collaboration, transparency, problem-first methodology            |
-| **About**        | Company principles, working style, and core team                         |
-| **Contact**      | Consultation for replacing manual workflows                              |
-| **Footer**       | Company info, legal links, and social connections                        |
+We are currently CSE students building Appriyo to:
 
----
+- Gain real-world experience before graduation
+- Build products used by actual users
+- Create a strong portfolio and practical work history
+- Learn teamwork, communication, and execution
+- Generate sustainable income over time
+- Build a long-term technology company from the ground up
 
-## 💰 Core Services
+For us, success right now means:
+- Real users
+- Real impact
+- Real experience
+- Real learning
+- Sustainable growth
 
-Appriyo offers ONLY these focused services:
-
-| Service                               | Description                                                      |
-|---------------------------------------|------------------------------------------------------------------|
-| **Business Process Automation**       | Replace repetitive manual tasks with automated workflows         |
-| **Custom Business Software**          | Build tools tailored to replace paper-based/inefficient systems  |
-| **AI Integration & Smart Systems**    | AI-powered assistants and smart automation workflows             |
-| **Digital Transformation Consulting** | Analyze operations, identify inefficiencies, implement solutions |
-
-### ❌ What We Don't Do
-
-- Generic website-only projects (unless part of system)
-- One-off freelance tasks without long-term value
-- Projects without clear business impact
-- Pure design-only work without functionality
-
-### 🚀 Our Products (Built from Real Problems)
-
-- **Amar Repair** - Repair store management system
-- **Amar Batch** - Teacher/Batch management system
-- **Amar Card** - NFC digital contact card
+Even a small recurring income before graduation is considered meaningful progress.
 
 ---
 
-## 🛠 Tech Stack
+# 🧠 Core Philosophy
 
-| Technology            | Purpose                              |
-|-----------------------|--------------------------------------|
-| **React 18**          | UI Library                           |
-| **Vite**              | Build tool & development server      |
-| **Tailwind CSS**      | Utility-first styling                |
-| **DaisyUI**           | Component library on top of Tailwind |
-| **JavaScript (ES6+)** | Core language                        |
-| **HTML5 & CSS3**      | Markup and base styles               |
-
-**Architecture:** Component-first, designed for easy scaling into a multi-page application.
+| Principle | Meaning |
+|---|---|
+| **Problem-First** | We focus on solving problems, not chasing technologies |
+| **Practicality Over Complexity** | Simple systems are often the most effective |
+| **Learning Through Execution** | Real-world work teaches faster than theory alone |
+| **Long-Term Thinking** | We build maintainable systems and sustainable relationships |
+| **Technology Agnostic** | We use whatever technology best solves the problem |
+| **Real Value Matters** | We prioritize usefulness over hype |
 
 ---
 
-## 🚀 Getting Started
+# 🎯 Current Focus
 
-### Prerequisites
+For the next 1.5 years, Appriyo is focused on building a strong foundation before graduation.
+
+Our current priorities are:
+
+- Building practical products
+- Showcasing our work publicly
+- Working with real businesses
+- Acquiring clients
+- Building visibility and trust
+- Improving our technical expertise
+- Learning business operations deeply
+- Creating recurring income streams
+
+Right now, we intentionally offer a broader range of services because we are still learning, experimenting, and discovering where our strongest long-term expertise will be.
+
+Over time, Appriyo will naturally specialize based on:
+- Experience
+- Client demand
+- Market opportunities
+- Team expertise
+- Real-world execution
+
+---
+
+# 🧩 Website Sections
+
+| Section | Description |
+|---|---|
+| **Hero** | Problem-solving focused company positioning |
+| **Services** | Software, automation, AI integration, and digital systems |
+| **Products** | SaaS products built from real operational problems |
+| **Why Appriyo** | Philosophy, approach, and long-term thinking |
+| **Our Process** | How we understand and solve business problems |
+| **About** | Team, mission, and company direction |
+| **Contact** | Communication and consultation pathways |
+| **Footer** | Legal, social, and company information |
+
+---
+
+# 💼 Core Services
+
+Appriyo focuses on solving operational and workflow problems using technology.
+
+---
+
+## 1. Custom Software Development
+
+We build systems tailored to specific business operations.
+
+Examples:
+- Internal management systems
+- Tracking platforms
+- Workflow systems
+- Operational dashboards
+
+---
+
+## 2. Web & Mobile Applications
+
+We build:
+- Websites
+- Web apps
+- Android applications
+- Cross-platform systems
+
+when they directly improve business operations or user workflows.
+
+---
+
+## 3. Business Automation
+
+We help businesses reduce repetitive manual work through:
+
+- Reminder systems
+- Smart workflows
+- Automated tracking
+- Notification systems
+- Operational automation
+
+---
+
+## 4. AI Integration & AI-Assisted Systems
+
+We integrate AI where it creates real practical value.
+
+Examples:
+- AI-assisted workflows
+- AI-powered tools
+- Smart operational systems
+- Productivity-enhancing AI features
+
+---
+
+## 5. SaaS Product Development
+
+We convert repeated business problems into reusable software products.
+
+Our long-term goal is building scalable SaaS systems based on real operational pain points.
+
+---
+
+## ❌ What We Avoid
+
+Appriyo does NOT focus on:
+
+- Building unnecessary complexity
+- Chasing every technology trend
+- Taking low-value freelance work
+- Overpromising expertise
+- Purely aesthetic projects without practical value
+- Technology-first development without real business impact
+
+---
+
+# 🚀 Product Strategy
+
+We believe great products come from real-world operational problems.
+
+Current products include:
+
+| Product | Description |
+|---|---|
+| **Amar Repair** | Repair store management system |
+| **Amar Batch** | Teacher and batch management system |
+
+More products will evolve naturally from:
+- Client work
+- Operational pain points
+- Real user feedback
+- Repeated workflow problems
+
+---
+
+## Product Philosophy
+
+```text
+Build → Test → Learn → Improve
+```
+
+We focus on:
+- Real users
+- Real workflows
+- Real operational improvements
+
+instead of assumptions.
+
+---
+
+# 🛠 Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| **React 18** | Frontend UI library |
+| **Vite** | Development & build tooling |
+| **Tailwind CSS** | Utility-first styling |
+| **DaisyUI** | Component system |
+| **JavaScript (ES6+)** | Core application language |
+| **HTML5 & CSS3** | Base frontend structure |
+
+---
+
+## Engineering Philosophy
+
+The technology stack may evolve over time.
+
+We choose tools based on:
+- Problem requirements
+- Scalability
+- Maintainability
+- Development speed
+- Practicality
+
+---
+
+# 🚀 Getting Started
+
+## Prerequisites
 
 - Node.js (v18 or higher)
-- npm or yarn or pnpm
+- npm / yarn / pnpm
 
-### Installation
+---
+
+## Installation
 
 ```bash
 # Clone the repository
@@ -162,9 +323,15 @@ npm install
 npm run dev
 ```
 
-The site will be available at `http://localhost:5173`
+The application will run on:
 
-### Build for Production
+```text
+http://localhost:5173
+```
+
+---
+
+## Production Build
 
 ```bash
 npm run build
@@ -173,264 +340,243 @@ npm run preview
 
 ---
 
-## 📁 Project Structure
+# 📁 Project Structure
 
-```
+```text
 appriyo-website/
 │
-├── docs/                        # 📚 ALL documentation lives here
-│   │
-│   ├── 01-foundation/           # Core identity & non-changing docs
-│   │   ├── appriyo_constitution.md
-│   │   ├── design.md
-│   │   └── content.md
-│   │
-│   ├── 02-product/              # What we are building
-│   │   ├── product.md
-│   │   ├── sitemap.md
-│   │   ├── pages.md
-│   │   └── user_flow.md
-│   │
-│   ├── 03-engineering/          # How we build it
-│   │   ├── architecture.md
-│   │   ├── components.md
-│   │   ├── coding_guidelines.md
-│   │   └── performance.md
-│   │
-│   ├── 04-operations/           # Process & execution
-│   │   ├── roadmap.md
-│   │   ├── testing.md
-│   │   └── deployment.md
-│   │
-│   ├── 05-legal/                # Legal & compliance
-│   │   ├── terms.md
-│   │   ├── privacy.md
-│   │
-│   └── 06-company/              # Internal company info
-│       └── teams.md
+├── docs/
+│   ├── 01-foundation/
+│   ├── 02-product/
+│   ├── 03-engineering/
+│   ├── 04-operations/
+│   ├── 05-legal/
+│   └── 06-company/
 │
-├── public/                      # Static assets
+├── public/
 │   ├── images/
 │   ├── icons/
 │   └── logo/
 │
 ├── src/
-│   │
-│   ├── components/              # Reusable UI components
-│   │   ├── ui/                  # Buttons, cards, inputs
-│   │   ├── layout/              # Navbar, footer, containers
-│   │   └── common/              # Shared small components
-│   │
-│   ├── sections/                # Page sections (Hero, Services)
-│   │   ├── home/
-│   │   ├── services/
-│   │   ├── products/
-│   │   └── shared/
-│   │
-│   ├── pages/                   # Route-level pages
-│   │   ├── Home.jsx
-│   │   ├── Services.jsx
-│   │   ├── Products.jsx
-│   │   ├── About.jsx
-│   │   └── Contact.jsx
-│   │
-│   ├── data/                    # Static content/data
-│   │   ├── services.js
-│   │   ├── products.js
-│   │   └── navigation.js
-│   │
-│   ├── styles/                  # Tailwind + global styles
-│   │   ├── globals.css
-│   │   └── theme.js
-│   │
-│   ├── utils/                   # Helper functions
-│   │
-│   └── App.jsx                  # Main application
+│   ├── components/
+│   ├── sections/
+│   ├── pages/
+│   ├── data/
+│   ├── styles/
+│   ├── utils/
+│   └── App.jsx
 │
-├── .github/                     # GitHub templates & workflows
-│   ├── ISSUE_TEMPLATE/          # Bug, feature, security templates
-│   │   ├── bug_report.md
-│   │   ├── feature_request.md
-│   │   └── security.md
-│   ├── PULL_REQUEST_TEMPLATE.md
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   ├── workflows/
 │   ├── CODEOWNERS
-│   └── workflows/
+│   └── PULL_REQUEST_TEMPLATE.md
 │
-├── README.md                    # Project overview (you are here)
-├── LICENSE.txt                  # Proprietary license
-├── TEAMS.md                     # Core team information
-├── PRIVACY.md                   # Privacy policy
-├── TERMS.md                     # Terms of service
-├── SECURITY.md                  # Security policy
+├── README.md
+├── LICENSE.txt
+├── TEAMS.md
+├── PRIVACY.md
+├── TERMS.md
+├── SECURITY.md
 └── package.json
 ```
 
 ---
 
-## 🎨 Design & UI
+# 🎨 Design & UI
 
-| Feature                                    | Status         |
-|--------------------------------------------|----------------|
-| Fully responsive (desktop, tablet, mobile) | ✅ Complete     |
-| Dark / Light theme support                 | ✅ Complete     |
-| Clean typography and spacing               | ✅ Complete     |
-| Readability and trust focus                | ✅ Complete     |
-| Cross-browser compatibility                | ✅ Complete     |
-| Accessibility (WCAG 2.1 AA)                | 🔄 In Progress |
-
-**Design Collaboration:** UI/UX design by Preota, implemented in code with pixel-level attention.
+| Feature | Status |
+|---|---|
+| Fully Responsive Layout | ✅ Complete |
+| Mobile & Tablet Optimization | ✅ Complete |
+| Dark / Light Mode | ✅ Complete |
+| Clean Typography & Spacing | ✅ Complete |
+| Accessibility Improvements | 🔄 In Progress |
+| Cross-Browser Compatibility | ✅ Complete |
 
 ---
 
-## 🔧 Planned Improvements
+## Design Goals
 
-- [ ] Convert sections into dedicated routes (`/services`, `/solutions`, `/about`)
-- [ ] Add React Router for scalable navigation
-- [ ] SEO optimization with meta tags and structured data
-- [ ] Analytics integration (privacy-friendly)
-- [ ] Blog / Insights section focused on automation & AI for SMBs
-- [ ] Product pages for Amar Repair, Amar Batch, Amar Card
-- [ ] Performance optimizations (Core Web Vitals)
-- [ ] Contact form with validation and email integration
+The website is designed to communicate:
 
----
+- Clarity
+- Simplicity
+- Professionalism
+- Trust
+- Practicality
+- Long-term thinking
 
-## 🤝 Team & Collaboration
-
-| Role                           | Team Member       | Main Responsibilities                                 |
-|--------------------------------|-------------------|-------------------------------------------------------|
-| **Development & Architecture** | Shahajalal Mahmud | Tech decisions, code review, security, architecture   |
-| **UI & Design**                | Preota Saha       | Frontend architecture, design systems, themes         |
-| **Testing & QA**               | Md Munna Sardar   | Quality assurance, testing strategy, bug verification |
-| **Marketing & Social Media**   | Hazera Islam Mim  | Brand communication, content strategy, visual assets  |
-
-📖 **Detailed team information:** See [TEAMS.md](TEAMS.md)
+The UI intentionally avoids unnecessary complexity or excessive visual noise.
 
 ---
 
-## 📍 Company Information
+# 🔧 Planned Improvements
 
-| Detail           | Information                                            |
-|------------------|--------------------------------------------------------|
-| **Company Name** | Appriyo Technologies                                   |
-| **Industry**     | AI-Powered Digital Transformation & Software Solutions |
-| **Location**     | Khulna, Bangladesh                                     |
-| **Service Area** | Remote services worldwide                              |
-| **Email**        | <contact@appriyo.com>                                  |
-| **Phone**        | +880 1410394038                                        |
-| **Office Hours** | Sunday – Thursday, 9:00 AM – 6:00 PM (GMT+6)           |
-
----
-
-## 📚 Documentation
-
-| File                       | Description                                           |
-|----------------------------|-------------------------------------------------------|
-| [TEAMS.md](TEAMS.md)       | Core team member profiles and responsibilities        |
-| [PRIVACY.md](PRIVACY.md)   | Privacy policy covering data collection and usage     |
-| [TERMS.md](TERMS.md)       | Terms of service for website use                      |
-| [SECURITY.md](SECURITY.md) | Security vulnerability reporting policy               |
-| [LICENSE.txt](LICENSE.txt) | Proprietary license (viewing only, no commercial use) |
-
-### Issue & Pull Request Templates
-
-| Template                    | Purpose                                  |
-|-----------------------------|------------------------------------------|
-| `bug_report.md`             | Report bugs or unexpected behavior       |
-| `feature_request.md`        | Suggest improvements or new features     |
-| `security_vulnerability.md` | Private security vulnerability reporting |
-| `PULL_REQUEST_TEMPLATE.md`  | PR checklist and review process          |
-| `CODEOWNERS`                | Automatic code review assignment         |
+- [ ] Multi-page routing with React Router
+- [ ] Dedicated product pages
+- [ ] SEO optimization
+- [ ] Blog & insights section
+- [ ] AI automation case studies
+- [ ] Improved animations & transitions
+- [ ] Performance optimization
+- [ ] Contact form backend integration
+- [ ] CMS-powered content management
+- [ ] Internationalization support
 
 ---
 
-## 🤝 Contributing
+# 🤝 Team & Collaboration
 
-**Appriyo is a proprietary project maintained by the core team.**
-
-### For Team Members (Internal)
-
-- Follow the [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md)
-- Ensure all checks pass before requesting review
-- Reference related issues in PR descriptions
-
-### For External Contributors
-
-We appreciate bug reports and security disclosures:
-
-- **Bugs:** Use the [Bug Report Template](.github/ISSUE_TEMPLATE/bug_report.md)
-- **Security Issues:** Follow [SECURITY.md](SECURITY.md) – do NOT create public issues
-- **Feature Requests:** Use the [Feature Request Template](.github/ISSUE_TEMPLATE/feature_request.md)
-
-**Note:** Direct code contributions from external contributors require explicit permission due to proprietary licensing.
+| Role | Team Member | Responsibilities |
+|---|---|---|
+| **Development & Architecture** | Shahajalal Mahmud | Software architecture, backend systems, technical planning |
+| **UI & Frontend** | Preota Saha | UI/UX design, frontend systems, visual consistency |
+| **Testing & QA** | Md Munna Sardar | Testing, QA processes, verification |
+| **Marketing & Branding** | Hazera Islam Mim | Social media, branding, communication |
 
 ---
 
-## 📜 License
+## Team Philosophy
 
-```
+We operate as:
+- A small, focused team
+- Fast learners
+- Builders first
+- Problem-solvers first
+- Long-term thinkers
+
+---
+
+# 📍 Company Information
+
+| Detail | Information |
+|---|---|
+| **Company Name** | Appriyo Technologies |
+| **Industry** | Software Solutions & Digital Systems |
+| **Location** | Khulna, Bangladesh |
+| **Operating Model** | Remote-first |
+| **Email** | contact@appriyo.com |
+| **Phone** | +880 1410394038 |
+
+---
+
+# 📚 Documentation
+
+| File | Description |
+|---|---|
+| `TEAMS.md` | Team structure and responsibilities |
+| `PRIVACY.md` | Privacy policy |
+| `TERMS.md` | Terms of service |
+| `SECURITY.md` | Security reporting policy |
+| `LICENSE.txt` | Proprietary licensing |
+
+---
+
+## GitHub Templates
+
+| Template | Purpose |
+|---|---|
+| `bug_report.md` | Report bugs |
+| `feature_request.md` | Suggest features |
+| `security_vulnerability.md` | Report vulnerabilities |
+| `PULL_REQUEST_TEMPLATE.md` | PR process and checklist |
+| `CODEOWNERS` | Review ownership configuration |
+
+---
+
+# 🤝 Contributing
+
+Appriyo is currently maintained by the core internal team.
+
+---
+
+## Internal Contributors
+
+Team members should:
+
+- Follow coding guidelines
+- Use pull request templates
+- Maintain code quality standards
+- Keep documentation updated
+
+---
+
+## External Contributors
+
+We welcome:
+- Bug reports
+- Security disclosures
+- Feedback
+- Suggestions
+
+Please use the provided GitHub issue templates.
+
+---
+
+# 📜 License
+
+```text
 Appriyo Proprietary License
 
-Copyright (c) 2026 Appriyo. All rights reserved.
+Copyright (c) 2026 Appriyo.
+All rights reserved.
 
-This project is proprietary and maintained by Appriyo.
-Unauthorized commercial use, reproduction, or redistribution is not permitted.
+This repository is proprietary software maintained by Appriyo.
 
-You MAY view the source code for educational or reference purposes.
-You MAY fork the repository for personal, non-commercial use.
+You MAY:
+- View the source code for educational purposes
+- Fork for personal, non-commercial use
 
-You MAY NOT use this project for commercial purposes, redistribute it,
-claim it as your own, or use Appriyo branding without permission.
+You MAY NOT:
+- Use commercially without permission
+- Redistribute modified versions
+- Rebrand or claim ownership
+- Use Appriyo branding without authorization
 ```
 
-📧 For licensing inquiries: **<contact@appriyo.com>**
+For licensing inquiries:
+
+```text
+contact@appriyo.com
+```
 
 ---
 
-## 💬 Final Note
+# 💬 Final Note
 
-> _Appriyo exists to solve problems—not to build software for the sake of building software._
->
-> _Problem-first, not technology-first. Simplicity over complexity. Practical over theoretical._
+> Appriyo exists to solve real-world problems, learn through execution, and build sustainable technology products that create practical value.
 
-We help small and medium businesses replace manual workflows with simple, automated, and AI-assisted systems. We build systems that remain maintainable long after launch. We partner with businesses — we don't just write code for them.
+We are building Appriyo step by step through:
+- Real work
+- Real users
+- Real learning
+- Real execution
 
----
+Our goal is not simply to build software.
 
-## 📞 Contact
-
-| Method       | Details                                                     |
-|--------------|-------------------------------------------------------------|
-| **Email**    | <contact@appriyo.com>                                       |
-| **Phone**    | +880 1410394038                                             |
-| **LinkedIn** | [Appriyo on LinkedIn](https://linkedin.com/company/appriyo) |
-| **GitHub**   | [github.com/Appriyo](https://github.com/Appriyo)            |
+Our goal is to build systems that genuinely improve how businesses operate.
 
 ---
 
-**Built with React, Tailwind CSS, and DaisyUI**  
-**© 2026 Appriyo Technologies. All rights reserved.**
+# 📞 Contact
+
+| Platform | Link |
+|---|---|
+| **Website** | https://appriyo.com |
+| **GitHub** | https://github.com/Appriyo |
+| **LinkedIn** | https://linkedin.com/company/appriyo |
+| **Email** | contact@appriyo.com |
 
 ---
 
 <div align="center">
-  <sub>Small team. Direct communication. Long-term responsibility.</sub>
-  <br/>
-  <sub>Helping businesses replace manual work with simple, AI-powered systems.</sub>
+
+### Small Team • Real Products • Long-Term Thinking
+
+**Building practical technology solutions for real-world business problems.**
+
+© 2026 Appriyo Technologies. All rights reserved.
+
 </div>
-```
-
-## Key Changes Made Based on Core Identity
-
-| Area                   | Change                                                                        |
-|------------------------|-------------------------------------------------------------------------------|
-| **Tagline**            | Updated to reflect "AI-powered digital transformation and software solutions" |
-| **Overview**           | Added Core Identity section with 4 key principles from the constitution       |
-| **Services Section**   | Completely revamped to match the 4 core services from §5 of the constitution  |
-| **"What We Don't Do"** | Added clear boundaries from §5 (services Appriyo will NOT focus on)           |
-| **Products Section**   | Added Amar Repair, Amar Batch, Amar Card from §6 (Product Strategy)           |
-| **Purpose**            | Changed "replace manual workflows" language to match primary focus from §2    |
-| **Blog Plans**         | Changed to "automation & AI for SMBs" (aligned with target market from §4)    |
-| **Industry**           | Updated to "AI-Powered Digital Transformation & Software Solutions"           |
-| **Final Note**         | Replaced with the exact final principle from §12 of the constitution          |
-| **Footer**             | Added the one-line positioning from §11                                       |
