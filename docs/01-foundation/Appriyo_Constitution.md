@@ -1,309 +1,464 @@
-# 📘 APPRIYO CORE IDENTITY DOCUMENT (v1.0)
+# 📘 APPRIYO CORE IDENTITY DOCUMENT (v2.0)
 
 > **Purpose:**
-> This document defines what Appriyo is, what it does, and what it does NOT do.
-> It is the **source of truth** for all decisions, services, products, and direction.
-> Nothing should be built, offered, or pursued outside this identity.
+> This document defines the identity, direction, philosophy, goals, and operational principles of Appriyo.
+> It acts as the long-term foundation and decision-making framework for everything Appriyo builds, offers, and pursues.
+>
+> Every service, product, partnership, and opportunity should align with this document.
 
 ---
 
 # 1. 🧠 CORE IDENTITY
 
-### 1.1 What Appriyo Is
+## 1.1 What Appriyo Is
 
-**Appriyo is an AI-powered digital transformation and software solutions company focused on solving real-world business problems through simple, efficient, and practical technology.**
+**Appriyo is a technology-driven problem-solving company that helps small and medium businesses improve their operations through practical software solutions, automation, and digital systems.**
 
----
+We focus on understanding real-world business problems and solving them using the most suitable technology — whether that is:
 
-### 1.2 What Appriyo Is NOT
+* Custom software
+* Web applications
+* Mobile apps
+* Cross-platform systems
+* Automation tools
+* AI integrations
+* SaaS platforms
+* Internal management systems
 
-Appriyo is NOT:
-
-- A generic “we build anything” software agency
-- A large-scale outsourcing IT firm
-- A company that builds unnecessary or overly complex systems
-- A company focused only on coding or development
-- A trend-chasing AI company without real problem focus
-
----
-
-### 1.3 Core Philosophy
-
-- Problem-first, not technology-first
-- Simplicity over complexity
-- Practical over theoretical
-- Long-term value over short-term gain
-- Small, efficient team over large workforce
-- Automation over manual processes
+Technology itself is not the goal.
+**Solving problems is the goal.**
 
 ---
 
-# 2. 🎯 CORE FOCUS
+## 1.2 Why Appriyo Exists
 
-### Primary Focus
+Appriyo exists because:
 
-> **Helping small and medium businesses replace manual workflows with simple, automated, and AI-assisted systems.**
+### 1. We Learn by Building
 
----
+We believe the best way to learn technology, business, and product development is through real-world execution.
 
-### Secondary Focus
-
-- Building practical software products based on real problems
-- Making technology accessible to non-technical users
-- Enabling businesses to adopt AI without complexity
+Instead of only studying concepts academically, we build systems used by real people solving real problems.
 
 ---
 
-### Focus Boundaries
+### 2. We Want to Build a Strong Future Before Graduation
 
-Appriyo will ONLY work on:
+We are currently CSE students at Northern University of Business & Technology Khulna.
 
-- Real business problems
-- Operational inefficiencies
-- Productivity and workflow improvements
-- Systems that reduce manual effort
+Our goal is that by the time we graduate:
 
----
+* Appriyo becomes financially sustainable
+* We generate consistent monthly income
+* We gain real industry experience
+* We build a strong portfolio of real-world products and clients
 
-# 3. 🌍 MISSION, VISION, GOALS
-
-### Mission
-
-> To make technology and AI simple, accessible, and truly useful for every business—regardless of size.
+Even a small amount of recurring revenue before graduation is considered a major success for us.
 
 ---
 
-### Vision
+### 3. We Want Real Experience, Not Just Certificates
 
-> A world where businesses no longer rely on manual processes, but operate efficiently through intelligent systems.
+Appriyo allows us to:
 
----
+* Work as a real team
+* Build real products
+* Serve real users
+* Solve real operational problems
+* Gain practical business understanding
+* Showcase meaningful work on our CVs and portfolios
 
-### Long-Term Goal
-
-- Become a trusted technology partner for businesses
-- Build scalable SaaS products used by thousands
-- Create systems that continue delivering value without constant intervention
-
----
-
-### Short-Term Goal
-
-- Work with real businesses
-- Build 2–3 strong products
-- Understand real-world workflows deeply
-- Establish credibility and experience
+Instead of only academic projects, we want to demonstrate actual impact.
 
 ---
 
-# 4. 👥 TARGET MARKET
+### 4. We Want to Build Something Bigger Long-Term
 
-### Primary Target
+Our long-term ambition is to grow Appriyo into a sustainable company capable of:
 
-- Small businesses
-- Local service providers
-- Non-technical business owners
+* Hiring employees
+* Running independently
+* Generating semi-passive or scalable income
+* Becoming a serious technology business
+
+Initially, Appriyo may operate alongside our future jobs as a side business.
+Over time, the goal is to make it strong enough to eventually become a full-time company if the opportunity becomes realistic.
+
+---
+
+# 2. 🎯 CORE PHILOSOPHY
+
+## Core Beliefs
+
+* Problem-first, not technology-first
+* Practicality over complexity
+* Execution over endless planning
+* Learning through real work
+* Simplicity creates value
+* Real users matter more than trends
+* Small consistent progress beats unrealistic scaling
+* Build useful systems, not unnecessary features
+
+---
+
+## How We Think
+
+We do not define ourselves by a single technology stack.
+
+We define ourselves by our ability to understand problems and build effective solutions using the best available tools.
+
+The stack may change.
+The mission does not.
+
+---
+
+# 3. 🎯 CURRENT PRIMARY FOCUS (NEXT 1.5 YEARS)
+
+## Main Objective Before Graduation
+
+For the next 1.5 years, Appriyo’s primary goal is to:
+
+* Become visible and recognized
+* Build strong products
+* Showcase our capabilities publicly
+* Work with real clients
+* Build a strong reputation
+* Gain real operational experience
+* Create sustainable income streams
+* Establish a strong foundation for future growth
+
+---
+
+## What Success Means Right Now
+
+At this stage, success means:
+
+* Having real users
+* Solving real business problems
+* Building products people actually use
+* Generating recurring monthly income
+* Growing a portfolio of completed work
+* Building credibility and trust
+* Learning rapidly through execution
+
+We are not optimizing for massive scale immediately.
+
+We are optimizing for:
+
+* Learning
+* Experience
+* Visibility
+* Consistency
+* Sustainability
+
+---
+
+# 4. 🌍 MISSION, VISION & LONG-TERM DIRECTION
+
+## Mission
+
+> To help businesses solve operational problems through simple, practical, and accessible technology solutions.
+
+---
+
+## Vision
+
+> To build a sustainable technology company that creates practical systems and products improving how businesses operate.
+
+---
+
+## Long-Term Direction
+
+Right now, Appriyo offers a broader range of technical services because we are still exploring, learning, and gaining experience.
+
+Over time, we will gradually specialize based on:
+
+* Our strongest expertise
+* Market demand
+* Client needs
+* Real-world experience
+* Areas where we can outperform others
+
+---
+
+## Future Specialization Possibilities
+
+In the future, Appriyo may focus heavily on areas such as:
+
+* AI automation
+* Business process automation
+* AI-powered internal systems
+* Productivity platforms
+* Workflow optimization
+
+However, we will specialize only after gaining sufficient expertise and practical experience.
+
+---
+
+# 5. 👥 TARGET MARKET
+
+## Primary Target Customers
+
+* Small businesses
+* Medium businesses
+* Local business owners
+* Service-based businesses
+* Non-technical operators
+
+---
+
+## Example Industries
+
+* Repair shops
+* Coaching centers
+* Teachers & batch management
+* Small retail businesses
+* Service centers
+* Local agencies
+* Operational businesses using manual workflows
+
+---
+
+## Customer Characteristics
+
+Most target customers:
+
+* Still use manual systems
+* Use paper-based tracking
+* Lack technical knowledge
+* Need affordable solutions
+* Need practical systems, not complicated software
+* Want easier operations and better management
+
+---
+
+# 6. 💼 CORE SERVICES
+
+Appriyo focuses on solving business problems using technology.
+
+The exact technology stack is flexible depending on the problem.
+
+---
+
+## 6.1 Custom Software Development
+
+Building tailored systems for specific business operations.
 
 Examples:
 
-- Repair shops
-- Coaching centers / teachers
-- Small retail/service businesses
+* Management systems
+* Dashboards
+* Tracking platforms
+* Internal operational tools
 
 ---
 
-### Secondary Target
+## 6.2 Web & Mobile Applications
 
-- Early-stage startups
-- Individuals needing productivity tools
+Building:
 
----
+* Websites
+* Web applications
+* Android apps
+* Cross-platform applications
 
-### Customer Characteristics
-
-- Still using manual or semi-manual processes
-- Limited technical knowledge
-- Need simple, affordable solutions
-- Value practicality over complexity
+when they directly solve operational or business problems.
 
 ---
 
-# 5. 💼 CORE SERVICES (STRICT LIMIT)
+## 6.3 Business Automation
 
-Appriyo will offer ONLY the following core services:
+Helping businesses reduce repetitive manual work through:
 
----
-
-## 5.1 Business Process Automation
-
-- Replace repetitive manual tasks
-- Automate workflows (SMS, reminders, tracking)
-- Improve operational efficiency
+* Workflow automation
+* Reminder systems
+* Tracking systems
+* Communication systems
+* Smart operational flows
 
 ---
 
-## 5.2 Custom Business Software
+## 6.4 AI Integration & AI-Assisted Systems
 
-- Build tools tailored to specific business needs
-- Replace paper-based or inefficient systems
-- Focus on usability and simplicity
+Integrating AI where it creates real value.
 
----
+Examples:
 
-## 5.3 AI Integration & Smart Systems
+* AI-assisted workflows
+* AI-powered tools
+* Smart automation
+* AI-enhanced productivity systems
 
-- AI-powered assistants
-- Smart automation workflows
-- AI-enhanced business operations
-
----
-
-## 5.4 Digital Transformation Consulting
-
-- Analyze business operations
-- Identify inefficiencies
-- Recommend and implement solutions
-- Maintain long-term partnership
+We will expand this area more deeply as our expertise grows.
 
 ---
 
-### ❌ Services Appriyo Will NOT Focus On
+## 6.5 SaaS Product Development
 
-- Generic website-only projects (unless part of system)
-- One-off freelance tasks without long-term value
-- Projects without clear business impact
-- Pure design-only work without functionality
+Turning repeated business problems into reusable products.
 
----
-
-# 6. 🚀 PRODUCT STRATEGY
-
-Appriyo will build **real-world SaaS products based on actual problems.**
+We aim to convert service experience into scalable SaaS systems.
 
 ---
 
-### Product Principles
+# 7. 🚀 PRODUCT STRATEGY
 
-- Must solve a real problem
-- Must be simple to use
-- Must be scalable
-- Must be affordable
+Appriyo builds products based on real operational problems discovered through real users and clients.
 
 ---
 
-### Initial Product Line
+## Product Principles
 
-- Repair Store Manager - Amar Repair
-- Teacher/Batch Management System - Amar Batch
-- NFC Digital Contact Card - Amar Card
+Every product should:
 
----
-
-### Product Strategy
-
-- Build → Test with real users → Improve
-- Convert service learnings into products
-- Focus on long-term usability
+* Solve a real problem
+* Be simple to understand
+* Be practical to use
+* Be affordable
+* Reduce manual effort
+* Create measurable value
 
 ---
 
-# 7. ⚙️ WORKING MODEL
+## Current Product Examples
 
-### Team Structure
+* Amar Repair — Repair Store Management System
+* Amar Batch — Teacher & Batch Management System
 
-- Small core team (3–4 people)
-- Supported by AI tools and automation
-- High efficiency, low overhead
-
----
-
-### How Work Is Done
-
-- Deep understanding before building
-- Direct communication with clients
-- Fast iteration using AI-assisted development
-- Focus on outcome, not just delivery
+Additional products may evolve naturally from client work and operational pain points.
 
 ---
 
-### Key Advantage
+## Product Development Philosophy
 
-> **Understanding business problems deeply and solving them simply using technology.**
+Build → Test → Learn → Improve
 
----
+We believe products should evolve through:
 
-# 8. 🧭 STRATEGIC APPROACH
+* Real usage
+* Real feedback
+* Real business operations
 
-### Phase 1
-
-- Experiment within defined boundaries
-- Work with small number of clients
-- Build real experience
-- Launch initial products
+not assumptions.
 
 ---
 
-### Phase 2
+# 8. ⚙️ WORKING MODEL
 
-- Identify strongest niche
-- Focus on 1–2 domains
-- Drop low-impact services
+## Team Structure
 
----
-
-### Phase 3 (Scaling)
-
-- Expand successful products
-- Build SaaS ecosystem
-- Grow sustainably
+* Small student-led core team
+* Collaborative development
+* High ownership
+* Fast execution
+* AI-assisted productivity
 
 ---
 
-# 9. 🚧 DECISION FILTER (VERY IMPORTANT)
+## How We Operate
 
-Before taking any work or building anything, ask:
-
-1. Does this solve a real business problem?
-2. Does it reduce manual effort or improve efficiency?
-3. Does it align with our core services?
-4. Can it lead to a reusable product or learning?
-5. Is it simple and practical?
-
-👉 If **3 or more answers are NO → DO NOT DO IT**
+* Understand the problem deeply first
+* Keep communication direct and practical
+* Build quickly and improve continuously
+* Focus on usefulness over perfection
+* Learn while executing
 
 ---
 
-# 10. ⚠️ WHAT APPRIYO WILL AVOID
+## Key Competitive Advantage
 
-- Chasing every opportunity
-- Over-expanding services
-- Building unnecessary features
-- Working without clear purpose
-- Complicating simple problems
+> Understanding real operational problems and solving them simply using practical technology.
 
 ---
 
-# 11. 🧱 BRAND POSITIONING
+# 9. 🧭 GROWTH STRATEGY
 
-### One-Line Positioning
+## Phase 1 — Foundation (Current Stage)
 
-> **Appriyo helps businesses replace manual work with simple, AI-powered systems.**
+Goals:
 
----
-
-### Identity Keywords
-
-- Practical
-- Efficient
-- Simple
-- Reliable
-- Problem-focused
-- AI-assisted
+* Build visibility
+* Build products
+* Gain experience
+* Acquire clients
+* Create portfolio projects
+* Learn deeply through execution
 
 ---
 
-# 12. 📌 FINAL PRINCIPLE
+## Phase 2 — Positioning
 
-> **Appriyo exists to solve problems—not to build software for the sake of building software.**
+Goals:
+
+* Identify strongest market opportunities
+* Discover our best expertise areas
+* Improve systems and operations
+* Focus services more strategically
 
 ---
+
+## Phase 3 — Specialization & Scaling
+
+Goals:
+
+* Focus on high-value niches
+* Build stronger SaaS products
+* Expand recurring revenue
+* Hire employees
+* Scale sustainably
+
+---
+
+# 10. 🚧 DECISION FILTER
+
+Before accepting any work or building any system, ask:
+
+1. Does this solve a real problem?
+2. Does this create practical value?
+3. Can this improve business operations?
+4. Will this help us learn or grow?
+5. Can this strengthen Appriyo’s portfolio or reputation?
+6. Is this sustainable or reusable long-term?
+7. Is the solution simple and practical?
+
+If most answers are “No”, we should reconsider the opportunity.
+
+---
+
+# 11. ⚠️ WHAT APPRIYO WILL AVOID
+
+* Chasing every trend blindly
+* Pretending expertise we do not yet have
+* Building unnecessary complexity
+* Taking projects without clear value
+* Overpromising capabilities
+* Prioritizing appearance over usefulness
+* Expanding too aggressively too early
+
+---
+
+# 12. 🧱 BRAND POSITIONING
+
+## One-Line Positioning
+
+> **Appriyo helps businesses solve operational problems through practical technology solutions.**
+
+---
+
+## Identity Keywords
+
+* Practical
+* Problem-solving
+* Reliable
+* Modern
+* Efficient
+* Adaptable
+* Product-focused
+* Business-oriented
+* Execution-driven
+
+---
+
+# 13. 📌 FINAL PRINCIPLE
+
+> **Appriyo exists to solve real-world problems, learn through execution, and build sustainable technology products that create practical value.**
