@@ -1,911 +1,598 @@
-# Appriyo Website Design System (v2.0)
-### *"Precision That Moves"*
+# Appriyo Design System (v3.0)
+
+### _"The Ledger System" — Paper-World Trust, Digital Precision_
 
 > **Purpose:**
-> Define a living, identity-driven design system for Appriyo that commands attention,
-> communicates intelligence, and leaves every visitor with a clear emotion:
-> *"This company knows exactly what they're doing."*
+> Replace the v2.0 dark-glow-SaaS aesthetic with a design language that a repair-shop
+> owner or coaching-center manager trusts on sight — because it speaks their
+> visual language, not Silicon Valley's.
 
 ---
 
-# 0. ⚡ THE BIG IDEA
+# 0. WHY WE'RE REPLACING v2.0
 
-Appriyo's design language is built around one concept:
+v2.0 was a dark background, cyan glow, dot-grid, glass cards, "Syne" display font.
+That combination is not distinctive anymore — it's the single most common look
+AI design tools default to for "modern tech startup." It also aims at the wrong
+audience: it reads _flashy VC-backed SaaS_, when your actual buyer is a local
+business owner who wants to know **can I trust these people with my shop's
+records for the next five years.**
 
-## **Structured Energy**
-
-Most tech companies choose between:
-- Boring-but-trustworthy *(enterprise blues, static grids)*
-- Exciting-but-chaotic *(rainbow gradients, endless animations)*
-
-Appriyo chooses neither. We choose **controlled intensity** —
-a design that feels **alive inside strict order**.
-
-Think: a precision instrument. A heartbeat monitor. Circuit traces.
-**Everything calculated. Everything intentional. Nothing wasted.**
+We're not toning it down. We're pointing it at a completely different idea.
 
 ---
 
-# 1. 🎯 DESIGN PHILOSOPHY
+# 1. THE BIG IDEA
 
-### 1.1 The 3-Second Test
+## Paper, Made Precise
 
-Every page, section, and component must pass this:
+Your clients' entire world runs on paper: ledgers, receipt books, hand-written
+registers, rubber ink stamps on invoices. Appriyo's job is to take that world
+and rebuild it as something clean and structured — without pretending the
+paper world was primitive or that you're selling them magic.
 
-> A visitor reads the headline in 3 seconds and knows exactly what Appriyo does and why it matters.
+**The design embodies the exact transformation you sell.** Every recurring
+visual motif on the site is drawn from paper business records — ruled ledger
+lines, receipt-card edges, ink stamps of verification — but executed with the
+restraint and precision of good software. Familiar material, elevated
+execution. That is the whole pitch, visually, before anyone reads a word.
 
-If they can't — the design failed. No exceptions.
-
----
-
-### 1.2 Alive, Not Loud
-
-Animation and motion exist to **guide attention**, not entertain.
-
-- Motion reveals structure
-- Motion rewards curiosity
-- Motion communicates intelligence
-
-**One perfectly timed reveal > twenty random animations**
+This also solves your "not just for Gen Z" requirement for free: ledgers and
+stamps are legible metaphors to a 55-year-old shop owner and a 20-year-old
+client's daughter scrolling on her phone alike.
 
 ---
 
-### 1.3 Density Done Right
+# 2. DESIGN PHILOSOPHY
 
-Appriyo is a smart company. Smart companies don't over-explain.
+### 2.1 The 3-Second Test (kept from v2.0 — still correct)
 
-- Show depth through **visual layering**, not word count
-- Pack meaning into **small spaces** without crowding
-- Every pixel has a job
+A visitor reads the headline and knows exactly what Appriyo does, in language
+they'd use themselves — not "digital transformation solutions," but "we build
+the system that replaces your notebook."
 
----
+### 2.2 Evidence Over Adjectives
 
-### 1.4 Dark Canvas, Bright Signal
+Never say "innovative," "cutting-edge," "revolutionary." Every claim is backed
+by something checkable: a real screenshot, a real number, a named product, a
+named team member. If we can't show proof, we don't make the claim. This is
+the visual/verbal expression of "we don't over-exaggerate."
 
-The dark background is not a trend. It is a **deliberate choice**:
+### 2.3 Calm, Not Cold
 
-- Makes primary blue luminous, not flat
-- Makes white text crisp, not washed
-- Signals: *focus here, this matters*
+Warm paper tones and generous whitespace, not sterile corporate blue-on-white.
+The feeling is "an organized person's desk," not "an empty enterprise
+brochure."
 
----
+### 2.4 Legible to Everyone in the Room
 
-### 1.5 Rejection Criteria
+Every section must work for both the non-technical shop owner and a technical
+evaluator. No section should require IT vocabulary to understand its point.
+Technical depth (stack, architecture) is available but never load-bearing for
+the main narrative.
+
+### 2.5 Rejection Criteria
 
 Reject any design that:
 
-❌ Looks like a template you've seen before
-❌ Could belong to a different company
-❌ Has motion that doesn't serve content
-❌ Makes the user work to understand the value
-❌ Prioritizes "cool" over "clear"
+- Could be mistaken for a generic dark SaaS template (the exact thing v2.0 was)
+- Uses a metaphor a first-year business owner wouldn't recognize
+- Makes a claim with no visible evidence next to it
+- Needs jargon to make sense
+- Adds a paper/stamp motif somewhere it doesn't earn its place
 
 ---
 
-# 2. 🎨 COLOR SYSTEM
+# 3. COLOR SYSTEM
 
-### 2.1 Brand Philosophy
+### 3.1 Palette Logic
 
-| Attribute | Color Signal |
-|-----------|-------------|
-| Reliable  | Deep Blue |
-| Intelligent | Electric Cyan accent |
-| Grounded | Near-black surface |
-| Alive | Bright signal moments |
-
-The palette is built on **contrast math** — every combination meets WCAG AA minimum.
-
----
-
-### 2.2 Core Palette
+Paper backgrounds (grey-warm, not golden-cream — deliberately cooler than the
+"cream + terracotta" look that's become its own AI cliché). Ink-navy does the
+work primary blue used to do. A rubber-stamp red is the _only_ saturated
+color on the site, reserved entirely for verification/proof moments — so it
+carries real meaning instead of being decoration.
 
 ```css
-/* === FOUNDATION === */
---color-void:       #060912;   /* Deepest background — almost black-blue */
---color-bg:         #0b0f1a;   /* Primary background */
---color-surface:    #111827;   /* Card surfaces */
---color-surface-2:  #1a2233;   /* Elevated surfaces */
---color-border:     #1e2d45;   /* Subtle borders */
---color-border-glow:#2a4a7f40; /* Glowing border (with alpha) */
+/* === PAPER (Backgrounds) === */
+--color-paper: #f7f5f0; /* Primary background — uncoated paper, warm-grey not golden */
+--color-paper-dim: #efebe1; /* Alternate section background */
+--color-paper-card: #ffffff; /* Card surfaces — slightly lifted off the paper */
+--color-line: #dad3c2; /* Ledger rule lines, borders */
+--color-line-strong: #b8af98; /* Emphasis rules, table borders */
 
-/* === PRIMARY — Electric Blue === */
---color-primary:       #2563eb;  /* Core brand blue */
---color-primary-bright:#3b82f6;  /* Hover / highlight */
---color-primary-glow:  #2563eb30;/* Glow layer (alpha) */
+/* === INK (Text & primary brand) === */
+--color-ink: #1b2a3a; /* Primary text, headlines — fountain-pen navy, not black */
+--color-ink-soft: #4c5c6e; /* Body text */
+--color-ink-muted: #7c8896; /* Captions, meta labels */
+--color-ink-on-dark: #f7f5f0; /* Text on ink-colored surfaces */
 
-/* === SIGNAL — Cyan === */
-/* Use ONLY for AI sections, live moments, highlights */
---color-signal:        #06b6d4;  /* Cyan 500 */
---color-signal-dim:    #0891b2;  /* Cyan 600 */
---color-signal-glow:   #06b6d420;/* Glow (alpha) */
+/* === STAMP (Proof accent — use sparingly, ~5% of UI) === */
+--color-stamp: #a6392b; /* Rubber-stamp ink red — verification marks, key proof numbers only */
+--color-stamp-soft: #a6392b14; /* Faint stamp tint for backgrounds behind proof callouts */
 
-/* === TEXT === */
---color-text-primary:   #f0f4ff;  /* Near-white with blue tint */
---color-text-secondary: #8fa3c0;  /* Cool grey */
---color-text-muted:     #4d6480;  /* Subdued */
---color-text-inverse:   #0b0f1a;  /* On light backgrounds */
+/* === LEDGER GREEN (secondary accent — "balanced," confirmed states) === */
+--color-ledger: #3f6b4f;
+--color-ledger-soft: #3f6b4f14;
+
+/* === BRASS (rare — certificate/founding-team moments only, not for buttons) === */
+--color-brass: #a9812e;
 
 /* === UTILITY === */
---color-success:  #10b981;
---color-warning:  #f59e0b;
---color-error:    #ef4444;
+--color-warning: #b5651d;
+--color-error: #a6392b; /* reuses stamp red — errors and "attention" share one language */
 ```
 
----
+### 3.2 Usage Rules
 
-### 2.3 Glow System
+| Context                                  | Color                                   |
+| ---------------------------------------- | --------------------------------------- |
+| Page backgrounds                         | `--color-paper`                         |
+| Alternating sections                     | `--color-paper-dim`                     |
+| Cards, panels                            | `--color-paper-card` on `--color-paper` |
+| Primary actions / links                  | `--color-ink`                           |
+| Verified proof points, stamps, key stats | `--color-stamp` — nowhere else          |
+| Confirmed / "it works" moments           | `--color-ledger`                        |
+| Body text                                | `--color-ink-soft`                      |
+| Meta labels, timestamps                  | `--color-ink-muted`                     |
+| Borders, dividers                        | `--color-line`                          |
 
-Appriyo uses **controlled glow effects** — not decoration, but emphasis.
+✅ 85% of the UI is paper neutrals and ink
+✅ 10% is ledger green (secondary confirmations, checkmarks)
+✅ 5% is stamp red — reserved for real proof, so it never feels decorative
+
+**Hard rule:** if stamp red appears on something that isn't a verifiable
+claim (a client name, a real number, a named result), it's being misused —
+remove it.
+
+### 3.3 No Glow, No Gradients-as-Decoration
+
+This system explicitly drops glow effects and mesh gradients. Depth comes
+from paper-like layering (subtle shadow, not light-emission) and from the
+receipt-edge motif below — not from anything that looks like it's lit from
+within. One exception: a very faint 1–2% radial vignette behind the hero
+headline is allowed, used once, to add depth without reading as "SaaS glow."
 
 ```css
-/* Use these as box-shadow or filter:drop-shadow values */
-
---glow-primary: 0 0 24px #2563eb40, 0 0 48px #2563eb18;
---glow-signal:  0 0 20px #06b6d430, 0 0 40px #06b6d415;
---glow-text:    0 0 12px #3b82f660;
-
-/* Applied ONLY on:
-   - Hero headline
-   - Active CTA button
-   - AI-section highlights
-   - Interactive hover moments
-*/
+--shadow-card: 0 1px 2px #1b2a3a0a, 0 4px 12px #1b2a3a0f;
+--shadow-card-hover: 0 2px 4px #1b2a3a10, 0 12px 28px #1b2a3a16;
+--shadow-stamp: 0 1px 1px #a6392b30; /* used only on stamp elements */
 ```
 
 ---
 
-### 2.4 Gradient Language
+# 4. TYPOGRAPHY SYSTEM
 
-Gradients are **directional and purposeful**, not decorative.
+### 4.1 Font Stack
 
-```css
-/* Hero mesh — background layer, very subtle */
---gradient-hero: radial-gradient(
-  ellipse 80% 60% at 50% -10%,
-  #1e3a6e22 0%,
-  transparent 70%
-);
-
-/* Section accent — top edge glow */
---gradient-section-edge: linear-gradient(
-  90deg,
-  transparent 0%,
-  #2563eb20 30%,
-  #06b6d415 70%,
-  transparent 100%
-);
-
-/* Card depth */
---gradient-card: linear-gradient(
-  145deg,
-  #1a223380 0%,
-  #111827 100%
-);
-
-/* CTA button */
---gradient-cta: linear-gradient(
-  135deg,
-  #2563eb 0%,
-  #1d4ed8 50%,
-  #1e3a8a 100%
-);
-```
-
----
-
-### 2.5 Color Usage Rules
-
-| Context | Color |
-|---------|-------|
-| Page backgrounds | `--color-void` / `--color-bg` |
-| Cards, panels | `--color-surface` |
-| Primary actions | `--color-primary` |
-| AI/live features | `--color-signal` (sparingly) |
-| Body text | `--color-text-primary` |
-| Meta labels | `--color-text-muted` |
-| Borders | `--color-border` |
-
-✅ 80% of the UI is dark neutrals
-✅ 15% is primary blue
-✅ 5% is signal cyan — saved for maximum impact
-
----
-
-# 3. 🔤 TYPOGRAPHY SYSTEM
-
-### 3.1 Font Stack
-
-| Role | Font | Why |
-|------|------|-----|
-| Display / Hero | **Syne** | Geometric, architectural, memorable — feels engineered |
-| Headings | **DM Sans** | Clean, confident, modern — professional without being cold |
-| Body | **IBM Plex Sans** | Technical clarity, high readability, a quiet nod to precision |
-| Mono / Code | **JetBrains Mono** | For code snippets, terminal UI, data — instantly credible |
+| Role                 | Font                    | Why                                                                                                                                                               |
+| -------------------- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Display / Headlines  | **Bitter** (Black/Bold) | A slab serif with the weight and squareness of an official stamped document — sturdy and readable to a non-technical owner, not decorative or "trendy editorial." |
+| Body                 | **Inter**               | Neutral, highly legible at any age or device, disappears in service of the content — exactly what body text should do.                                            |
+| Meta / Labels / Data | **IBM Plex Mono**       | Receipt-printer, ledger-column character. Used for numbers, dates, small labels — never for prose.                                                                |
 
 ```html
-<!-- Import via Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?
-  family=Syne:wght@700;800&
-  family=DM+Sans:wght@400;500;600&
-  family=IBM+Plex+Sans:wght@400;500&
-  family=JetBrains+Mono:wght@400;500&
-  display=swap" rel="stylesheet">
+<link
+  href="https://fonts.googleapis.com/css2?
+  family=Bitter:wght@700;900&
+  family=Inter:wght@400;500;600&
+  family=IBM+Plex+Mono:wght@400;500&
+  display=swap"
+  rel="stylesheet"
+/>
 ```
 
----
+**Why not a high-contrast editorial serif (Playfair/Fraunces)?** That pairing
+with a warm background is its own overused AI look right now. Bitter reads
+as _document_, not _magazine_ — closer to the register you want (reliable
+firm, not lifestyle brand).
 
-### 3.2 Type Scale
+### 4.2 Type Scale
 
 ```css
-/* === DISPLAY === */
---text-display-xl: clamp(52px, 7vw, 88px);  /* Hero headline */
---text-display-lg: clamp(40px, 5vw, 64px);  /* Section hero */
+--text-display-xl: clamp(40px, 6vw, 68px); /* Hero headline */
+--text-display-lg: clamp(32px, 4vw, 48px); /* Section hero */
 
-/* === HEADINGS === */
---text-h1: clamp(36px, 4vw, 52px);
---text-h2: clamp(28px, 3.5vw, 40px);
---text-h3: clamp(22px, 2.5vw, 30px);
---text-h4: 20px;
+--text-h1: clamp(30px, 3.5vw, 42px);
+--text-h2: clamp(24px, 3vw, 32px);
+--text-h3: clamp(20px, 2.2vw, 26px);
+--text-h4: 18px;
 
-/* === BODY === */
 --text-body-lg: 18px;
---text-body:    16px;
+--text-body: 16px;
 --text-body-sm: 14px;
 
-/* === UTILITY === */
---text-label:   12px;  /* Uppercase tracking labels */
---text-mono:    14px;  /* Code / terminal */
+--text-label: 12px; /* Uppercase-free ledger labels, mono */
+--text-mono: 14px;
 ```
 
----
+Note the smaller display size than v2.0 (68px vs 88px max). Confidence
+doesn't require shouting — a business owner reading on a mid-range Android
+phone should never feel like the type is performing for them.
 
-### 3.3 Font Weights
+### 4.3 Special Typography Rules
+
+**Headlines:** Bitter, weight 800–900, `letter-spacing: -0.01em`,
+`line-height: 1.1`. Sentence case, not Title Case — reads as plain speech,
+not marketing copy.
+
+**Meta / Ledger Labels (above headings):**
 
 ```css
---weight-regular:   400;
---weight-medium:    500;
---weight-semibold:  600;
---weight-bold:      700;
---weight-black:     800;  /* Display only */
-```
-
----
-
-### 3.4 Special Typography Rules
-
-**Hero Headlines:**
-- Font: `Syne`, weight `800`
-- Letter-spacing: `-0.02em`
-- Line-height: `1.05`
-- Effect: Subtle `--glow-text` on hover or animated in
-
-**Section Labels (above headings):**
-```css
-font-family: 'JetBrains Mono';
+font-family: "IBM Plex Mono";
 font-size: 12px;
-letter-spacing: 0.15em;
-text-transform: uppercase;
-color: var(--color-signal);
+letter-spacing: 0.04em;
+color: var(--color-ink-muted);
+/* No uppercase transform by default — a ledger label like "Service 03 of 05"
+   reads more like a real record than "SERVICE" in caps */
 ```
-These small mono labels create an **engineering cadence** — precise, systematic.
 
 **Never:**
-- Center-align paragraphs longer than 2 lines on desktop
-- Use Syne for body text
-- Mix more than 2 font families in one section
+
+- Use Bitter below 18px (it was drawn for display, not body copy)
+- Center-align paragraphs longer than 2 lines
+- Mix in a third typeface anywhere
+- Use ALL CAPS for anything longer than 3 words
 
 ---
 
-# 4. 🧱 LAYOUT SYSTEM
+# 5. LAYOUT SYSTEM
 
-### 4.1 Grid
+### 5.1 Grid
 
 ```css
---grid-max:      1200px;
---grid-padding:  clamp(16px, 4vw, 40px);
---grid-gap:      24px;
-
-/* Sections */
---section-gap:   clamp(80px, 12vw, 140px);
+--grid-max: 1140px; /* Slightly narrower than v2.0 — easier reading for non-technical visitors */
+--grid-padding: clamp(20px, 5vw, 48px);
+--grid-gap: 24px;
+--section-gap: clamp(72px, 10vw, 120px);
 ```
 
----
+### 5.2 Layout Principle: Ruled, Not Floating
 
-### 4.2 The Asymmetry Principle
-
-Not every section is centered. Appriyo uses **intentional asymmetry**:
-
-- Hero: Large left text, right-side visual artifact
-- Services: Offset grid — 5-col text, 7-col card grid
-- Why Appriyo: Left-pinned stat numbers, right flowing text
-- Products: Full-bleed dark card with pinned left label
-
-This creates **visual rhythm** — the page breathes.
-
----
-
-### 4.3 Section Anatomy
-
-Every section follows this skeleton:
+v2.0 used asymmetric "floating card" layouts typical of dark SaaS sites. This
+system instead borrows from ledger books: content sits on **ruled sections**
+with a visible top rule and a running left-hand label (like a ledger's date
+column), giving structure without needing glow or shadow to feel organized.
 
 ```
 [SECTION]
-  ├── [EDGE GLOW LINE] — 1px top border with gradient glow
-  ├── [LABEL] — Mono, cyan, ALL CAPS
-  ├── [HEADING] — Syne, bold, large
-  ├── [SUBTEXT] — DM Sans, muted, max 2 lines
-  └── [CONTENT BLOCK]
-        ├── Cards / Grid / Visual
-        └── Optional CTA
+  ├── [RULE] — thin horizontal line, full width, --color-line
+  ├── [LEDGER LABEL] — mono, e.g. "02 — Services" (numbering justified: these
+  │                     ARE sequential sections of one page, so numbering
+  │                     carries real information here)
+  ├── [HEADING] — Bitter, sentence case
+  ├── [SUBTEXT] — Inter, --color-ink-soft, max 2 lines
+  └── [CONTENT]
 ```
 
----
-
-### 4.4 Spacing Scale
+### 5.3 Spacing Scale
 
 ```css
---space-1:   4px
---space-2:   8px
---space-3:   12px
---space-4:   16px
---space-5:   24px
---space-6:   32px
---space-7:   48px
---space-8:   64px
---space-9:   96px
---space-10:  128px
+--space-1: 4px --space-5: 24px --space-9: 96px --space-2: 8px --space-6: 32px
+  --space-10: 128px --space-3: 12px --space-7: 48px --space-4: 16px
+  --space-8: 64px;
 ```
-
-Spacing is **never arbitrary**. Every gap is a step on this scale.
 
 ---
 
-# 5. 🧩 COMPONENT DESIGN
+# 6. SIGNATURE ELEMENTS
 
-### 5.1 Buttons
+This is the one place we spend real design boldness. Everything else in the
+system stays quiet so these two motifs carry the identity.
+
+### 6.1 The Verified Stamp
+
+A circular ink-stamp mark, hand-set at a very slight rotation (2–4°), used
+**only** next to something genuinely provable: a real client result, a real
+product metric, a completed project. Never decorative, never on marketing
+copy.
+
+```css
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1.5px solid var(--color-stamp);
+  color: var(--color-stamp);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font: 500 12px "IBM Plex Mono";
+  transform: rotate(-2deg);
+  background: var(--color-stamp-soft);
+}
+/* Slightly irregular border via a subtle SVG filter/noise texture is
+   optional — the rotation alone is usually enough to read as "stamped,"
+   not printed. */
+```
+
+Use for: "Verified client result," "Live product," "Real metric," dates of
+delivery. This is the direct visual answer to "we don't exaggerate" — every
+stamp is a promise that what's next to it is checkable.
+
+### 6.2 Receipt-Edge Cards
+
+Cards that hold real evidence (screenshots, testimonials, case studies) get
+a subtle perforated/torn top edge — like tearing a receipt off a pad —
+instead of a glowing top border. This is the load-bearing "unmistakably
+Appriyo" visual signature.
+
+```css
+.receipt-card {
+  background: var(--color-paper-card);
+  border: 1px solid var(--color-line);
+  border-radius: 4px; /* sharp-ish, document-like — not the soft 14px of v2.0 */
+  box-shadow: var(--shadow-card);
+  position: relative;
+  padding: 28px;
+}
+
+/* Perforated top edge, drawn once as a repeating background, not per-card SVG */
+.receipt-card::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background-image: radial-gradient(
+    circle,
+    var(--color-paper) 2px,
+    transparent 2.2px
+  );
+  background-size: 14px 14px;
+  background-position: 0 -4px;
+}
+```
+
+**Rule:** this treatment is reserved for cards showing _real evidence_
+(testimonials, product screenshots, stats). Generic service-list cards use a
+plain rule-bordered style (below) so the receipt motif keeps its meaning.
+
+### 6.3 Plain Ledger Card (for services, non-evidence content)
+
+```css
+.ledger-card {
+  background: var(--color-paper-card);
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  padding: 24px;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+.ledger-card:hover {
+  border-color: var(--color-line-strong);
+  transform: translateY(-2px);
+}
+```
+
+---
+
+# 7. COMPONENTS
+
+### 7.1 Buttons
 
 **Primary CTA:**
-```css
-background: var(--gradient-cta);
-color: white;
-border-radius: 8px;
-padding: 13px 24px;
-font: 500 15px 'DM Sans';
-letter-spacing: 0.01em;
-border: 1px solid #3b82f630;
-box-shadow: var(--glow-primary);
-transition: all 0.2s ease;
 
-/* Hover: */
+```css
+background: var(--color-ink);
+color: var(--color-paper);
+border-radius: 4px;
+padding: 13px 24px;
+font: 600 15px "Inter";
+border: none;
+box-shadow: var(--shadow-card);
+transition:
+  transform 0.15s ease,
+  box-shadow 0.15s ease;
+
+/* Hover */
 transform: translateY(-1px);
-box-shadow: 0 0 32px #2563eb50, 0 8px 24px #00000040;
+box-shadow: var(--shadow-card-hover);
 ```
 
-**Ghost / Secondary:**
+**Secondary / Ghost:**
+
 ```css
 background: transparent;
-border: 1px solid var(--color-border);
-color: var(--color-text-secondary);
-border-radius: 8px;
-padding: 12px 22px;
+border: 1.5px solid var(--color-line-strong);
+color: var(--color-ink);
+border-radius: 4px;
+padding: 11.5px 22px;
 
-/* Hover: */
-border-color: var(--color-primary);
-color: var(--color-text-primary);
+/* Hover */
+border-color: var(--color-ink);
+background: var(--color-paper-dim);
 ```
 
-**Text Link:**
-```css
-color: var(--color-primary-bright);
-text-decoration: none;
-position: relative;
-
-/* Underline slides in on hover — CSS only */
-::after {
-  content: '';
-  position: absolute;
-  bottom: -2px; left: 0;
-  width: 0; height: 1px;
-  background: var(--color-primary-bright);
-  transition: width 0.3s ease;
-}
-:hover::after { width: 100%; }
-```
-
----
-
-### 5.2 Cards
-
-**Standard Card:**
-```css
-background: var(--gradient-card);
-border: 1px solid var(--color-border);
-border-radius: 14px;
-padding: 28px;
-position: relative;
-overflow: hidden;
-transition: border-color 0.3s ease, transform 0.3s ease;
-
-/* Top edge light line — signature Appriyo detail */
-::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 10%; right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #2563eb60, transparent);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-/* Hover: */
-border-color: #2563eb50;
-transform: translateY(-3px);
-::before { opacity: 1; }
-```
-
-**Feature / Hero Card:**
-- Larger padding: `36px 40px`
-- Optional: faint dot-grid pattern background (`background-image: radial-gradient`)
-- Icon: 40×40px, outlined, primary-colored
-- Stat number: Display font, large, glowing
-
----
-
-### 5.3 The Dot Grid Texture
-
-This is Appriyo's signature background texture — subtle, technical, alive.
+**Text Link:** underline always visible (not hover-only) at low opacity,
+solidifies on hover — reads as "this is clickable" instantly to
+non-technical visitors, who don't always hunt for hover states.
 
 ```css
-/* Applied to hero and select sections */
-background-image: radial-gradient(
-  circle,
-  #1e3a6e18 1px,
-  transparent 1px
-);
-background-size: 28px 28px;
-```
-
-Layered under the main content. Creates **depth without noise**.
-
----
-
-### 5.4 The Edge Line
-
-Every section break has a 1px glowing line:
-
-```css
-.section-edge {
-  width: 100%;
-  height: 1px;
-  background: var(--gradient-section-edge);
-  margin-bottom: var(--space-9);
+color: var(--color-ink);
+text-decoration: underline;
+text-decoration-color: var(--color-line-strong);
+text-underline-offset: 3px;
+transition: text-decoration-color 0.2s ease;
+:hover {
+  text-decoration-color: var(--color-ink);
 }
 ```
 
-This creates a **circuit board aesthetic** — sections feel connected and ordered.
-
----
-
-### 5.5 Icons
-
-- Library: **Phosphor Icons** (outline style, consistent stroke)
-- Size: 20–24px in cards, 32–40px in feature sections
-- Color: `var(--color-primary-bright)` default; `var(--color-signal)` for AI features
-- Never: Colored icon backgrounds unless it's a hero feature card
-
----
-
-### 5.6 Data / Stats Display
-
-When showing numbers that prove value:
+### 7.2 Stat / Proof Display
 
 ```css
 .stat-number {
-  font-family: 'Syne';
-  font-size: clamp(40px, 5vw, 64px);
-  font-weight: 800;
-  color: var(--color-text-primary);
-  text-shadow: var(--glow-text);
-  letter-spacing: -0.03em;
+  font-family: "Bitter";
+  font-weight: 900;
+  font-size: clamp(32px, 4vw, 48px);
+  color: var(--color-ink);
 }
-
 .stat-label {
-  font-family: 'JetBrains Mono';
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
+  font-family: "IBM Plex Mono";
+  font-size: 12px;
+  color: var(--color-ink-muted);
   margin-top: 4px;
 }
+/* A stamp badge sits beside verified stats — see 6.1 */
 ```
 
----
+### 7.3 Icons
 
-# 6. ✨ MOTION SYSTEM
-
-### 6.1 Motion Philosophy
-
-> Motion is **information design**. It shows relationships, reveals structure, and confirms actions.
-
-Every animation has a reason. If you cannot explain why it moves — remove it.
+- Library: **Phosphor Icons**, `duotone` or `regular` weight (not thin outline —
+  thin lines read as "delicate SaaS," we want something a bit sturdier)
+- Size: 20–24px inline, 32px in feature moments
+- Color: `--color-ink` default. Never colored icon backgrounds/badges.
 
 ---
 
-### 6.2 Timing Tokens
+# 8. MOTION SYSTEM
+
+### 8.1 Philosophy
+
+Motion here does less than v2.0, on purpose. A shop owner on a three-year-old
+Android phone should never wait on an animation, and restraint itself signals
+"we don't need tricks to make our case."
 
 ```css
---duration-instant:  80ms;   /* State changes (toggle, check) */
---duration-fast:     160ms;  /* Hover, micro interactions */
---duration-normal:   280ms;  /* Card reveals, button states */
---duration-slow:     480ms;  /* Section entries */
---duration-dramatic: 700ms;  /* Hero entrance only */
-
+--duration-fast: 150ms;
+--duration-normal: 220ms;
+--duration-slow: 360ms; /* section reveals only */
 --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
---ease-enter:    cubic-bezier(0, 0, 0.2, 1);
---ease-exit:     cubic-bezier(0.4, 0, 1, 1);
---ease-spring:   cubic-bezier(0.34, 1.56, 0.64, 1); /* Slight overshoot */
 ```
 
----
+### 8.2 What Moves
 
-### 6.3 Scroll-Triggered Entries
+- Scroll reveal: simple fade + 12px rise, `--duration-slow`, staggered 50ms
+  per item in a grid — no more than 4 items staggered before falling back to
+  simultaneous (avoid a long cascade that reads as show-off)
+- Button/card hover: as specified in Section 7
+- **No** hero choreography sequence, no cursor-follow glow, no auto-playing
+  anything
 
-Elements enter as they scroll into view:
+### 8.3 Forbidden Motion (kept from v2.0, extended)
 
-```css
-/* Initial state (set via JS IntersectionObserver) */
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity var(--duration-slow) var(--ease-enter),
-              transform var(--duration-slow) var(--ease-enter);
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-```
-
-**Stagger:** Cards in a grid get `transition-delay` increments of `60ms`.
-This creates a **cascade effect** — the grid assembles before your eyes.
-
----
-
-### 6.4 Hero Entrance Sequence
-
-The hero section runs a **choreographed entrance**:
-
-```
-0ms    → Label fades in (opacity 0→1, translateY 10px→0)
-120ms  → Headline word 1
-200ms  → Headline word 2
-280ms  → Subheadline
-420ms  → CTA buttons
-600ms  → Hero visual / artifact
-800ms  → Background dot-grid fades in
-```
-
-One sequence. One moment. Maximum impact.
-
----
-
-### 6.5 Hover States — The Appriyo Signature
-
-**Card hover:** `translateY(-3px)` + border glow + top edge line reveals
-**Button hover:** `translateY(-1px)` + glow intensifies
-**Nav link hover:** Color shift + sliding underline
-**Stat hover:** Number glows brighter
-
-All transitions: `var(--duration-normal)` with `var(--ease-standard)`
-
----
-
-### 6.6 The Cursor Pulse (Optional Enhancement)
-
-For the hero section, a subtle glowing ring follows the cursor:
-
-```css
-.cursor-glow {
-  width: 300px; height: 300px;
-  background: radial-gradient(circle, #2563eb08 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  position: fixed;
-  transform: translate(-50%, -50%);
-  transition: top 0.1s, left 0.1s;
-  z-index: 0;
-}
-```
-
-This makes the **page feel alive** — it responds to presence.
-
----
-
-### 6.7 Forbidden Motion
-
-❌ Parallax scrolling (performance + distraction)
+❌ Parallax scrolling
 ❌ Auto-playing carousels
-❌ Spin/bounce animations on content elements
-❌ Transitions longer than `700ms` (except page load)
-❌ Animation that repeats without user trigger
-❌ Hover effects on mobile (use `:focus-visible` instead)
+❌ Any glow/light-pulse animation
+❌ Anything that delays reading the headline by more than ~300ms
+❌ Motion on mobile beyond simple opacity fades (respect `prefers-reduced-motion`)
 
 ---
 
-# 7. 🌐 PAGE STRUCTURE
+# 9. PAGE STRUCTURE & SECTION INTENT
 
-### 7.1 Section Map & Design Intent
+| Section          | Approach                                                                                                       | Feel                   |
+| ---------------- | -------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| **Nav**          | Paper background, thin bottom rule, logo + plain-language links                                                | Steady                 |
+| **Hero**         | Plain headline in owner's own words + one real product screenshot in a receipt-card, not an abstract graphic   | Immediately clear      |
+| **Problem**      | One direct question about their actual daily friction (notebook, missed follow-ups)                            | Recognizable           |
+| **Services**     | Ledger-card grid, plain descriptions, no jargon                                                                | Straightforward        |
+| **Products**     | Full case-style section per product, real screenshots, receipt-card treatment                                  | Substantive, provable  |
+| **Why Appriyo**  | Verified-stamp stats (real numbers only — no invented "99.9% uptime") + team photos/names, not anonymous icons | Personally accountable |
+| **Process**      | Numbered ledger steps (numbering justified — it's a real sequence)                                             | Transparent            |
+| **Testimonials** | Receipt-card quotes, full name + business name + stamp if verifiable                                           | Credible               |
+| **Contact**      | One plain line, minimal form, direct email/phone visible without a form at all                                 | Frictionless           |
+| **Footer**       | Plain, mono meta text, real address/hours                                                                      | Grounded               |
 
-| Section | Design Approach | Feel |
-|---------|----------------|------|
-| **Nav** | Blurred backdrop, edge-bottom line, logo + links + CTA | Precise |
-| **Hero** | Full viewport, dot grid, asymmetric layout, large headline | Striking |
-| **Problem Statement** | Dark panel, single bold question, minimal | Provocative |
-| **Services** | Offset 2-col grid, icon cards with top-edge glow | Structured |
-| **Solutions** | Problem → Arrow → Outcome, horizontal flow cards | Clear |
-| **Why Appriyo** | Large stat numbers left, text right, thin dividers | Confident |
-| **Products** | Full-width dark card, product name large, use-case list | Substantive |
-| **Testimonials** | Minimal quote cards, no stars (we're not a consumer app) | Credible |
-| **Contact** | Dark, minimal, one strong line + form | Frictionless |
-| **Footer** | Simple, no clutter, mono text, subtle links | Clean |
+### 9.1 Hero Blueprint
+
+```
+[very faint radial vignette behind headline only — no dot grid]
+[LEDGER LABEL]  "// what we do"
+[H1]  Plain sentence in the client's language:
+      "We build the system that replaces your notebook."
+[SUBTEXT]  One sentence, concrete, no buzzwords
+[BUTTONS]  Primary ("See our work") + Secondary ("Talk to us")
+[RECEIPT-CARD VISUAL]  An actual screenshot of Amar Repair or Amar Batch,
+                        framed in a receipt-card, right-aligned or below on
+                        mobile — real product, not a mockup of a fake one
+```
 
 ---
 
-### 7.2 Navigation
-
-```
-[LOGO]                    [Links]             [CTA Button]
-Appriyo                   Services  Products   Get Started →
-                          Solutions  About
-```
+# 10. RESPONSIVENESS
 
 ```css
-.nav {
-  position: fixed; top: 0; width: 100%;
-  backdrop-filter: blur(16px) saturate(180%);
-  background: #0b0f1a90;
-  border-bottom: 1px solid var(--color-border);
-  z-index: 100;
-}
+--bp-sm: 640px --bp-md: 768px --bp-lg: 1024px --bp-xl: 1280px;
 ```
 
-On scroll: `border-bottom` transitions to glow variant.
+- Hero stacks vertically; the real product screenshot moves below the fold text, never removed (it's the proof, don't cut it on mobile)
+- Ledger-numbered sections collapse to single column, numbering stays (it's information, not decoration)
+- Touch targets ≥ 44×44px, body text never below 16px, inputs never below 16px (prevents iOS zoom)
+- No horizontal scroll, no hover-dependent information anywhere
 
 ---
 
-### 7.3 Hero Section Blueprint
+# 11. PERFORMANCE STANDARDS
 
-```
-[dot grid bg]
-[cursor glow]
-[hero content]
-  ├── [LABEL] ── "// software solutions" in mono cyan
-  ├── [H1] ── "We Build Software
-               That Solves Real Problems"
-  ├── [SUBTEXT] ── 1–2 lines, muted, max 60 chars
-  ├── [BUTTONS] ── Primary + Ghost
-  └── [VISUAL] ── Abstract circuit / dashboard preview / code artifact
-                  (right-side, 40% width, subtle animation)
-```
+| Metric                 | Target                                                                           |
+| ---------------------- | -------------------------------------------------------------------------------- |
+| Lighthouse Performance | ≥ 90                                                                             |
+| LCP                    | ≤ 2.5s                                                                           |
+| CLS                    | ≤ 0.1                                                                            |
+| Image size             | ≤ 150KB (WebP/AVIF), real screenshots compressed carefully so text stays legible |
+| Fonts                  | Preconnect, `display=swap`, only 3 families total                                |
+| Animation              | `transform`/`opacity` only, GPU-composited                                       |
 
-The visual is **not a hero image**. It's a **live UI artifact** — a dark panel showing a component preview, animated stats, or a minimal dashboard mockup. This signals: *we build actual products.*
-
----
-
-# 8. 📱 RESPONSIVENESS
-
-### 8.1 Breakpoints
-
-```css
---bp-sm:  640px;
---bp-md:  768px;
---bp-lg:  1024px;
---bp-xl:  1280px;
-```
-
-### 8.2 Mobile Adaptations
-
-- Hero: Stacks vertically; visual artifact hidden below fold or replaced with stat grid
-- Asymmetric layouts: Collapse to single column
-- Dot grid: Reduce opacity (20% → 10%) for performance
-- Glow effects: Reduce intensity by 50% (less powerful on mobile displays)
-- Cursor glow: Disabled entirely
-- Section gap: `clamp(60px, 10vw, 120px)`
-
-### 8.3 Mobile-First Rules
-
-- Build mobile → scale up
-- No horizontal scroll
-- Touch targets minimum 44×44px
-- `font-size` minimum `16px` for inputs (prevents iOS zoom)
+This matters more than usual here: a meaningful share of real visitors will
+be on mid-range phones over average mobile data in Bangladesh, not fast
+office wifi. A slow site directly contradicts "we're the reliable, careful
+option."
 
 ---
 
-# 9. 📐 VISUAL IDENTITY ELEMENTS
+# 12. THEME SYSTEM
 
-### 9.1 The Appriyo Mark
-
-The logo should feel: **geometric, grid-aligned, modern.**
-
-In dark mode: White wordmark + primary blue symbol
-In light mode: Dark wordmark + primary blue symbol
-Never: Colorful logos, drop shadows, outlines on symbol
+**Default: Light (paper).** This is the primary and only fully-designed
+experience — unlike v2.0, we are not building a dark mode as a co-equal
+theme, because the paper metaphor is the point. If a dark mode is wanted
+later for the products themselves (Amar Repair/Amar Batch dashboards), that
+is a separate, product-specific decision — not the marketing site.
 
 ---
 
-### 9.2 Signature Visual Language
-
-These elements define Appriyo's visual fingerprint:
-
-| Element | Description |
-|---------|-------------|
-| **Dot Grid** | Subtle repeating grid on hero/dark sections |
-| **Top Edge Line** | 1px gradient glow on card tops |
-| **Mono Labels** | Small caps, cyan, above every heading |
-| **Stat Numbers** | Syne 800, large, with text-glow |
-| **Circuit Lines** | Thin SVG lines connecting sections (decorative, optional) |
-| **Section Edge** | Gradient glowing 1px dividers between sections |
-
-These are the **recurring motifs** that make the site feel **designed**, not assembled.
-
----
-
-### 9.3 Illustration / Visuals Approach
-
-No stock photos. No people photos. No abstract blobs.
-
-✅ Use:
-- **UI mockups** — real interface previews
-- **Data visualizations** — simple charts in brand colors
-- **Abstract geometric** — circuit-like, grid-aligned SVGs
-- **Terminal / code snippets** — styled in JetBrains Mono
-- **Icon compositions** — arranged to tell a story
-
-All visuals should feel like they came from **inside the product**, not from a stock library.
-
----
-
-# 10. 🎭 SECTION-BY-SECTION DESIGN NOTES
-
-### Hero
-- **Emotion target:** "I trust this company immediately"
-- Background: Dot grid + radial blue glow from top
-- Headline: Syne 800, `clamp(52px, 7vw, 88px)`, near-white
-- One strong subline: What Appriyo actually does
-- Right artifact: Dark panel UI mockup (subtle float animation)
-
-### Problem Statement
-- **Emotion target:** "They understand my pain"
-- Full-width dark panel (`--color-void`)
-- Single large question: `"Still patching broken tools instead of building?"` — Syne, 40px+
-- No icons. No bullets. Just the question and a breath of space.
-
-### Services
-- **Emotion target:** "They cover everything I need"
-- Grid of 4–6 cards
-- Each card: Icon + Service name + 1-line description
-- Cards stagger-animate in on scroll
-
-### Why Appriyo
-- **Emotion target:** "These numbers prove it"
-- 3 large stats on left (clients, delivery rate, years)
-- Short proof paragraph on right
-- Thin vertical divider between columns
-
-### Products / Solutions
-- **Emotion target:** "This is built for real use"
-- Product name large (Syne)
-- Real use-case listed as mono-text bullet points
-- Dark card with signal-color accent
-
-### Contact
-- **Emotion target:** "This is easy and safe"
-- One line: `"Let's talk about what you're building"`
-- Minimal form: Name, Email, Message
-- Primary CTA button with glow
-- No excess fields
-
----
-
-# 11. ⚡ PERFORMANCE STANDARDS
-
-| Metric | Target |
-|--------|--------|
-| Lighthouse Performance | ≥ 90 |
-| LCP (Largest Contentful Paint) | ≤ 2.5s |
-| CLS (Cumulative Layout Shift) | ≤ 0.1 |
-| FID / INP | ≤ 200ms |
-| Image size | ≤ 150KB (WebP/AVIF) |
-| Font load | Preconnect + `display=swap` |
-| Animation | GPU-composited (`transform`, `opacity`) only |
-
-**Rules:**
-- All images: lazy-loaded, WebP format, `srcset` for responsive
-- No CSS libraries beyond what's needed
-- Animations: use `transform` and `opacity` ONLY (GPU-composited)
-- No layout-triggering properties in animation (`width`, `height`, `top`, `left`)
-
----
-
-# 12. 🌗 THEME SYSTEM
-
-### Default: Dark
-
-This is Appriyo's primary and canonical experience.
-
-### Light Mode (Supported)
-
-```css
-[data-theme="light"] {
-  --color-bg:              #f8fafc;
-  --color-surface:         #ffffff;
-  --color-surface-2:       #f1f5f9;
-  --color-border:          #e2e8f0;
-  --color-text-primary:    #0f172a;
-  --color-text-secondary:  #475569;
-  --color-text-muted:      #94a3b8;
-
-  /* Glows become shadows in light mode */
-  --glow-primary: 0 4px 20px #2563eb25;
-  --glow-signal:  0 4px 16px #06b6d420;
-}
-```
-
-In light mode: dot grid is faint grey, no cyan glows, cards use soft drop shadows.
-
----
-
-# 13. ✅ DESIGN QA CHECKLIST
-
-Before any page ships, verify:
+# 13. DESIGN QA CHECKLIST
 
 **Identity**
-- [ ] Feels unmistakably Appriyo (not a template)
-- [ ] Dark with precise accents (not randomly colorful)
-- [ ] Every section has mono label + Syne heading
+
+- [ ] Could not be mistaken for a dark SaaS template or a cream/terracotta AI-default template
+- [ ] Every stamp is next to a genuinely checkable claim
+- [ ] Ledger numbering only appears where content is a real sequence
 
 **Clarity**
-- [ ] Hero message passes 3-second test
-- [ ] No section requires re-reading to understand
 
-**Motion**
-- [ ] All animations serve content
-- [ ] No animation exceeds 700ms
-- [ ] Scroll reveals are staggered, not simultaneous
+- [ ] A non-technical reader understands each section without re-reading
+- [ ] No section requires IT vocabulary to follow the main point
 
-**Performance**
-- [ ] No images > 150KB
-- [ ] Animations use only `transform` / `opacity`
-- [ ] Fonts are preloaded
+**Evidence**
 
-**Responsiveness**
-- [ ] Mobile layout tested at 375px
-- [ ] No horizontal scroll
-- [ ] Touch targets ≥ 44px
+- [ ] Every stat is real — no invented percentages
+- [ ] At least one real product screenshot appears above the fold
+
+**Motion & Performance**
+
+- [ ] No animation delays the headline
+- [ ] Works cleanly on a mid-range Android phone on 3G/4G
 
 **Consistency**
-- [ ] Spacing uses only scale tokens
-- [ ] Colors use only CSS variables (no hardcoded hex in components)
-- [ ] Border radius: 8px (buttons), 12–14px (cards), never random
+
+- [ ] Colors only from tokens above — no hardcoded hex in components
+- [ ] Only 3 typefaces, used per their assigned roles
 
 ---
 
 # 🔚 FINAL STATEMENT
 
-> Appriyo's design is not decoration.
-> It is not trend-following.
-> It is not safe.
+> Appriyo's design isn't trying to look like a funded startup.
+> It's trying to look like the team that will still answer the phone
+> in three years.
 >
-> It is **structured energy** — a system that feels alive inside strict order.
-> It makes clients feel that they have found something
-> precise, trustworthy, and genuinely capable.
->
-> Every pixel, every millisecond of animation, every word of copy
-> answers the same question: *"Why Appriyo?"*
->
-> The design should answer it before the visitor even reads the headline.
+> Paper, made precise. That's the whole idea — and it's the one thing
+> a template can't accidentally produce, because it comes from actually
+> knowing who you're building for.
 
 ---
 
-*Appriyo Design System v2.0 — "Precision That Moves"*
+_Appriyo Design System v3.0 — "The Ledger System"_
