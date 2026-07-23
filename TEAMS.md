@@ -9,7 +9,7 @@ Appriyo operates with a lean, focused team — each member owning a clear domain
 ## Our Working Principles
 
 | Principle                    | What It Means in Practice                                                         |
-|------------------------------|-----------------------------------------------------------------------------------|
+| ---------------------------- | --------------------------------------------------------------------------------- |
 | **Direct Collaboration**     | You speak directly with the engineers and leads building your system              |
 | **Clear Communication**      | Honest updates on progress, risks, and decisions — no fluff                       |
 | **Maintainable Systems**     | We build clean architecture that is easy to extend, support, and evolve over time |
@@ -33,12 +33,14 @@ With a background in Android systems and full-stack development, Shahajalal focu
 **Specialties:** Android Systems · Full-Stack Architecture · System Design · Production Engineering
 
 **Tech Stack:**
+
 - Kotlin & Jetpack Compose (Android)
 - React (Frontend)
 - Firebase (Backend & Real-time Systems)
 - Node.js
 
 **Responsibilities:**
+
 - End-to-end technical architecture and delivery
 - Technical decision-making and direction
 - Code review and merge authority
@@ -60,12 +62,14 @@ Preota specializes in long-term frontend maintainability, building design system
 **Specialties:** Scalable Web Architectures · Design Systems · Component-Driven UI · Accessibility
 
 **Tech Stack:**
+
 - React & TypeScript
 - Tailwind CSS & DaisyUI
 - Figma (Design Collaboration)
 - Responsive & Accessible UI Patterns
 
 **Responsibilities:**
+
 - UI/UX design and implementation
 - Frontend architecture and component library
 - Design system creation and maintenance
@@ -82,17 +86,19 @@ Munna ensures that what Appriyo ships actually works — in real environments, n
 
 With hands-on experience in both Android development and modern frontend interfaces, Munna contributes across the stack while maintaining ownership of quality and testing standards.
 
-> *"Build practical solutions that work reliably in real environments, not just in theory."*
+> _"Build practical solutions that work reliably in real environments, not just in theory."_
 
 **Specialties:** Software Testing · Frontend Development · Android Application Development · QA Strategy
 
 **Tech Stack:**
+
 - Kotlin & Jetpack Compose (Android)
 - JavaScript & React (Frontend)
 - Manual & Structured Testing Workflows
 - Version Control (Git/GitHub)
 
 **Responsibilities:**
+
 - Quality assurance strategy and execution
 - Frontend validation and UI consistency checks
 - Bug identification, documentation, and verification
@@ -109,16 +115,18 @@ Mim manages Appriyo's external presence — how the company communicates, what i
 
 She believes that great digital products are built when design, communication, and technology work together with shared purpose and clarity.
 
-> *"Strong digital products are created when design, communication, and technology work together with clarity and purpose."*
+> _"Strong digital products are created when design, communication, and technology work together with clarity and purpose."_
 
 **Specialties:** Brand Communication · Content Strategy · Visual Storytelling · Social Media Management · UI Support
 
 **Tech Stack:**
+
 - Canva & CapCut (Visual Content Creation)
 - HTML & CSS (Frontend Support)
 - Flutter & Dart (Mobile UI Contribution)
 
 **Responsibilities:**
+
 - Social media strategy and management
 - Brand communication and tone of voice
 - Visual content creation and asset management
@@ -130,7 +138,7 @@ She believes that great digital products are built when design, communication, a
 ## How to Reach Us
 
 | Purpose                               | Contact                                                            |
-|---------------------------------------|--------------------------------------------------------------------|
+| ------------------------------------- | ------------------------------------------------------------------ |
 | **General Inquiries & Consultations** | contact@appriyo.com                                                |
 | **Technical Support**                 | contact@appriyo.com — available Sunday–Thursday, 9 AM–6 PM (GMT+6) |
 | **Security Vulnerability Reports**    | security@appriyo.com — or follow [SECURITY.md](SECURITY.md)        |
@@ -142,4 +150,4 @@ She believes that great digital products are built when design, communication, a
 
 ---
 
-*© 2026 Appriyo Technologies. All rights reserved.*
+_© 2026 Appriyo Technologies. All rights reserved._
