@@ -92,3 +92,33 @@
     margin: 0;
   }
 }
+
+@layer components {
+  /* DESIGN.md §6.2 — receipt-edge card with perforated top edge.
+     Perforation uses only the paper token so it sits "through" the card
+     against the page background. RESERVED for cards showing real evidence
+     (screenshots, testimonials, stats). Generic content uses LedgerCard. */
+  .receipt-card {
+    position: relative;
+    background: var(--color-paper-card);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: 28px;
+  }
+  .receipt-card::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background-image: radial-gradient(
+      circle,
+      var(--color-paper) 2px,
+      transparent 2.2px
+    );
+    background-size: 14px 14px;
+    background-position: 0 -4px;
+  }
+}
