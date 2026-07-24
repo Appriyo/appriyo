@@ -1,6 +1,6 @@
 // src/router/AppRouter.jsx
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MainLayout from "../layouts/MainLayout";
+import Layout from "../layout/Layout";
 
 // Pages
 import Home         from "../pages/Home";
@@ -32,7 +32,7 @@ export default function AppRouter() {
         {/* DEV-ONLY — remove this <Route> before Phase 8 launch */}
         <Route path="/dev/components" element={<ComponentsShowcase />} />
 
-        <Route element={<MainLayout />}>
+        <Route element={<Layout />}>
           <Route path="/"                       element={<Home />}       />
           <Route path="/services"               element={<Services />}   />
           <Route path="/solutions"              element={<Solutions />}  />
