@@ -1,6 +1,0 @@
-@import "tailwindcss";
-
-/* DaisyUI theme configuration */
-@plugin "daisyui" {
-  themes: light --default, dark --prefersdark;
-}

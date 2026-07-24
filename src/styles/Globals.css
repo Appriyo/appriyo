@@ -1,42 +1,94 @@
-/* src/styles/globals.css */
+/* src/styles/globals.css — Appriyo design system foundation (v3.0 Ledger System) */
 @import "tailwindcss";
 
-:root {
-  --color-primary:         #2563eb;
-  --color-primary-dark:    #1e40af;
-  --color-primary-light:   #3b82f6;
-  --color-accent:          #7c3aed;
-  --color-accent-light:    #a78bfa;
-  --color-bg:              #0b0f19;
-  --color-surface:         #111827;
-  --color-border:          #1f2937;
-  --color-text-primary:    #f9fafb;
-  --color-text-secondary:  #9ca3af;
-  --color-text-muted:      #6b7280;
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --site-max-width: 1200px;
-  --site-padding: clamp(16px, 4vw, 24px);
+@theme {
+  /* === PAPER (Backgrounds) === */
+  --color-paper: #F7F5F0;
+  --color-paper-dim: #EFEBE1;
+  --color-paper-card: #FFFFFF;
+
+  /* === LINES === */
+  --color-line: #DAD3C2;
+  --color-line-strong: #B8AF98;
+
+  /* === INK (Text & primary brand) === */
+  --color-ink: #1B2A3A;
+  --color-ink-soft: #4C5C6E;
+  --color-ink-muted: #7C8896;
+  --color-ink-on-dark: #F7F5F0;
+
+  /* === STAMP (verification accent) === */
+  --color-stamp: #A6392B;
+  --color-stamp-soft: #A6392B14;
+
+  /* === LEDGER GREEN (confirmed states) === */
+  --color-ledger: #3F6B4F;
+  --color-ledger-soft: #3F6B4F14;
+
+  /* === BRASS === */
+  --color-brass: #A9812E;
+
+  /* === UTILITY === */
+  --color-warning: #B5651D;
+  --color-error: #A6392B;
+
+  /* === FONTS === */
+  --font-display: "Bitter", serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  /* === TYPE SCALE (custom) === */
+  --text-display-xl: clamp(40px, 6vw, 68px);
+  --text-display-xl--line-height: 1.1;
+  --text-display-xl--letter-spacing: -0.01em;
+  --text-display-lg: clamp(32px, 4vw, 48px);
+  --text-display-lg--line-height: 1.1;
+  --text-display-lg--letter-spacing: -0.01em;
+
+  /* === SHADOWS === */
+  --shadow-card: 0 1px 2px rgba(27, 42, 58, 0.04), 0 4px 12px rgba(27, 42, 58, 0.06);
+  --shadow-card-hover: 0 2px 4px rgba(27, 42, 58, 0.06), 0 12px 28px rgba(27, 42, 58, 0.09);
+  --shadow-stamp: 0 1px 1px rgba(166, 57, 43, 0.19);
+
+  /* === RADIUS === */
+  --radius-card: 4px;
+  --radius-card-lg: 6px;
+
+  /* === SPACING (only 128 not in default Tailwind scale) === */
+  --spacing-128: 128px;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-html {
-  background-color: var(--color-bg);
-  color: var(--color-text-primary);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  scroll-behavior: smooth;
-}
+  html {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
 
-body { min-height: 100vh; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--color-ink-soft);
+  }
 
-.site-container {
-  width: 100%;
-  max-width: var(--site-max-width);
-  margin-inline: auto;
-  padding-inline: var(--site-padding);
-}
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: var(--font-display);
+    color: var(--color-ink);
+  }
 
-.section-spacing {
-  padding-block: clamp(64px, 8vw, 120px);
+  p {
+    margin: 0;
+  }
 }
