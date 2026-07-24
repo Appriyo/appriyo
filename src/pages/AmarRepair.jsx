@@ -1,36 +1,23 @@
-// pages/AmarRepair.jsx
-import ProductHero from "../sections/products/ProductHero";
-import ProductProblem from "../sections/product-detail/ProductProblem";
-import ProductFeatures from "../sections/product-detail/ProductFeatures";
-import { ProductAudience, ProductCTA } from "../sections/product-detail/ProductAudience";
+// src/pages/AmarRepair.jsx — Amar Repair product detail page.
+//
+// Thin wrapper around ProductPageTemplate. The data lives in
+// src/data/products.js; this file only wires meta tags and looks
+// up the entry by slug.
+import { getProductBySlug } from "../data/products";
+import ProductPageTemplate from "../components/ProductPageTemplate";
+import usePageMeta from "../hooks/usePageMeta";
+
+const product = getProductBySlug("amar-repair");
 
 export default function AmarRepair() {
-  return (
-    <>
-      <ProductHero
-        label="Amar Repair"
-        headline="The Repair Shop System You've Been Running Manually"
-        description="Job status on paper. Customer names on WhatsApp. Payments in a notebook. Amar Repair replaces all of that with one simple system."
-      />
-      <ProductProblem
-        items={[
-          "Customer calls asking for an update — you check three places to answer",
-          "A job gets lost or forgotten between technicians",
-          "No way to see all pending repairs at a glance",
-        ]}
-      />
-      <ProductFeatures
-        features={[
-          { feature: "Job Intake", description: "Log every repair — device, issue, customer, technician" },
-          { feature: "Status Tracking", description: "Received → In Progress → Ready → Delivered" },
-          { feature: "Customer Notifications", description: "Automatic WhatsApp/SMS when a job is ready" },
-          { feature: "Payment Management", description: "Record deposits, balances, mark jobs as paid" },
-          { feature: "Customer History", description: "Full service history per customer and device" },
-          { feature: "Dashboard", description: "See every open job at a glance" },
-        ]}
-      />
-      <ProductAudience text="Amar Repair is built for mobile repair shops, computer repair centers, appliance repair businesses, and any service center managing physical jobs from intake to delivery." />
-      <ProductCTA heading="Ready to Run Your Shop Without the Chaos?" ctaLabel="Talk to Us About Amar Repair" />
-    </>
-  );
+  usePageMeta({
+    title: "Amar Repair — Repair Store Management System · Appriyo",
+    description: product?.subtext,
+    // PLACEHOLDER — replace before launch. Real OG image mounts in
+    // Phase 5 per docs/Asset_Checklist.md.
+    ogImage: "/img/og-amar-repair.png",
+  });
+
+  if (!product) return null;
+  return <ProductPageTemplate product={product} />;
 }
