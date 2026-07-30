@@ -1,0 +1,262 @@
+[
+  {
+    "vp": "desktop",
+    "route": "/",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "desktop",
+    "route": "/services",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "desktop",
+    "route": "/solutions",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "desktop",
+    "route": "/products",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "desktop",
+    "route": "/products/amar-repair",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Amar Repair — Repair Store Management System · Appriyo"
+  },
+  {
+    "vp": "desktop",
+    "route": "/products/amar-batch",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Amar Batch — Teacher & Batch Management System · Appriyo"
+  },
+  {
+    "vp": "desktop",
+    "route": "/products/amar-card",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "desktop",
+    "route": "/about",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "desktop",
+    "route": "/contact",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "desktop",
+    "route": "/privacy",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "desktop",
+    "route": "/terms",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "desktop",
+    "route": "/security",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "desktop",
+    "route": "/dev/components",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "mobile",
+    "route": "/",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "mobile",
+    "route": "/services",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "mobile",
+    "route": "/solutions",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "mobile",
+    "route": "/products",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "mobile",
+    "route": "/products/amar-repair",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Amar Repair — Repair Store Management System · Appriyo"
+  },
+  {
+    "vp": "mobile",
+    "route": "/products/amar-batch",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Amar Batch — Teacher & Batch Management System · Appriyo"
+  },
+  {
+    "vp": "mobile",
+    "route": "/products/amar-card",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "mobile",
+    "route": "/about",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "mobile",
+    "route": "/contact",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "mobile",
+    "route": "/privacy",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "mobile",
+    "route": "/terms",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "mobile",
+    "route": "/security",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  },
+  {
+    "vp": "mobile",
+    "route": "/dev/components",
+    "http": 200,
+    "h1": 1,
+    "expectedH1": 1,
+    "consoleErrors": [],
+    "failedReqs": [],
+    "title": "Appriyo"
+  }
+]

@@ -17,21 +17,13 @@ import Terms        from "../pages/Terms";
 import Security     from "../pages/Security";
 import NotFound     from "../pages/NotFound";
 
-// DEV-ONLY — /dev/components visual review page for Phase 1 primitives.
-// DELETE this import AND the <Route path="/dev/components" ...> below
-// before Phase 8 launch (see docs/Component_Inventory.md "Dev-Only
-// Scaffold (deleted before launch)"). The route is intentionally outside
-// <MainLayout> so the dark v2 Navbar/Footer don't render around the
-// paper-themed component review.
-import ComponentsShowcase from "../pages/ComponentsShowcase";
+// DEV-ONLY scaffold removed before launch: src/pages/ComponentsShowcase.jsx
+// was deleted together with its <Route path="/dev/components"> entry.
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* DEV-ONLY — remove this <Route> before Phase 8 launch */}
-        <Route path="/dev/components" element={<ComponentsShowcase />} />
-
         <Route element={<Layout />}>
           <Route path="/"                       element={<Home />}       />
           <Route path="/services"               element={<Services />}   />
