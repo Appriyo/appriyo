@@ -1,17 +1,15 @@
 // src/sections/Products.jsx — CONTENT_STRATEGY.md §3.5
 //
-// IMPORTANT: This section MUST NOT use the Stamp component. The
-// products are real software, but their "live product" status is not
-// confirmed and Asset_Checklist.md requires explicit confirmation
-// before stamping. Phase 5 will revisit.
-//
-// The card frame is a ReceiptCard because it is the evidence motif
-// — the inner rectangle is where the real screenshot will mount in
-// Phase 5. For now the rectangle is a labelled placeholder.
+// ReceiptCard per product. StampStatus renders the status badge
+// ("Live product" / "In development") from the product's `status`
+// field in src/data/homepage.js — see components/StampStatus.jsx for
+// the mapping and the design rule that every Stamp must be next to
+// something genuinely verifiable.
 import { products } from "../data/homepage";
 import SectionHeader from "../components/SectionHeader";
 import ReceiptCard from "../components/ReceiptCard";
 import Button from "../components/Button";
+import StampStatus from "../components/StampStatus";
 
 export default function Products() {
   return (
@@ -22,28 +20,20 @@ export default function Products() {
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
           {products.items.map((p) => (
             <ReceiptCard key={p.name} className="flex flex-col gap-5">
-              {/* PLACEHOLDER — replace before launch.
-                  Real product screenshots will replace this rectangle
-                  in Phase 5 once provided. The on-page label is
-                  intentional so reviewers can see the evidence area
-                  is still empty. */}
-              <div
-                className="bg-paper-dim border border-line rounded-card flex flex-col items-center justify-center text-center aspect-[16/9] w-full"
-                role="img"
-                aria-label={`[PLACEHOLDER — replace before launch] ${p.name} screenshot`}
-              >
-                <span className="font-mono text-xs text-ink-muted tracking-[0.04em]">
-                  [PLACEHOLDER — replace before launch]
-                </span>
-                <span className="font-mono text-xs text-ink-muted tracking-[0.04em] mt-1">
-                  {p.name} screenshot
-                </span>
-              </div>
+              <img
+                src={p.screenshot}
+                alt={`${p.name} dashboard screenshot`}
+                loading="lazy"
+                className="block w-full h-auto aspect-[16/9] object-cover rounded-card border border-line"
+              />
 
               <div className="flex flex-col gap-2">
-                <h3 className="font-display text-xl font-bold text-ink">
-                  {p.name}
-                </h3>
+                <div className="flex items-center gap-3 flex-wrap">
+                  <h3 className="font-display text-xl font-bold text-ink">
+                    {p.name}
+                  </h3>
+                  <StampStatus status={p.status} />
+                </div>
                 <span className="font-mono text-xs text-ink-muted tracking-[0.04em]">
                   {p.tagline}
                 </span>

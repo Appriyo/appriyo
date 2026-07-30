@@ -1,20 +1,15 @@
 // src/sections/Hero.jsx — CONTENT_STRATEGY.md §3.2 + DESIGN.md §9.1
 //
 // Two-column hero. Left = headline + subtext + CTAs. Right = a
-// ReceiptCard frame containing a grey placeholder rectangle for the
-// product screenshot that doesn't exist yet.
-//
-// ReceiptCard is used here on purpose: it is the evidence motif, and
-// when the real screenshot lands in Phase 5 the surrounding frame is
-// already correct — only the inner placeholder needs to be swapped out.
-//
-// PLACEHOLDER — replace before launch: the screenshot rectangle is a
-// labelled stand-in. Do not ship until /img/amar-repair-dashboard.png
-// (or equivalent) is in place per docs/Asset_Checklist.md.
-import { hero } from "../data/homepage";
+// ReceiptCard frame containing the Amar Repair dashboard screenshot.
+// Real product, not a mockup of a fake one (per DESIGN.md §9).
+import { hero, products } from "../data/homepage";
 import Button from "../components/Button";
 import ReceiptCard from "../components/ReceiptCard";
 import LedgerLabel from "../components/LedgerLabel";
+
+// The hero always shows the Amar Repair screenshot — see CONTENT_STRATEGY.md §3.2.
+const heroScreenshot = products.items[0].screenshot;
 
 export default function Hero() {
   return (
@@ -43,27 +38,16 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right column — ReceiptCard + placeholder screenshot (md: 5 cols) */}
+          {/* Right column — ReceiptCard + real product screenshot (md: 5 cols) */}
           <div className="md:col-span-5">
             <ReceiptCard className="p-6 md:p-7">
-              {/* PLACEHOLDER — replace before launch.
-                  Real screenshot will replace this rectangle once
-                  /img/amar-repair-dashboard.png (or equivalent) is
-                  provided. Do NOT remove the visible label — it's
-                  there so reviewers can see at a glance that the
-                  evidence area is still empty. */}
-              <div
-                className="bg-paper-dim border border-line rounded-card flex flex-col items-center justify-center text-center aspect-[4/3] w-full"
-                role="img"
-                aria-label="[PLACEHOLDER — replace before launch] Product screenshot"
-              >
-                <span className="font-mono text-xs text-ink-muted tracking-[0.04em]">
-                  [PLACEHOLDER — replace before launch]
-                </span>
-                <span className="font-mono text-xs text-ink-muted tracking-[0.04em] mt-1">
-                  product screenshot
-                </span>
-              </div>
+              <img
+                src={heroScreenshot}
+                alt="Amar Repair dashboard"
+                loading="eager"
+                fetchpriority="high"
+                className="block w-full h-auto rounded-card"
+              />
             </ReceiptCard>
           </div>
         </div>

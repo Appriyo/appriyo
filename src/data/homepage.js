@@ -62,6 +62,9 @@ export const products = {
       body:
         "Tracks every repair job from drop-off to pickup, so nothing gets lost and no customer is left wondering where their device is.",
       cta: { label: "See Amar Repair", href: "/products/amar-repair" },
+      // WebP placeholder until the real screenshot is provided.
+      screenshot: "/img/screenshots/amar-repair-dashboard.webp",
+      status: "live",
     },
     {
       name: "Amar Batch",
@@ -69,6 +72,9 @@ export const products = {
       body:
         "Manages student batches, attendance, and payments in one place, built for how coaching centers in Bangladesh actually operate.",
       cta: { label: "See Amar Batch", href: "/products/amar-batch" },
+      // WebP placeholder until the real screenshot is provided.
+      screenshot: "/img/screenshots/amar-batch-dashboard.webp",
+      status: "in-development",
     },
   ],
 };

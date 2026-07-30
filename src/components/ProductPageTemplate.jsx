@@ -24,27 +24,6 @@ import SectionHeader from "./SectionHeader";
 import Button from "./Button";
 import StampStatus from "./StampStatus";
 
-function PlaceholderScreenshot({ alt }) {
-  // PLACEHOLDER — replace before launch. Real screenshots mount in
-  // Phase 5 per docs/Asset_Checklist.md. Visible on-page label and
-  // matching code comment so reviewers can see at a glance that the
-  // evidence area is still empty.
-  return (
-    <div
-      className="bg-paper-dim border border-line rounded-card flex flex-col items-center justify-center text-center aspect-[16/9] w-full"
-      role="img"
-      aria-label={alt}
-    >
-      <span className="font-mono text-xs text-ink-muted tracking-[0.04em]">
-        [PLACEHOLDER — replace before launch]
-      </span>
-      <span className="font-mono text-xs text-ink-muted tracking-[0.04em] mt-1">
-        product screenshot
-      </span>
-    </div>
-  );
-}
-
 export default function ProductPageTemplate({ product }) {
   const {
     name,
@@ -91,7 +70,13 @@ export default function ProductPageTemplate({ product }) {
       <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 pb-16 md:pb-20">
           <ReceiptCard className="p-5 md:p-6">
-            <PlaceholderScreenshot alt={`${name} dashboard screenshot placeholder`} />
+            <img
+              src={screenshot}
+              alt={`${name} dashboard screenshot`}
+              loading="eager"
+              fetchpriority="high"
+              className="block w-full h-auto rounded-card"
+            />
           </ReceiptCard>
         </div>
       </section>

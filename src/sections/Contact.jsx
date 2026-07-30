@@ -1,14 +1,24 @@
-// src/sections/Contact.jsx — CONTENT_STRATEGY.md §3.9
+// src/sections/Contact.jsx — CONTENT_STRATEGY.md §3.9 + TECH_SPEC.md §6
 //
-// UI only. The submit handler is a no-op in Phase 3 — Phase 5 will
-// wire it to Formspree / Web3Forms / a real endpoint. The form
-// keeps noValidate so the browser doesn't interfere with the
-// placeholder submit behaviour before that wiring is done.
+// Form submission is wired to Web3Forms (free, no signup limits as
+// strict per TECH_SPEC.md §6). Web3Forms POSTs the form fields straight
+// to their endpoint and forwards them to the email address associated
+// with the access key below — no backend code needed.
+//
+// The access key below is a placeholder for the user to swap in before
+// launch. The endpoint URL is exposed via VITE_WEB3FORMS_ACCESS_KEY so
+// the real key isn't checked into source control if a build env is
+// later preferred. The fallback "or reach us directly" block below
+// keeps the plain-text email visible regardless of form status.
 import { useState } from "react";
 import { contact } from "../data/homepage";
 import SectionHeader from "../components/SectionHeader";
 import LedgerLabel from "../components/LedgerLabel";
 import Button from "../components/Button";
+
+const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
+const WEB3FORMS_ACCESS_KEY =
+  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "WEB3FORMS_ACCESS_KEY";
 
 const fields = [
   { name: "name",     label: "Name",           type: "text",  required: true,  multiline: false },
@@ -18,14 +28,38 @@ const fields = [
 ];
 
 export default function Contact() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+  const [errorMsg, setErrorMsg] = useState("");
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
-    // PLACEHOLDER: wire to Formspree / Web3Forms in Phase 5.
-    // For now just flip the local "submitted" state so the user sees
-    // a confirmation while the real submit handler is missing.
-    setSubmitted(true);
+    setStatus("sending");
+    setErrorMsg("");
+
+    const fd = new FormData(e.currentTarget);
+    fd.append("access_key", WEB3FORMS_ACCESS_KEY);
+    fd.append("subject", "New inquiry from appriyo.com");
+    fd.append("from_name", "Appriyo Website");
+    // Honeypot field — Web3Forms rejects bots that fill it.
+    fd.append("botcheck", "");
+
+    try {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
+        method: "POST",
+        body: fd,
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setStatus("sent");
+        e.currentTarget.reset();
+      } else {
+        setStatus("error");
+        setErrorMsg(data.message || "Something went wrong. Please try again or email us directly.");
+      }
+    } catch (err) {
+      setStatus("error");
+      setErrorMsg("Network error. Please try again or email us directly.");
+    }
   };
 
   return (
@@ -34,7 +68,6 @@ export default function Contact() {
         <SectionHeader heading={contact.heading} subtext={contact.intro} />
 
         <form
-          noValidate
           onSubmit={onSubmit}
           className="mt-12 flex flex-col gap-5"
         >
@@ -49,23 +82,37 @@ export default function Contact() {
                   name={f.name}
                   required={f.required}
                   rows={5}
-                  className="font-body text-base text-ink bg-paper-card border border-line rounded-card px-4 py-3 min-h-[120px] focus-visible:outline-none focus-visible:border-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+                  disabled={status === "sending"}
+                  className="font-body text-base text-ink bg-paper-card border border-line rounded-card px-4 py-3 min-h-[120px] focus-visible:outline-none focus-visible:border-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-paper disabled:opacity-60"
                 />
               ) : (
                 <input
                   type={f.type}
                   name={f.name}
                   required={f.required}
-                  className="font-body text-base text-ink bg-paper-card border border-line rounded-card px-4 py-3 h-[44px] focus-visible:outline-none focus-visible:border-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+                  disabled={status === "sending"}
+                  className="font-body text-base text-ink bg-paper-card border border-line rounded-card px-4 py-3 h-[44px] focus-visible:outline-none focus-visible:border-ink focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-paper disabled:opacity-60"
                 />
               )}
             </label>
           ))}
 
-          <div className="pt-2">
-            <Button type="submit" variant="primary">
-              {submitted ? "Thanks — we'll be in touch." : "Send"}
+          <div className="pt-2 flex flex-wrap items-center gap-4">
+            <Button type="submit" variant="primary" disabled={status === "sending"}>
+              {status === "sending"
+                ? "Sending…"
+                : status === "sent"
+                  ? "Thanks — we'll be in touch."
+                  : "Send"}
             </Button>
+            {status === "error" && (
+              <span
+                role="alert"
+                className="font-mono text-xs text-error tracking-[0.04em]"
+              >
+                {errorMsg}
+              </span>
+            )}
           </div>
         </form>
 

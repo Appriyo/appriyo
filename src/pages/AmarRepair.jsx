@@ -13,9 +13,9 @@ export default function AmarRepair() {
   usePageMeta({
     title: "Amar Repair — Repair Store Management System · Appriyo",
     description: product?.subtext,
-    // PLACEHOLDER — replace before launch. Real OG image mounts in
-    // Phase 5 per docs/Asset_Checklist.md.
-    ogImage: "/img/og-amar-repair.png",
+    // Default OG image until a dedicated one is provided. Hero
+    // screenshot reused for now per Asset_Checklist.md (Nice to Have).
+    ogImage: "/img/screenshots/amar-repair-dashboard.webp",
   });
 
   if (!product) return null;

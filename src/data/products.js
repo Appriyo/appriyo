@@ -3,14 +3,19 @@
 // text at render time so we never accidentally leave a stale claim on
 // the page.
 //
-// Screenhots stay as labelled placeholders until Phase 5 swaps in the
-// real assets (per Asset_Checklist.md).
+// Screenshots are compressed WebP placeholders for now (24 KB each,
+// rendered under public/img/screenshots/). The user said they will
+// swap in the real screenshots later per docs/Asset_Checklist.md.
 //
 // Status values:
 //   "live"             → "Live product"            (renderer maps it)
 //   "in-development"   → "In development"          (renderer maps it)
 // The mapping lives in components/StampStatus.jsx so the words are
 // defined in exactly one place.
+//
+// NOTE: `status` values below are placeholders. Replace with the
+// confirmed real value ("live" or "in-development") for each product
+// before launch per Asset_Checklist.md.
 
 export const products = [
   {
@@ -20,9 +25,7 @@ export const products = [
     status: "live",
     subtext:
       "A repair shop system built for the way repair shops actually run — not the way an enterprise POS assumes you do.",
-    // PLACEHOLDER — replace before launch. Real screenshot will mount
-    // at this path in Phase 5 per docs/Asset_Checklist.md.
-    screenshot: "/img/amar-repair-dashboard.png",
+    screenshot: "/img/screenshots/amar-repair-dashboard.webp",
     problem:
       "Repair shops track jobs on paper, customer names on WhatsApp, and payments in a notebook. A job gets lost between technicians, a customer calls asking for an update and you check three places to answer, and nobody can see what's actually overdue at a glance.",
     capabilities: [
@@ -46,8 +49,7 @@ export const products = [
     status: "in-development",
     subtext:
       "Built for how coaching centers in Bangladesh actually operate — batches, attendance, fees, and reminders without spreadsheets.",
-    // PLACEHOLDER — replace before launch.
-    screenshot: "/img/amar-batch-dashboard.png",
+    screenshot: "/img/screenshots/amar-batch-dashboard.webp",
     problem:
       "Coaching centers keep student lists in notebooks, attendance in a separate register, and fee collection in someone's head. At the end of the month it takes hours to figure out who owes what, and fee reminders never go out on time because someone always has to remember to send them.",
     capabilities: [

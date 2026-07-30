@@ -13,9 +13,9 @@ export default function AmarBatch() {
   usePageMeta({
     title: "Amar Batch — Teacher & Batch Management System · Appriyo",
     description: product?.subtext,
-    // PLACEHOLDER — replace before launch. Real OG image mounts in
-    // Phase 5 per docs/Asset_Checklist.md.
-    ogImage: "/img/og-amar-batch.png",
+    // Default OG image until a dedicated one is provided. Hero
+    // screenshot reused for now per Asset_Checklist.md (Nice to Have).
+    ogImage: "/img/screenshots/amar-batch-dashboard.webp",
   });
 
   if (!product) return null;
