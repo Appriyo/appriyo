@@ -121,4 +121,62 @@
     background-size: 14px 14px;
     background-position: 0 -4px;
   }
+
+  /* DESIGN.md §8 — scroll reveal. The Reveal component renders inline
+     styles until revealed. Once revealed, the inline --reveal-delay
+     custom property drives the per-item stagger (capped at 4 × 50ms =
+     200ms additional). Duration is capped at --duration-slow (360ms).
+     prefers-reduced-motion is handled at the React level — Reveal sets
+     revealed=true immediately so the element never paints at opacity-0. */
+  .reveal {
+    transition:
+      opacity var(--duration-slow, 360ms) cubic-bezier(0.4, 0, 0.2, 1),
+      transform var(--duration-slow, 360ms) cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    /* Belt and braces: even if JS sets revealed=true immediately, the
+       transition is also turned off here so any residual movement
+       (e.g. devtools toggling reduced-motion after load) can't fire. */
+    .reveal {
+      transition: none;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+  }
+
+  /* Skip link — DESIGN.md §13 (QA) + WCAG 2.4.1 (Bypass Blocks). Hidden
+     until focused, then visible primarily above the page so keyboard
+     users can jump straight to main content. */
+  .skip-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 12px 16px;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font: 500 14px "Inter", system-ui, sans-serif;
+    text-decoration: none;
+    border: 0;
+    transform: translateY(-150%);
+    transition: transform 150ms ease;
+  }
+  .skip-link:focus-visible {
+    transform: translateY(0);
+    outline: 2px solid var(--color-ink);
+    outline-offset: 2px;
+  }
+
+  /* Visible focus ring for any link that doesn't have its own. DESIGN.md
+     §7.1 only specifies Button focus; plain links/recipe cards also need
+     a visible keyboard focus state. */
+  a:focus-visible,
+  summary:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-ink);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
 }

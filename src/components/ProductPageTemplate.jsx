@@ -72,7 +72,7 @@ export default function ProductPageTemplate({ product }) {
           <ReceiptCard className="p-5 md:p-6">
             <img
               src={screenshot}
-              alt={`${name} dashboard screenshot`}
+              alt={`Screenshot of the ${name} ${tagline.toLowerCase()} showing the live dashboard interface.`}
               loading="eager"
               fetchpriority="high"
               className="block w-full h-auto rounded-card"

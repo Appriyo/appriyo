@@ -8,26 +8,31 @@
 import { process } from "../data/homepage";
 import SectionHeader from "../components/SectionHeader";
 import LedgerCard from "../components/LedgerCard";
+import Reveal from "../components/Reveal";
 
 export default function Process() {
   return (
-    <section className="bg-paper-dim">
+    <section className="bg-paper-dim" aria-labelledby="process-heading">
       <div className="mx-auto max-w-7xl px-6 py-24 md:py-28">
-        <SectionHeader heading={process.heading} subtext={null} />
+        <Reveal>
+          <SectionHeader heading={process.heading} subtext={null} />
+        </Reveal>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {process.steps.map((s) => (
-            <LedgerCard key={s.n} className="flex flex-col gap-3">
-              <span className="font-mono text-2xl text-stamp leading-none">
-                {s.n}
-              </span>
-              <h3 className="font-display text-lg font-bold text-ink">
-                {s.title}
-              </h3>
-              <p className="text-ink-soft text-[15px] leading-[1.55]">
-                {s.body}
-              </p>
-            </LedgerCard>
+          {process.steps.map((s, i) => (
+            <Reveal key={s.n} stagger index={i}>
+              <LedgerCard className="flex flex-col gap-3">
+                <span className="font-mono text-2xl text-stamp leading-none">
+                  {s.n}
+                </span>
+                <h3 className="font-display text-lg font-bold text-ink">
+                  {s.title}
+                </h3>
+                <p className="text-ink-soft text-[15px] leading-[1.55]">
+                  {s.body}
+                </p>
+              </LedgerCard>
+            </Reveal>
           ))}
         </div>
       </div>

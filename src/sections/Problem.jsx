@@ -4,14 +4,20 @@
 // label, no subtext — SectionHeader would add visual noise here. The
 // single question is the whole point of the section.
 import { problem } from "../data/homepage";
+import Reveal from "../components/Reveal";
 
 export default function Problem() {
   return (
-    <section className="bg-paper-dim">
+    <section className="bg-paper-dim" aria-labelledby="problem-heading">
       <div className="mx-auto max-w-4xl px-6 py-24 md:py-32 text-center">
-        <h2 className="font-display text-display-lg font-black text-ink leading-[1.1] tracking-[-0.01em]">
-          {problem.heading}
-        </h2>
+        <Reveal>
+          <h2
+            id="problem-heading"
+            className="font-display text-display-lg font-black text-ink leading-[1.1] tracking-[-0.01em]"
+          >
+            {problem.heading}
+          </h2>
+        </Reveal>
       </div>
     </section>
   );
