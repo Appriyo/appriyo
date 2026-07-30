@@ -91,22 +91,22 @@ export const whyAppriyo = {
     {
       name: "Md Shahajalal Mahmud",
       role: "Founder & Technical Project Lead",
-      photo: "/img/team_img/profile%20pic.jpg",
+      photo: "/img/team_img/profile%20pic.webp",
     },
     {
       name: "Preota Saha",
       role: "Lead Frontend Engineer & UI/UX Lead",
-      photo: "/img/team_img/preota%20profile.jpg",
+      photo: "/img/team_img/preota%20profile.webp",
     },
     {
       name: "Md Munna Sardar",
       role: "Lead — Testing & Frontend Development",
-      photo: "/img/team_img/munna%20profile.jpeg",
+      photo: "/img/team_img/munna%20profile.webp",
     },
     {
       name: "Hazera Islam Mim",
       role: "Social Media & Creative Lead",
-      photo: "/img/team_img/mim%20profile.jpeg",
+      photo: "/img/team_img/mim%20profile.webp",
     },
   ],
 };
