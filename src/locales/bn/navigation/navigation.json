@@ -1,0 +1,16 @@
+{
+  "home": "হোম",
+  "services": "সেবা",
+  "solutions": "সমাধান",
+  "products": "পণ্য",
+  "about": "আমাদের সম্পর্কে",
+  "contact": "যোগাযোগ",
+  "skipToContent": "মূল কন্টেন্টে যান",
+  "openMenu": "মেনু খুলুন",
+  "closeMenu": "মেনু বন্ধ করুন",
+  "languageSwitcher": {
+    "label": "ভাষা",
+    "english": "English",
+    "bangla": "বাংলা"
+  }
+}

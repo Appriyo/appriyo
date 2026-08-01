@@ -1,0 +1,16 @@
+{
+  "home": "Home",
+  "services": "Services",
+  "solutions": "Solutions",
+  "products": "Products",
+  "about": "About",
+  "contact": "Contact",
+  "skipToContent": "Skip to main content",
+  "openMenu": "Open menu",
+  "closeMenu": "Close menu",
+  "languageSwitcher": {
+    "label": "Language",
+    "english": "English",
+    "bangla": "বাংলা"
+  }
+}

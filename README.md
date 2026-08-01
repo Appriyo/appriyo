@@ -39,6 +39,7 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Production Build](#production-build)
+- [🌍 Internationalization (i18n)](#-internationalization-i18n)
 - [📁 Project Structure](#-project-structure)
 - [🎨 Design \& UI](#-design--ui)
   - [Design Goals](#design-goals)
@@ -283,14 +284,16 @@ instead of assumptions.
 
 # 🛠 Tech Stack
 
-| Technology            | Purpose                     |
-| --------------------- | --------------------------- |
-| **React 18**          | Frontend UI library         |
-| **Vite**              | Development & build tooling |
-| **Tailwind CSS**      | Utility-first styling       |
-| **DaisyUI**           | Component system            |
-| **JavaScript (ES6+)** | Core application language   |
-| **HTML5 & CSS3**      | Base frontend structure     |
+| Technology                            | Purpose                          |
+| ------------------------------------- | -------------------------------- |
+| **React 18**                          | Frontend UI library              |
+| **Vite**                              | Development & build tooling      |
+| **Tailwind CSS**                      | Utility-first styling            |
+| **DaisyUI**                           | Component system                 |
+| **react-i18next / i18next**           | Internationalisation runtime     |
+| **i18next-browser-languagedetector**  | Browser language + storage detection |
+| **JavaScript (ES6+)**                 | Core application language        |
+| **HTML5 & CSS3**                      | Base frontend structure          |
 
 ---
 
@@ -350,6 +353,117 @@ npm run preview
 
 ---
 
+# 🌍 Internationalization (i18n)
+
+The site is bilingual (English + Bangla) and built on a scalable i18n
+foundation that makes adding more languages a single-folder change.
+
+### Stack
+
+- **i18next** — translation runtime and resource container.
+- **react-i18next** — React bindings (`useTranslation`, hooks).
+- **i18next-browser-languagedetector** — reads the user's preferred
+  language from `localStorage` first, then `navigator.language`.
+
+### Behaviour
+
+- **Default language**: English (`en`).
+- **Supported languages**: English (`en`), Bangla (`bn`).
+- **Detection order**: `localStorage` → `navigator.language` →
+  English fallback.
+- **Persistence**: the active language is written to
+  `localStorage` under the key `appriyo:language:v1`.
+- **HMR**: editing any file under `src/locales/**` updates the UI
+  live, without a full reload. See `src/i18n/index.js`.
+
+### Folder layout
+
+```text
+src/
+├── i18n/
+│   ├── config.js         # Supported languages, namespaces, storage key
+│   ├── loadResources.js  # Auto-discovers JSON files via import.meta.glob
+│   ├── useLanguage.js    # Wrapper hook: t + language + setLanguage
+│   ├── hooks.js          # Public barrel for components
+│   └── index.js          # Single init entry (imported once from main.jsx)
+│
+└── locales/
+    ├── en/               # English resources, one folder per namespace
+    │   ├── common/common.json
+    │   ├── navigation/navigation.json
+    │   ├── layout/layout.json
+    │   ├── home/home.json
+    │   ├── services/services.json
+    │   ├── solutions/solutions.json
+    │   ├── products/products.json
+    │   ├── product-detail/product-detail.json
+    │   ├── about/about.json
+    │   ├── contact/contact.json
+    │   ├── legal/legal.json
+    │   ├── errors/errors.json
+    │   └── index.js      # Explicit imports (for editor tooling)
+    └── bn/               # Bangla resources — same structure as en/
+```
+
+### Adding a new language
+
+1. Create `src/locales/<code>/` mirroring the folder layout under
+   `src/locales/en/`. Provide every namespace file (empty objects are
+   fine for placeholders — i18next falls back to English).
+2. Add an entry to `SUPPORTED_LANGUAGES` in `src/i18n/config.js`,
+   including `code`, `label`, `nativeLabel`, `dir`, and an optional
+   `flag` emoji.
+3. (Optional) Add an explicit `index.js` under the new locale so
+   editors can "Find references" on individual translation keys.
+4. Done — the language appears in the `LanguageSwitcher` automatically.
+
+### Adding a new namespace
+
+1. Register the namespace in `NAMESPACES` in `src/i18n/config.js`.
+2. Create `src/locales/en/<namespace>/<namespace>.json` and the same
+   file under every other supported language.
+3. Use it from components with `const { t } = useTranslation("<namespace>");`.
+
+### Usage in components
+
+```jsx
+import { useLanguage } from "../../i18n/hooks";
+
+function Greeting() {
+  const { t } = useLanguage("navigation");
+  return <h1>{t("navigation.home")}</h1>;
+}
+```
+
+```jsx
+import { useLanguage } from "../../i18n/hooks";
+import LanguageSwitcher from "../../components/ui/LanguageSwitcher";
+
+function HeaderActions() {
+  const { language, setLanguage } = useLanguage();
+  return (
+    <>
+      <LanguageSwitcher />
+      <button onClick={() => setLanguage("bn")}>Use Bangla</button>
+    </>
+  );
+}
+```
+
+The included `LanguageSwitcher` (`src/components/ui/LanguageSwitcher.jsx`)
+is a self-contained dropdown that lists every language declared in
+`SUPPORTED_LANGUAGES` and persists the choice on selection. It owns its
+own click-outside / Escape behaviour and is ready to drop into Nav,
+Footer, or a settings menu.
+
+> **Note:** Adding i18n does **not** change any existing UI text yet.
+> Components continue to render their hard-coded strings; switching
+> the language in the switcher will only affect strings that have been
+> migrated to `t("…")` calls. The infrastructure is in place — the
+> migration is the next step.
+
+---
+
 # 📁 Project Structure
 
 ```text
@@ -375,6 +489,8 @@ appriyo-website/
 │   ├── data/
 │   ├── styles/
 │   ├── utils/
+│   ├── i18n/         # i18next config + loader + hooks
+│   ├── locales/      # Translation files, organised per language and namespace
 │   └── App.jsx
 │
 ├── .github/
@@ -433,7 +549,7 @@ The UI intentionally avoids unnecessary complexity or excessive visual noise.
 - [ ] Performance optimization
 - [ ] Contact form backend integration
 - [ ] CMS-powered content management
-- [ ] Internationalization support
+- [x] Internationalization infrastructure (i18n runtime in place; per-component translation migration pending)
 
 ---
 
