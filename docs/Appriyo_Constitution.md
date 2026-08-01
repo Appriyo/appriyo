@@ -1,10 +1,17 @@
-# 📘 APPRIYO CORE IDENTITY DOCUMENT (v2.0)
+# 📘 APPRIYO CORE IDENTITY DOCUMENT (v2.1)
 
 > **Purpose:**
 > This document defines the identity, direction, philosophy, goals, and operational principles of Appriyo.
 > It acts as the long-term foundation and decision-making framework for everything Appriyo builds, offers, and pursues.
 >
 > Every service, product, partnership, and opportunity should align with this document.
+
+> **What changed in v2.1:** No changes to mission, target market, services,
+> or growth strategy — those are unaffected by a visual redesign. The only
+> update is to §12 (Brand Positioning), which now documents the site's
+> visual direction (Design System v4.0 — a dark, confident studio
+> aesthetic) and names, explicitly, the one place it sits in tension with
+> a principle stated below in §11. See the new §12.3 for the reasoning.
 
 ---
 
@@ -435,17 +442,21 @@ If most answers are “No”, we should reconsider the opportunity.
 * Prioritizing appearance over usefulness
 * Expanding too aggressively too early
 
+*(See §12.3 for how the v4.0 marketing-site redesign relates to the
+"appearance over usefulness" line above — it's a deliberate, bounded
+exception, not a quiet reversal of it.)*
+
 ---
 
 # 12. 🧱 BRAND POSITIONING
 
-## One-Line Positioning
+## 12.1 One-Line Positioning
 
 > **Appriyo helps businesses solve operational problems through practical technology solutions.**
 
 ---
 
-## Identity Keywords
+## 12.2 Identity Keywords
 
 * Practical
 * Problem-solving
@@ -456,6 +467,54 @@ If most answers are “No”, we should reconsider the opportunity.
 * Product-focused
 * Business-oriented
 * Execution-driven
+* Confident *(new — v2.1, reflects the v4.0 marketing-site direction)*
+* Polished *(new — v2.1)*
+
+"Practical" and "Problem-solving" remain the load-bearing words — they
+describe what we build. "Confident" and "Polished" describe how the
+*marketing site* now presents that work; they're additions, not
+replacements.
+
+---
+
+## 12.3 Visual Identity Direction (new — v2.1)
+
+The Appriyo marketing site now follows **Design System v4.0 — "The
+Ledger, After Hours"**: a dark-background, motion-forward studio
+aesthetic, replacing the earlier paper-ledger daylight look (v3.0).
+
+**Why this is worth naming here, not just in the design doc:** the
+target market described in §5 is explicitly non-technical, paper-based,
+and unfamiliar with SaaS conventions — while a dark, glow-lit,
+animation-heavy studio site is a register built to read as credible to
+a *technical* evaluator or a design-literate visitor, not necessarily
+the repair-shop owner herself. That's the same trade-off §11 warns
+against under "prioritizing appearance over usefulness."
+
+The reasoning for making this trade anyway:
+
+* The site's actual first audience in the near term (Phase 1, §9) is
+  as much about **visibility, credibility, and portfolio strength** —
+  attracting attention, partners, and slightly more technical
+  decision-makers (e.g., a coaching-center owner's tech-comfortable
+  child, a repair-shop owner's accountant) — as it is about a shop
+  owner reading the homepage cold.
+* The actual *products* (Amar Repair, Amar Batch) are where the
+  non-technical, practical, plain-language design principles still
+  apply without compromise — the marketing site and the product UI are
+  not held to the same visual standard, and shouldn't be.
+* This is logged as a conscious, bounded decision — confined to the
+  public marketing site — not a philosophy change. If early visitor
+  feedback shows the dark studio site is actively costing trust with
+  the actual target customer, this section is the place to revisit
+  that call.
+
+**Practical guardrail going forward:** any product-facing UI (client
+dashboards inside Amar Repair/Amar Batch, onboarding flows, anything a
+shop owner uses daily) should still default to the plain-language,
+low-jargon, evidence-over-adjectives standard from the original ledger
+philosophy — dark-studio confidence is a marketing-site choice, not a
+product-wide one, unless a future decision explicitly extends it.
 
 ---
 
