@@ -1,1 +1,35 @@
-{}
+{
+  "page": {
+    "kicker": "যোগাযোগ",
+    "title": "আসুন আপনার ব্যবসায়িক সমস্যা নিয়ে কথা বলি",
+    "intro": "কোনো প্রযুক্তিগত ভাষা নয়। কোনো প্রতিশ্রুতি লাগে না। শুধু বলুন আপনার ব্যবসাকে কী ধীর করছে।"
+  },
+  "details": {
+    "emailLabel": "📧 {email}",
+    "phoneLabel": "📱 {phone} (হোয়াটসঅ্যাপ)",
+    "hoursLabel": "🕐 {hours}",
+    "responseTime": "আমরা ১টি কার্যদিবসের মধ্যে উত্তর দিই।"
+  },
+  "form": {
+    "ariaLabel": "যোগাযোগ ফর্ম",
+    "fields": {
+      "name": {
+        "label": "নাম",
+        "required": true
+      },
+      "businessType": {
+        "label": "ব্যবসার ধরন",
+        "required": false
+      },
+      "phone": {
+        "label": "ফোন",
+        "required": false
+      },
+      "problem": {
+        "label": "আপনি কী সমস্যার সমাধান চান?",
+        "required": true
+      }
+    },
+    "submit": "বার্তা পাঠান"
+  }
+}

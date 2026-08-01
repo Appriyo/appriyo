@@ -22,12 +22,18 @@
 import { FALLBACK_LANGUAGE, NAMESPACES, SUPPORTED_LANGUAGES } from "./config";
 
 /**
- * Glob pattern relative to this file. `eager: true` makes the modules
- * available synchronously at startup, which is what i18next needs.
- * `import: "default"` returns the parsed JSON object directly instead of
- * the `{ default: ... }` wrapper that Vite's default import shape uses.
+ * Glob pattern relative to this file (src/i18n/loadResources.js). With
+ * `eager: true` the modules are available synchronously at startup,
+ * which is what i18next needs. `import: "default"` returns the parsed
+ * JSON object directly instead of the `{ default: ... }` wrapper that
+ * Vite's default import shape uses.
  *
- * The pattern below matches:
+ * Path math: this file lives at `src/i18n/loadResources.js`. One `..`
+ * lands in `src/`, two `..` lands in the project root. The locale
+ * files live in `src/locales/`, so we need a single `..` followed by
+ * `locales/...`.
+ *
+ * The pattern matches:
  *   src/locales/<lng>/<namespace>/<namespace>.json
  *   (and any additional JSON files in the same folder, e.g. <lng>/about/extra.json)
  *
@@ -35,10 +41,10 @@ import { FALLBACK_LANGUAGE, NAMESPACES, SUPPORTED_LANGUAGES } from "./config";
  * it can't be composed from a variable or template literal. The pattern
  * is therefore inlined directly in the call below.
  *
- * Result keys look like "../../locales/en/navigation/navigation.json".
+ * Result keys look like "../locales/en/navigation/navigation.json".
  */
 const translationModules = import.meta.glob(
-  "../../locales/*/*/*.json",
+  "../locales/*/*/*.json",
   { eager: true, import: "default" },
 );
 
@@ -50,6 +56,12 @@ const translationModules = import.meta.glob(
  * namespace (e.g. "../../locales/en/about/team/team.json" becomes
  * namespace "team"). For the Appriyo project structure we keep a strict
  * two-segment layout, so this is mostly a safety net.
+ *
+ * On-disk folder names use kebab-case (e.g. `product-detail`), but the
+ * canonical namespace list in NAMESPACES is camelCase (`productDetail`).
+ * When a kebab namespace has a matching camelCase entry in NAMESPACES
+ * we normalise so `useTranslation("productDetail")` resolves the
+ * `src/locales/en/product-detail/product-detail.json` bundle.
  */
 function parseGlobKey(key) {
   // Strip the leading "../../locales/" prefix and the trailing ".json".
@@ -63,7 +75,10 @@ function parseGlobKey(key) {
   // Use the file's basename as the namespace (last segment). This means
   // "navigation/navigation.json" → "navigation" and
   // "about/team/team.json" → "team", which is the convention we want.
-  const namespace = rest[rest.length - 1];
+  const rawNamespace = rest[rest.length - 1];
+  // Normalise kebab → camelCase if a matching entry exists in NAMESPACES.
+  const camel = rawNamespace.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+  const namespace = NAMESPACES.includes(camel) ? camel : rawNamespace;
   return { lng, namespace };
 }
 

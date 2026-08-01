@@ -23,18 +23,22 @@ import ReceiptCard from "./ReceiptCard";
 import SectionHeader from "./SectionHeader";
 import Button from "./Button";
 import StampStatus from "./StampStatus";
+import { useLanguage } from "../i18n/hooks";
 
 export default function ProductPageTemplate({ product }) {
-  const {
+  const { t } = useLanguage("productDetail");
+  // product.shape comes from src/data/products.js (slug, name, tagline,
+  // status, screenshot). The other fields — subtext, problem,
+  // capabilities, techStack — come from the productDetail namespace.
+  const { slug, name, tagline, status, screenshot } = product;
+  const productCopy = t(`productDetail.products.${slug === "amar-repair" ? "amarRepair" : "amarBatch"}`, { returnObjects: true }) || {};
+  const capabilities = productCopy.capabilities ?? [];
+  const techStack = productCopy.techStack ?? [];
+
+  const altText = t("productDetail.template.screenshotAlt", {
     name,
-    tagline,
-    status,
-    subtext,
-    screenshot,
-    problem,
-    capabilities = [],
-    techStack = [],
-  } = product;
+    tagline: tagline.toLowerCase(),
+  });
 
   return (
     <>
@@ -42,7 +46,7 @@ export default function ProductPageTemplate({ product }) {
       <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 pt-16 pb-12 md:pt-20 md:pb-16">
           <div className="flex flex-col gap-5">
-            <LedgerLabel>// Product</LedgerLabel>
+            <LedgerLabel>{t("productDetail.template.productLabel")}</LedgerLabel>
 
             <h1 className="font-display text-display-xl font-black text-ink leading-[1.05] tracking-[-0.01em]">
               {name}
@@ -55,7 +59,7 @@ export default function ProductPageTemplate({ product }) {
             ) : null}
 
             <p className="font-body text-lg text-ink-soft max-w-2xl leading-[1.55]">
-              {subtext}
+              {productCopy.subtext}
             </p>
 
             {/* Stamp text comes from `status`, never hardcoded in JSX. */}
@@ -72,7 +76,7 @@ export default function ProductPageTemplate({ product }) {
           <ReceiptCard className="p-5 md:p-6">
             <img
               src={screenshot}
-              alt={`Screenshot of the ${name} ${tagline.toLowerCase()} showing the live dashboard interface.`}
+              alt={altText}
               loading="eager"
               fetchpriority="high"
               className="block w-full h-auto rounded-card"
@@ -85,11 +89,11 @@ export default function ProductPageTemplate({ product }) {
       <section className="bg-paper-dim">
         <div className="mx-auto max-w-3xl px-6 py-20 md:py-24">
           <SectionHeader
-            label="// 01 — the problem"
-            heading="The problem it solves"
+            label={t("productDetail.template.problemLabel")}
+            heading={t("productDetail.template.problemHeading")}
           />
           <p className="text-ink-soft text-base leading-[1.65] mt-6">
-            {problem}
+            {productCopy.problem}
           </p>
         </div>
       </section>
@@ -98,8 +102,8 @@ export default function ProductPageTemplate({ product }) {
       <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-24">
           <SectionHeader
-            label="// 02 — what it does"
-            heading="What it actually does"
+            label={t("productDetail.template.capabilitiesLabel")}
+            heading={t("productDetail.template.capabilitiesHeading")}
           />
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -122,16 +126,16 @@ export default function ProductPageTemplate({ product }) {
         <section className="bg-paper-dim">
           <div className="mx-auto max-w-3xl px-6 py-16 md:py-20">
             <SectionHeader
-              label="// 03 — built with"
-              heading="Built with"
+              label={t("productDetail.template.techLabel")}
+              heading={t("productDetail.template.techHeading")}
             />
             <ul className="mt-6 flex flex-wrap gap-x-4 gap-y-2">
-              {techStack.map((t) => (
+              {techStack.map((tech) => (
                 <li
-                  key={t}
+                  key={tech}
                   className="font-mono text-xs text-ink-muted tracking-[0.04em]"
                 >
-                  · {t}
+                  {tech}
                 </li>
               ))}
             </ul>
@@ -143,14 +147,14 @@ export default function ProductPageTemplate({ product }) {
       <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-6 py-20 md:py-24 text-center flex flex-col items-center gap-6">
           <h2 className="font-display text-display-lg font-black text-ink leading-[1.1] tracking-[-0.01em]">
-            Want something like this for your business?
+            {t("productDetail.template.closingHeading")}
           </h2>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Button href="/contact" variant="primary">
-              Contact us →
+              {t("productDetail.template.contactCta")}
             </Button>
             <Button href="/" variant="secondary">
-              Back to home
+              {t("productDetail.template.backToHomeCta")}
             </Button>
           </div>
           {/* The "Back to home" link is the explicit return-to-homepage
@@ -159,7 +163,7 @@ export default function ProductPageTemplate({ product }) {
             to="/"
             className="font-mono text-xs text-ink-muted tracking-[0.04em] hover:text-ink"
           >
-            // back to homepage
+            {t("common.backToHomepageLabel")}
           </Link>
         </div>
       </section>

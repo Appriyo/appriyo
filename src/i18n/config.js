@@ -93,6 +93,7 @@ export const NAMESPACES = [
   "productDetail",
   "about",
   "contact",
+  "metadata",
   "legal",
   "errors",
 ];

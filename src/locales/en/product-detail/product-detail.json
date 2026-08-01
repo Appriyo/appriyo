@@ -1,1 +1,83 @@
-{}
+{
+  "template": {
+    "productLabel": "// Product",
+    "problemLabel": "// 01 — the problem",
+    "problemHeading": "The problem it solves",
+    "capabilitiesLabel": "// 02 — what it does",
+    "capabilitiesHeading": "What it actually does",
+    "techLabel": "// 03 — built with",
+    "techHeading": "Built with",
+    "techItemPrefix": "·",
+    "closingHeading": "Want something like this for your business?",
+    "contactCta": "Contact us →",
+    "backToHomeCta": "Back to home",
+    "screenshotAlt": "Screenshot of the {name} {tagline} showing the live dashboard interface."
+  },
+  "products": {
+    "amarRepair": {
+      "subtext": "A repair shop system built for the way repair shops actually run — not the way an enterprise POS assumes you do.",
+      "problem": "Repair shops track jobs on paper, customer names on WhatsApp, and payments in a notebook. A job gets lost between technicians, a customer calls asking for an update and you check three places to answer, and nobody can see what's actually overdue at a glance.",
+      "capabilities": [
+        "Logs every device dropped off with photos, notes, and the customer's contact details.",
+        "Moves each job through a clear status: Received → In progress → Ready → Delivered.",
+        "Sends the customer a text the moment their repair is ready, so they stop calling to ask.",
+        "Records deposits, balances, and final payments against the job, so nothing gets lost in cash.",
+        "Shows the shop owner every open job at a glance, with what is overdue highlighted."
+      ],
+      "techStack": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Twilio (SMS notifications)"
+      ]
+    },
+    "amarBatch": {
+      "subtext": "Built for how coaching centers in Bangladesh actually operate — batches, attendance, fees, and reminders without spreadsheets.",
+      "problem": "Coaching centers keep student lists in notebooks, attendance in a separate register, and fee collection in someone's head. At the end of the month it takes hours to figure out who owes what, and fee reminders never go out on time because someone always has to remember to send them.",
+      "capabilities": [
+        "Enrolls students into named batches by subject, time slot, and level.",
+        "Marks daily attendance per batch and shows trends over the month.",
+        "Sets fees per batch, records each payment, and surfaces outstanding dues at a glance.",
+        "Sends fee reminders automatically so the coordinator never has to chase them.",
+        "Produces a monthly summary of attendance and collections for each batch."
+      ],
+      "techStack": [
+        "React",
+        "Node.js",
+        "PostgreSQL"
+      ]
+    }
+  },
+  "section": {
+    "problemHeadingDefault": "Sound Familiar?",
+    "featuresHeading": "What It Gives You",
+    "featuresPlaceholder": "Feature list: {items}",
+    "audienceHeading": "Who It's For",
+    "audienceBody": "For business owners, freelancers, consultants, sales professionals, and anyone who attends meetings or networking sessions.",
+    "ctaHeading": "Replace Your Paper Stack With One Smart Card",
+    "ctaButton": "Get Your Amar Card"
+  },
+  "items": {
+    "amarCard": {
+      "label": "Amar Card",
+      "headline": "Your Business Card Just Got a Tap",
+      "description": "One tap on any modern phone shares your name, number, WhatsApp, links — everything. No app required on their end.",
+      "problem": [
+        "Paper cards get lost or thrown away within days",
+        "Every detail change means reprinting a new batch",
+        "Can't link to your WhatsApp, website, or portfolio"
+      ],
+      "features": [
+        { "feature": "NFC Tap", "description": "One tap on any NFC-enabled phone opens your profile" },
+        { "feature": "No App Required", "description": "Receiver doesn't need an app" },
+        { "feature": "Full Digital Profile", "description": "Name, phone, WhatsApp, email, links, social" },
+        { "feature": "Instant Save", "description": "Contact saves directly to their phone" },
+        { "feature": "Update Anytime", "description": "Change details online — same physical card works" },
+        { "feature": "One Card, Forever", "description": "No reprinting when your details change" }
+      ],
+      "audience": "For business owners, freelancers, consultants, sales professionals, and anyone who attends meetings or networking sessions.",
+      "ctaHeading": "Replace Your Paper Stack With One Smart Card",
+      "ctaButton": "Get Your Amar Card"
+    }
+  }
+}

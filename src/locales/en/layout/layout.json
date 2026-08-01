@@ -1,6 +1,15 @@
 {
   "footer": {
-    "copyright": "© {year} Appriyo. All rights reserved.",
-    "builtIn": "Built with care in Bangladesh"
-  }
+    "brand": "Appriyo Technologies",
+    "location": "Khulna, Bangladesh · Remote, worldwide",
+    "email": "contact@appriyo.com",
+    "copyright": "© {year} Appriyo Technologies. All rights reserved.",
+    "links": {
+      "services": "Services",
+      "products": "Products",
+      "about": "About",
+      "contact": "Contact"
+    }
+  },
+  "skipToContent": "Skip to main content"
 }

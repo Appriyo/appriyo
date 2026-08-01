@@ -7,17 +7,18 @@
 // ("anything that delays reading the headline by more than ~300ms is
 // forbidden"). The screenshot card is allowed to reveal because it is
 // decorative copy that the visitor reads second.
-import { hero, products } from "../data/homepage";
+import { products as productsData } from "../data/products";
 import Button from "../components/Button";
 import ReceiptCard from "../components/ReceiptCard";
 import LedgerLabel from "../components/LedgerLabel";
 import Reveal from "../components/Reveal";
+import { useLanguage } from "../i18n/hooks";
 
 // The hero always shows the Amar Repair screenshot — see CONTENT_STRATEGY.md §3.2.
-const heroScreenshot = products.items[0].screenshot;
-const heroAlt = "Screenshot of the Amar Repair repair-shop dashboard, showing job list, customer names, and statuses.";
+const heroScreenshot = productsData[0].screenshot;
 
 export default function Hero() {
+  const { t } = useLanguage("home");
   return (
     <section className="bg-paper" aria-labelledby="hero-headline">
       <div className="mx-auto max-w-7xl px-6 pt-20 pb-24 md:pt-28 md:pb-32">
@@ -26,25 +27,25 @@ export default function Hero() {
               wrapped in Reveal so the first paint shows it immediately
               (DESIGN.md §8.3). */}
           <div className="md:col-span-7 flex flex-col gap-6">
-            <LedgerLabel>{hero.label}</LedgerLabel>
+            <LedgerLabel>{t("home.hero.label")}</LedgerLabel>
 
             <h1
               id="hero-headline"
               className="font-display text-display-xl font-black text-ink leading-[1.05] tracking-[-0.01em]"
             >
-              {hero.headline}
+              {t("home.hero.headline")}
             </h1>
 
             <p className="font-body text-lg text-ink-soft max-w-2xl leading-[1.55]">
-              {hero.subtext}
+              {t("home.hero.subtext")}
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Button href={hero.primaryCta.href} variant="primary">
-                {hero.primaryCta.label}
+              <Button href={t("home.hero.primaryCta.href")} variant="primary">
+                {t("home.hero.primaryCta.label")}
               </Button>
-              <Button href={hero.secondaryCta.href} variant="secondary">
-                {hero.secondaryCta.label}
+              <Button href={t("home.hero.secondaryCta.href")} variant="secondary">
+                {t("home.hero.secondaryCta.label")}
               </Button>
             </div>
           </div>
@@ -56,7 +57,7 @@ export default function Hero() {
               <ReceiptCard className="p-6 md:p-7">
                 <img
                   src={heroScreenshot}
-                  alt={heroAlt}
+                  alt={t("home.hero.screenshotAlt")}
                   loading="eager"
                   fetchpriority="high"
                   className="block w-full h-auto rounded-card"

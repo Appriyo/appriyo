@@ -1,0 +1,58 @@
+{
+  "site": {
+    "title": "Appriyo",
+    "description": "Appriyo replaces manual business processes with simple, automated systems built for your business."
+  },
+  "home": {
+    "title": "Appriyo",
+    "description": "Appriyo replaces manual business processes with simple, automated systems built for your business."
+  },
+  "services": {
+    "title": "Services · Appriyo",
+    "description": "Four services focused on one goal: helping small businesses stop wasting time."
+  },
+  "solutions": {
+    "title": "Solutions · Appriyo",
+    "description": "Real problems we've heard from business owners — and the Appriyo products that solve them."
+  },
+  "products": {
+    "title": "Products · Appriyo",
+    "description": "Real software built from real problems. Amar Repair, Amar Batch, and Amar Card."
+  },
+  "about": {
+    "title": "About · Appriyo",
+    "description": "A small team that builds practical software for small businesses."
+  },
+  "contact": {
+    "title": "Contact · Appriyo",
+    "description": "Tell us what's slowing your business down. No pressure, no pitch."
+  },
+  "amarRepair": {
+    "title": "Amar Repair — Repair Store Management System · Appriyo",
+    "description": "A repair shop system built for the way repair shops actually run — not the way an enterprise POS assumes you do."
+  },
+  "amarBatch": {
+    "title": "Amar Batch — Teacher & Batch Management System · Appriyo",
+    "description": "Built for how coaching centers in Bangladesh actually operate — batches, attendance, fees, and reminders without spreadsheets."
+  },
+  "amarCard": {
+    "title": "Amar Card — NFC Digital Business Card · Appriyo",
+    "description": "Your business card just got a tap. One tap shares your full contact profile."
+  },
+  "privacy": {
+    "title": "Privacy Policy · Appriyo",
+    "description": "How Appriyo collects, uses, and protects your information."
+  },
+  "terms": {
+    "title": "Terms of Service · Appriyo",
+    "description": "The rules and conditions for using Appriyo."
+  },
+  "security": {
+    "title": "Security · Appriyo",
+    "description": "Our approach to keeping Appriyo and your data safe."
+  },
+  "notFound": {
+    "title": "Page not found · Appriyo",
+    "description": "The page you are looking for does not exist or has been moved."
+  }
+}

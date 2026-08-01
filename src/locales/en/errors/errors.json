@@ -3,5 +3,9 @@
     "title": "Page not found",
     "description": "The page you are looking for does not exist or has been moved.",
     "goHome": "Go to homepage"
+  },
+  "form": {
+    "generic": "Something went wrong. Please try again or email us directly.",
+    "network": "Network error. Please try again or email us directly."
   }
 }

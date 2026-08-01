@@ -80,8 +80,9 @@ export default function Nav() {
         <Link
           to="/"
           className="font-display text-[20px] text-ink leading-none"
+          aria-label={t("navigation.home")}
         >
-          Appriyo
+          {t("common.appName")}
         </Link>
 
         <nav className="hidden md:flex items-center gap-8" aria-label={t("navigation.primary")}>

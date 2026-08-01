@@ -8,7 +8,22 @@
 // tags (description, og:title, og:image). On unmount it restores the
 // previous title so navigation back to / leaves no stale "Amar Repair"
 // in the tab.
+//
+// Two call shapes:
+//
+//   usePageMeta({ title, description, ogImage })            — raw strings
+//   usePageMeta({ titleKey, descriptionKey, ogImage, ns })   — translation
+//                                                              keys; the
+//                                                              hook re-renders
+//                                                              when the
+//                                                              language changes
+//
+// The key-based form is what every i18n-aware page should use. It
+// subscribes to i18next's `languageChanged` event so the <title> and
+// meta tags update instantly when the user toggles Bangla/English —
+// without a page reload.
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 function setMeta(name, content) {
   if (!content) return;
@@ -32,10 +47,16 @@ function setPropertyMeta(property, content) {
   el.setAttribute("content", content);
 }
 
-export default function usePageMeta({ title, description, ogImage }) {
+export default function usePageMeta({ title, description, ogImage, titleKey, descriptionKey, ns = "metadata" }) {
+  const { t, i18n } = useTranslation(ns);
+
+  // Resolve title + description — prefer translation keys when supplied.
+  const resolvedTitle = titleKey ? t(titleKey) : title;
+  const resolvedDescription = descriptionKey ? t(descriptionKey) : description;
+
   useEffect(() => {
     const prevTitle = document.title;
-    if (title) document.title = title;
+    if (resolvedTitle) document.title = resolvedTitle;
 
     // Cache and restore the previous description so leaving the page
     // doesn't permanently overwrite what another page had set.
@@ -49,8 +70,8 @@ export default function usePageMeta({ title, description, ogImage }) {
       .querySelector('meta[property="og:image"]')
       ?.getAttribute("content");
 
-    if (description) setMeta("description", description);
-    setPropertyMeta("og:title", title);
+    if (resolvedDescription) setMeta("description", resolvedDescription);
+    setPropertyMeta("og:title", resolvedTitle);
     setPropertyMeta("og:image", ogImage);
 
     return () => {
@@ -59,5 +80,5 @@ export default function usePageMeta({ title, description, ogImage }) {
       setPropertyMeta("og:title", prevOgTitle || "");
       setPropertyMeta("og:image", prevOgImage || "");
     };
-  }, [title, description, ogImage]);
+  }, [resolvedTitle, resolvedDescription, ogImage, i18n.resolvedLanguage]);
 }

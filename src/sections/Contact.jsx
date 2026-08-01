@@ -11,24 +11,32 @@
 // later preferred. The fallback "or reach us directly" block below
 // keeps the plain-text email visible regardless of form status.
 import { useState } from "react";
-import { contact } from "../data/homepage";
 import SectionHeader from "../components/SectionHeader";
 import LedgerLabel from "../components/LedgerLabel";
 import Button from "../components/Button";
 import Reveal from "../components/Reveal";
+import { useLanguage } from "../i18n/hooks";
 
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 const WEB3FORMS_ACCESS_KEY =
   import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "WEB3FORMS_ACCESS_KEY";
 
+// Field shape mirrors the keys inside home.contact.fields. Each entry
+// holds the data attributes (autocomplete, multiline, required) and a
+// translation key for the label. We don't read strings from the
+// translation file directly into a `fields` array because the array
+// would have to live outside the component to avoid re-creating it on
+// every render — instead we iterate over a small config and look up
+// each label via t() inside the render.
 const fields = [
-  { name: "name",     label: "Name",                 type: "text",  required: true,  multiline: false, autocomplete: "name" },
-  { name: "business", label: "Business name",        type: "text",  required: false, multiline: false, autocomplete: "organization" },
-  { name: "email",    label: "Email",                type: "email", required: true,  multiline: false, autocomplete: "email" },
-  { name: "problem",  label: "What are you trying to solve?", type: "text", required: true, multiline: true  },
+  { name: "name",     type: "text",  required: true,  multiline: false, autocomplete: "name" },
+  { name: "business", type: "text",  required: false, multiline: false, autocomplete: "organization" },
+  { name: "email",    type: "email", required: true,  multiline: false, autocomplete: "email" },
+  { name: "problem",  type: "text",  required: true,  multiline: true  },
 ];
 
 export default function Contact() {
+  const { t } = useLanguage("home");
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -39,8 +47,8 @@ export default function Contact() {
 
     const fd = new FormData(e.currentTarget);
     fd.append("access_key", WEB3FORMS_ACCESS_KEY);
-    fd.append("subject", "New inquiry from appriyo.com");
-    fd.append("from_name", "Appriyo Website");
+    fd.append("subject", t("home.contact.subject"));
+    fd.append("from_name", t("home.contact.fromName"));
     // Honeypot field — Web3Forms rejects bots that fill it.
     fd.append("botcheck", "");
 
@@ -55,11 +63,11 @@ export default function Contact() {
         e.currentTarget.reset();
       } else {
         setStatus("error");
-        setErrorMsg(data.message || "Something went wrong. Please try again or email us directly.");
+        setErrorMsg(data.message || t("common.errorGeneric"));
       }
     } catch (err) {
       setStatus("error");
-      setErrorMsg("Network error. Please try again or email us directly.");
+      setErrorMsg(t("common.errorNetwork"));
     }
   };
 
@@ -67,26 +75,27 @@ export default function Contact() {
     <section className="bg-paper" aria-labelledby="contact-heading">
       <div className="mx-auto max-w-3xl px-6 py-24 md:py-28">
         <Reveal>
-          <SectionHeader heading={contact.heading} subtext={contact.intro} />
+          <SectionHeader heading={t("home.contact.heading")} subtext={t("home.contact.intro")} />
         </Reveal>
 
         <Reveal>
           <form
             onSubmit={onSubmit}
             noValidate
-            aria-label="Contact form"
+            aria-label={t("common.aria.contactForm")}
             className="mt-12 flex flex-col gap-5"
           >
             {fields.map((f) => {
               const inputId = `contact-${f.name}`;
+              const fieldLabel = t(`home.contact.fields.${f.name}.label`);
               return (
                 <div key={f.name} className="flex flex-col gap-2">
                   <label
                     htmlFor={inputId}
                     className="font-mono text-xs text-ink-muted tracking-[0.04em]"
                   >
-                    {f.label}
-                    {f.required ? " *" : ""}
+                    {fieldLabel}
+                    {f.required ? ` ${t("common.requiredMarker")}` : ""}
                   </label>
                   {f.multiline ? (
                     <textarea
@@ -117,10 +126,10 @@ export default function Contact() {
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <Button type="submit" variant="primary" disabled={status === "sending"}>
                 {status === "sending"
-                  ? "Sending…"
+                  ? t("common.sending")
                   : status === "sent"
-                    ? "Thanks — we'll be in touch."
-                    : "Send"}
+                    ? t("common.thankYou")
+                    : t("common.send")}
               </Button>
               {status === "error" && (
                 <span
@@ -136,15 +145,15 @@ export default function Contact() {
 
         <Reveal>
           <div className="mt-12 border-t border-line pt-6 flex flex-col gap-2">
-            <LedgerLabel>// or reach us directly</LedgerLabel>
+            <LedgerLabel>{t("home.contact.orReachUsDirectly")}</LedgerLabel>
             <a
-              href={`mailto:${contact.email}`}
+              href={`mailto:${t("home.contact.email")}`}
               className="font-mono text-[15px] text-ink hover:text-ink-soft"
             >
-              {contact.email}
+              {t("home.contact.email")}
             </a>
             <span className="font-mono text-xs text-ink-muted tracking-[0.04em]">
-              {contact.officeHours}
+              {t("home.contact.officeHours")}
             </span>
           </div>
         </Reveal>

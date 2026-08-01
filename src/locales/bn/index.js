@@ -16,6 +16,7 @@ import products from "./products/products.json";
 import productDetail from "./product-detail/product-detail.json";
 import about from "./about/about.json";
 import contact from "./contact/contact.json";
+import metadata from "./metadata/metadata.json";
 import legal from "./legal/legal.json";
 import errors from "./errors/errors.json";
 
@@ -30,6 +31,7 @@ export const resources = {
   productDetail,
   about,
   contact,
+  metadata,
   legal,
   errors,
 };

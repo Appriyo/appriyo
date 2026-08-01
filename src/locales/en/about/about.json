@@ -1,1 +1,39 @@
-{}
+{
+  "header": {
+    "kicker": "About Appriyo",
+    "heading": "We're a Small Team. We Like It That Way."
+  },
+  "whoWeAre": {
+    "heading": "What Appriyo Is",
+    "body": "Appriyo is an AI-powered digital transformation company focused on solving real-world business problems through simple, practical technology. Based in Khulna, Bangladesh."
+  },
+  "philosophy": {
+    "heading": "Our Philosophy",
+    "itemsLabel": "Beliefs",
+    "items": [
+      "Problem-first",
+      "Simplicity",
+      "Practical",
+      "Long-term",
+      "Direct access"
+    ]
+  },
+  "team": {
+    "heading": "The Team",
+    "members": [
+      { "name": "Shahajalal Mahmud", "role": "Development & Architecture" },
+      { "name": "Preota Saha",       "role": "UI & Design" },
+      { "name": "Md Munna Sardar",   "role": "Testing & QA" },
+      { "name": "Hazera Islam Mim",  "role": "Marketing & Social Media" }
+    ]
+  },
+  "howWeWork": {
+    "heading": "How a Typical Engagement Works",
+    "body": "We start every project with a conversation — not a proposal. We build in short cycles, show you progress often, and stay involved after launch."
+  },
+  "cta": {
+    "heading": "Want to Work With Us?",
+    "subtext": "The first step is just a conversation. No pressure, no pitch.",
+    "button": "Get in Touch"
+  }
+}

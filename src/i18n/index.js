@@ -129,8 +129,17 @@ function initOrReturnExisting() {
       // Stable, human-readable keys in the rendered HTML (no array
       // indexes leaking through). Defaults are sensible, listed for
       // documentation.
-      keySeparator: ".",
-      nsSeparator: ":",
+      //
+      // The codebase uses dotted keys like `t("home.hero.headline")` and
+      // `t("navigation.services")` everywhere. i18next treats the first
+      // segment of a key as a namespace prefix only when separated by
+      // `nsSeparator` (default `:`). To make our existing call sites
+      // work without rewriting every `t(...)` invocation, we swap the
+      // separators so `.` is the namespace separator and `/` is the key
+      // separator. Nested keys in the locale JSON never contain `/`, so
+      // the swap is safe.
+      keySeparator: "/",
+      nsSeparator: ".",
       pluralSeparator: "_",
       contextSeparator: "_",
 

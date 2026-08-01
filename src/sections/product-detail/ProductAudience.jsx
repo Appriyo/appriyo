@@ -1,11 +1,16 @@
 // sections/product-detail/ProductAudience.jsx
 // Props: text (string)
 
+import { useLanguage } from "../../i18n/hooks";
+
 export function ProductAudience({ text }) {
+  const { t } = useLanguage("productDetail");
   return (
     <section style={{ borderTop: "1px solid var(--color-border)", paddingBlock: "clamp(48px, 6vw, 72px)" }}>
       <div className="site-container">
-        <h2 style={{ fontSize: "clamp(20px, 2.5vw, 28px)", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "16px" }}>Who It's For</h2>
+        <h2 style={{ fontSize: "clamp(20px, 2.5vw, 28px)", fontWeight: 600, color: "var(--color-text-primary)", marginBottom: "16px" }}>
+          {t("productDetail.section.audienceHeading")}
+        </h2>
         <p style={{ fontSize: "15px", color: "var(--color-text-secondary)", maxWidth: "640px", lineHeight: 1.7 }}>{text}</p>
       </div>
     </section>

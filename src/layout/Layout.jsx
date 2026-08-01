@@ -18,12 +18,14 @@
 import { Outlet } from "react-router-dom";
 import Nav from "./Nav";
 import Footer from "./Footer";
+import { useLanguage } from "../i18n/hooks";
 
 export default function Layout() {
+  const { t } = useLanguage("layout");
   return (
     <div className="min-h-screen bg-paper text-ink-soft font-body flex flex-col">
       <a href="#main-content" className="skip-link">
-        Skip to main content
+        {t("layout.skipToContent")}
       </a>
       <Nav />
       <main id="main-content" className="flex-1" tabIndex={-1}>

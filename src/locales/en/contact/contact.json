@@ -1,1 +1,35 @@
-{}
+{
+  "page": {
+    "kicker": "Contact",
+    "title": "Let's Talk About Your Business Problem",
+    "intro": "No tech jargon. No commitment required. Just tell us what's slowing your business down."
+  },
+  "details": {
+    "emailLabel": "📧 {email}",
+    "phoneLabel": "📱 {phone} (WhatsApp)",
+    "hoursLabel": "🕐 {hours}",
+    "responseTime": "We respond within 1 business day."
+  },
+  "form": {
+    "ariaLabel": "Contact form",
+    "fields": {
+      "name": {
+        "label": "Name",
+        "required": true
+      },
+      "businessType": {
+        "label": "Business type",
+        "required": false
+      },
+      "phone": {
+        "label": "Phone",
+        "required": false
+      },
+      "problem": {
+        "label": "What are you trying to solve?",
+        "required": true
+      }
+    },
+    "submit": "Send message"
+  }
+}

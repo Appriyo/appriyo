@@ -1,1 +1,159 @@
-{}
+{
+  "hero": {
+    "label": "// what we do",
+    "headline": "We build the system that replaces your notebook.",
+    "subtext": "Appriyo builds practical software for repair shops, coaching centers, and small businesses still running on notebooks and memory — built by a team you can actually call.",
+    "primaryCta": {
+      "label": "See our work",
+      "href": "/products"
+    },
+    "secondaryCta": {
+      "label": "Talk to us",
+      "href": "/contact"
+    },
+    "screenshotAlt": "Screenshot of the Amar Repair repair-shop dashboard, showing job list, customer names, and statuses."
+  },
+  "problem": {
+    "label": "// 01 — the problem",
+    "heading": "Still tracking repairs, students, or orders in a notebook — and hoping nothing gets lost?"
+  },
+  "services": {
+    "label": "// 02 — what we build",
+    "heading": "Software built around how your business actually runs",
+    "items": [
+      {
+        "title": "Custom Software",
+        "body": "A system built specifically for how you work — not a generic template you have to bend your business around."
+      },
+      {
+        "title": "Websites & Apps",
+        "body": "A website or app that actually gets you customers or makes your day-to-day easier — not just a digital business card."
+      },
+      {
+        "title": "Automation",
+        "body": "Automatic reminders, follow-ups, and tracking, so nothing depends on someone remembering."
+      },
+      {
+        "title": "AI Where It Helps",
+        "body": "We use AI only where it saves you real time — never added just to sound modern."
+      },
+      {
+        "title": "Products You Can Try Today",
+        "body": "See Amar Repair and Amar Batch — real software already built, not a pitch.",
+        "cta": {
+          "label": "See products",
+          "href": "/products"
+        }
+      }
+    ]
+  },
+  "products": {
+    "label": "// 03 — proof, not promises",
+    "heading": "Two real products. Try them before you take our word for it.",
+    "items": [
+      {
+        "name": "Amar Repair",
+        "tagline": "Repair Store Management System",
+        "body": "Tracks every repair job from drop-off to pickup, so nothing gets lost and no customer is left wondering where their device is.",
+        "cta": {
+          "label": "See Amar Repair",
+          "href": "/products/amar-repair"
+        },
+        "status": "live",
+        "screenshotAlt": "Screenshot of the {name} {tagline} interface."
+      },
+      {
+        "name": "Amar Batch",
+        "tagline": "Teacher & Batch Management System",
+        "body": "Manages student batches, attendance, and payments in one place, built for how coaching centers in Bangladesh actually operate.",
+        "cta": {
+          "label": "See Amar Batch",
+          "href": "/products/amar-batch"
+        },
+        "status": "in-development",
+        "screenshotAlt": "Screenshot of the {name} {tagline} interface."
+      }
+    ]
+  },
+  "whyAppriyo": {
+    "label": "// 04 — why us",
+    "heading": "Small team. Direct access. No middlemen.",
+    "paragraph": "You talk directly to the person building your system — not a account manager relaying messages to a developer you'll never meet. We're a small team of four, and we intend to still be answering your calls after you've forgotten you ever used a notebook.",
+    "statsLabel": "// stats — pending real numbers",
+    "statsEmpty": "No stats will be shown here until real numbers are confirmed.",
+    "statsCountSingular": "{count} stat pending display.",
+    "statsCountPlural": "{count} stats pending display.",
+    "team": [
+      {
+        "name": "Md Shahajalal Mahmud",
+        "role": "Founder & Technical Project Lead",
+        "photoAlt": "Portrait photograph of {name}, {role} at Appriyo."
+      },
+      {
+        "name": "Preota Saha",
+        "role": "Lead Frontend Engineer & UI/UX Lead",
+        "photoAlt": "Portrait photograph of {name}, {role} at Appriyo."
+      },
+      {
+        "name": "Md Munna Sardar",
+        "role": "Lead — Testing & Frontend Development",
+        "photoAlt": "Portrait photograph of {name}, {role} at Appriyo."
+      },
+      {
+        "name": "Hazera Islam Mim",
+        "role": "Social Media & Creative Lead",
+        "photoAlt": "Portrait photograph of {name}, {role} at Appriyo."
+      }
+    ]
+  },
+  "process": {
+    "label": "// 05 — how we work",
+    "heading": "How a project actually goes",
+    "steps": [
+      {
+        "n": "01",
+        "title": "We understand your business first",
+        "body": "before any code, a real conversation about how you currently work."
+      },
+      {
+        "n": "02",
+        "title": "We build the smallest version that solves the real problem",
+        "body": "not every feature you can imagine, the one that matters first."
+      },
+      {
+        "n": "03",
+        "title": "You use it, we improve it",
+        "body": "real feedback from real use, not guesswork."
+      },
+      {
+        "n": "04",
+        "title": "We stay reachable after launch",
+        "body": "this is a long-term relationship, not a handoff."
+      }
+    ]
+  },
+  "contact": {
+    "label": "// 07 — let's talk",
+    "heading": "Tell us what you're dealing with",
+    "intro": "One line, no sales pitch: describe the problem, and we'll tell you honestly whether we're the right fit — even if the answer is no.",
+    "email": "contact@appriyo.com",
+    "officeHours": "Sunday – Thursday, 9:00 AM – 6:00 PM (GMT+6)",
+    "subject": "New inquiry from appriyo.com",
+    "fromName": "Appriyo Website",
+    "orReachUsDirectly": "// or reach us directly",
+    "fields": {
+      "name": {
+        "label": "Name"
+      },
+      "business": {
+        "label": "Business name"
+      },
+      "email": {
+        "label": "Email"
+      },
+      "problem": {
+        "label": "What are you trying to solve?"
+      }
+    }
+  }
+}

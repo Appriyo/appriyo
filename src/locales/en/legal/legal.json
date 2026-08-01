@@ -1,14 +1,17 @@
 {
   "privacy": {
     "title": "Privacy Policy",
-    "description": "How Appriyo collects, uses, and protects your information."
+    "description": "How Appriyo collects, uses, and protects your information.",
+    "comingSoon": "Privacy policy content coming soon. For questions, contact us at contact@appriyo.com."
   },
   "terms": {
     "title": "Terms of Service",
-    "description": "The rules and conditions for using Appriyo."
+    "description": "The rules and conditions for using Appriyo.",
+    "comingSoon": "Terms of service content coming soon. For questions, contact us at contact@appriyo.com."
   },
   "security": {
-    "title": "Security",
-    "description": "Our approach to keeping Appriyo and your data safe."
+    "title": "Security Policy",
+    "description": "Our approach to keeping Appriyo and your data safe.",
+    "comingSoon": "Security policy content coming soon. For questions, contact us at contact@appriyo.com."
   }
 }
