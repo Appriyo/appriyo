@@ -8,6 +8,11 @@
   "skipToContent": "Skip to main content",
   "openMenu": "Open menu",
   "closeMenu": "Close menu",
+  "primary": "Primary",
+  "primaryMobile": "Primary mobile",
+  "cta": {
+    "talkToUs": "Talk to us"
+  },
   "languageSwitcher": {
     "label": "Language",
     "english": "English",

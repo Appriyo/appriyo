@@ -8,6 +8,11 @@
   "skipToContent": "মূল কন্টেন্টে যান",
   "openMenu": "মেনু খুলুন",
   "closeMenu": "মেনু বন্ধ করুন",
+  "primary": "প্রাথমিক",
+  "primaryMobile": "প্রাথমিক মোবাইল",
+  "cta": {
+    "talkToUs": "যোগাযোগ করুন"
+  },
   "languageSwitcher": {
     "label": "ভাষা",
     "english": "English",
