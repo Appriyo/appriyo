@@ -3,7 +3,7 @@
 // Maps a product's `status` field to human-readable Stamp text and
 // renders the Stamp primitive. Centralizing the mapping here means
 // the words appear in exactly one place — adding a new status
-// (e.g. "beta") is a one-line change in src/i18n/common.json.
+// (e.g. "beta") is a one-line change in src/locales/common/common.json.
 //
 //   "live"            → "Live product"
 //   "in-development"  → "In development"
@@ -14,9 +14,9 @@
 import Stamp from "./Stamp";
 import { useLanguage } from "../i18n/hooks";
 
-// These keys are looked up against src/locales/<lng>/common/common.json.
-// Defined here so adding a status is a one-line change in two places
-// (this list + the JSON value).
+// These keys are looked up against src/locales/<lng>/common/common.json
+// under productStatus. Defined here so adding a status is a one-line
+// change in two places (this list + the JSON value).
 const STATUS_KEYS = {
   live: "common.productStatus.live",
   "in-development": "common.productStatus.inDevelopment",
@@ -28,12 +28,12 @@ export default function StampStatus({ status, className = "" }) {
   if (!key) {
     throw new Error(
       `StampStatus: unknown status "${status}". ` +
-        `Valid values: ${Object.keys(STATUS_KEYS).join(", ")}`
+        `Valid values: ${Object.keys(STATUS_KEYS).join(", ")}`,
     );
   }
   const text = t(key);
   return (
-    <Stamp className={className} aria-label={`${t("common.statusLabel")}: ${text}`}>
+    <Stamp className={className} aria-label={`${t("common.productStatus.statusLabel")}: ${text}`}>
       {text}
     </Stamp>
   );

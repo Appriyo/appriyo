@@ -72,7 +72,6 @@ const BASE = "http://localhost:4173";
     let audit;
     try {
       audit = await page.evaluate(async () => {
-        // eslint-disable-next-line no-undef
         return await axe.run(document, {
           runOnly: { type: "tag", values: ["wcag2a", "wcag2aa", "best-practice"] },
         });

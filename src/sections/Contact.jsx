@@ -63,11 +63,11 @@ export default function Contact() {
         e.currentTarget.reset();
       } else {
         setStatus("error");
-        setErrorMsg(data.message || t("common.errorGeneric"));
+        setErrorMsg(data.message || t("common.form.errorGeneric"));
       }
-    } catch (err) {
+    } catch {
       setStatus("error");
-      setErrorMsg(t("common.errorNetwork"));
+      setErrorMsg(t("common.form.errorNetwork"));
     }
   };
 
@@ -128,7 +128,7 @@ export default function Contact() {
                 {status === "sending"
                   ? t("common.sending")
                   : status === "sent"
-                    ? t("common.thankYou")
+                    ? t("common.form.thankYou")
                     : t("common.send")}
               </Button>
               {status === "error" && (

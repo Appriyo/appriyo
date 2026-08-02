@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "i18n:check": "node scripts/check-i18n-runtime.mjs",
+    "i18n:browser": "node scripts/i18n-browser-test.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",

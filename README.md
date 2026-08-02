@@ -355,40 +355,49 @@ npm run preview
 
 # 🌍 Internationalization (i18n)
 
-The site is bilingual (English + Bangla) and built on a scalable i18n
-foundation that makes adding more languages a single-folder change.
+The site is bilingual today (English + Bangla) and the i18n layer is
+designed for production scale — adding a third language is a config-only
+change, switching languages has no flash of untranslated UI, and every
+public string is sourced from a typed translation file.
 
-### Stack
+## Stack
 
-- **i18next** — translation runtime and resource container.
-- **react-i18next** — React bindings (`useTranslation`, hooks).
-- **i18next-browser-languagedetector** — reads the user's preferred
-  language from `localStorage` first, then `navigator.language`.
+| Package | Role |
+| --- | --- |
+| [`i18next`](https://www.i18next.com/) | Translation runtime and resource container. |
+| [`react-i18next`](https://react.i18next.com/) | React bindings (`useTranslation`, `Trans`, hooks). |
+| [`i18next-browser-languagedetector`](https://github.com/i18next/i18next-browser-languagedetector) | Reads preferred language from `localStorage` → `navigator.language` → English fallback. |
 
-### Behaviour
+## Runtime behaviour
 
-- **Default language**: English (`en`).
-- **Supported languages**: English (`en`), Bangla (`bn`).
-- **Detection order**: `localStorage` → `navigator.language` →
-  English fallback.
-- **Persistence**: the active language is written to
-  `localStorage` under the key `appriyo:language:v1`.
-- **HMR**: editing any file under `src/locales/**` updates the UI
-  live, without a full reload. See `src/i18n/index.js`.
+- **Default language:** `en`. **Supported:** `en`, `bn`.
+- **Detection order:** `localStorage` (`appriyo:language:v1`) →
+  `navigator.language` → `DEFAULT_LANGUAGE`.
+- **Persistence:** every `setLanguage(...)` call writes the active
+  code to `localStorage`. The same key is read on the next page load
+  to avoid a one-frame fallback-language flash.
+- **HMR:** editing any file under `src/locales/**` re-applies the
+  bundle and forces React to re-render — no reload required.
+- **`<html lang>` and `<html dir>`:** updated synchronously on
+  `languageChanged`, sourced from the per-language config so adding
+  an RTL language is a one-line change.
+- **`<title>` and `<meta>`:** updated by `usePageMeta` with both a
+  re-render effect and an `i18n.on("languageChanged", …)` listener, so
+  meta keeps in sync even when nothing in the tree re-renders.
 
-### Folder layout
+## Folder layout
 
 ```text
 src/
 ├── i18n/
-│   ├── config.js         # Supported languages, namespaces, storage key
-│   ├── loadResources.js  # Auto-discovers JSON files via import.meta.glob
-│   ├── useLanguage.js    # Wrapper hook: t + language + setLanguage
-│   ├── hooks.js          # Public barrel for components
-│   └── index.js          # Single init entry (imported once from main.jsx)
+│   ├── config.js            # SUPPORTED_LANGUAGES, NAMESPACES, NAMESPACE_TO_FOLDER
+│   ├── loadResources.js     # import.meta.glob → i18next resources
+│   ├── useLanguage.js       # useTranslation wrapper + setLanguage
+│   ├── hooks.js             # Public barrel — import { useLanguage } from "@/i18n/hooks"
+│   └── index.js             # Single init entry, imported once from main.jsx
 │
 └── locales/
-    ├── en/               # English resources, one folder per namespace
+    ├── en/                  # One folder per namespace, mirrors NAMESPACES + NAMESPACE_TO_FOLDER
     │   ├── common/common.json
     │   ├── navigation/navigation.json
     │   ├── layout/layout.json
@@ -396,35 +405,100 @@ src/
     │   ├── services/services.json
     │   ├── solutions/solutions.json
     │   ├── products/products.json
-    │   ├── product-detail/product-detail.json
+    │   ├── product-detail/product-detail.json        # Folder name is kebab-case, namespace name is camelCase
     │   ├── about/about.json
     │   ├── contact/contact.json
+    │   ├── metadata/metadata.json                    # Source of truth for <title> + <meta description>
     │   ├── legal/legal.json
     │   ├── errors/errors.json
-    │   └── index.js      # Explicit imports (for editor tooling)
-    └── bn/               # Bangla resources — same structure as en/
+    │   └── index.js                                  # Explicit imports for editor tooling
+    └── bn/                  # Same structure, Bangla translations
 ```
 
-### Adding a new language
+The `metadata` namespace is the single source of truth for SEO: every
+page uses `usePageMeta({ titleKey, descriptionKey })` so the `<title>`
+and `<meta name="description">` automatically translate.
 
-1. Create `src/locales/<code>/` mirroring the folder layout under
-   `src/locales/en/`. Provide every namespace file (empty objects are
-   fine for placeholders — i18next falls back to English).
-2. Add an entry to `SUPPORTED_LANGUAGES` in `src/i18n/config.js`,
-   including `code`, `label`, `nativeLabel`, `dir`, and an optional
-   `flag` emoji.
-3. (Optional) Add an explicit `index.js` under the new locale so
-   editors can "Find references" on individual translation keys.
-4. Done — the language appears in the `LanguageSwitcher` automatically.
+## Adding a new language
 
-### Adding a new namespace
+1. **Copy the folder.** `cp -r src/locales/en src/locales/<code>` and
+   translate every JSON. Empty objects are fine for placeholders —
+   i18next falls back to English until translated.
+2. **Register the language.** Add an entry to `SUPPORTED_LANGUAGES` in
+   `src/i18n/config.js`:
 
-1. Register the namespace in `NAMESPACES` in `src/i18n/config.js`.
-2. Create `src/locales/en/<namespace>/<namespace>.json` and the same
-   file under every other supported language.
-3. Use it from components with `const { t } = useTranslation("<namespace>");`.
+   ```js
+   {
+     code: "ar",
+     label: "Arabic",
+     nativeLabel: "العربية",
+     dir: "rtl",        // ← "rtl" for Arabic, Hebrew, Urdu, …
+     flag: "🇸🇦",
+   }
+   ```
 
-### Usage in components
+3. **(Optional) Editor imports.** Add an explicit `src/locales/<code>/index.js`
+   so editors surface individual files in "Find references".
+
+The runtime picks it up automatically — `import.meta.glob` in
+`loadResources.js` discovers the new JSON files, the parity check
+verifies they're in lockstep with `en/`, and the `LanguageSwitcher`
+renders the new option without any other change.
+
+## Adding a new namespace
+
+1. Register the namespace name in `NAMESPACES` (camelCase — e.g. `productDetail`).
+2. Add the matching on-disk folder to `NAMESPACE_TO_FOLDER`. Use kebab-case
+   for the folder name (`product-detail`) when the URL slug would too.
+3. Create `src/locales/<lng>/<folder>/<folder>.json` for every supported language.
+4. Read with `const { t } = useLanguage("<namespace>")` from `src/i18n/hooks`.
+
+## Translation guidelines
+
+- **Keys are dotted.** `t("home.hero.headline")` looks up `home` →
+  `hero` → `headline`. The i18next config swaps `keySeparator` and
+  `nsSeparator` so the prefix is the namespace and the suffix is the
+  nested path.
+- **Namespaces match folders.** The on-disk folder for a namespace is
+  declared in `NAMESPACE_TO_FOLDER`; never guess. The folder and the
+  JSON filename must match.
+- **No HTML in translations.** Strings are rendered into the DOM as
+  text. Use `react-i18next` `<Trans>` if you really need inline markup
+  (the codebase currently doesn't).
+- **Interpolation.** Use `{name}`-style tokens that match keys passed
+  to `t(key, { name: ... })`. Escape braces with `'{' '{'`.
+- **URLs don't belong in JSON.** Routes are language-independent; put
+  them in a sibling `src/data/*.js` module (see `src/data/homeCtas.js`
+  for the home hero CTA URLs).
+- **Plurals.** Use i18next's `_one` / `_other` suffix when the count
+  varies, and look up with `t("key", { count: n })`.
+- **Empty keys.** Leave the value empty (`""`) if you have no
+  translation yet; the `missingKeyHandler` will warn in dev.
+
+## RTL readiness
+
+Both supported languages are LTR today, but the plumbing is already in
+place:
+
+- `SUPPORTED_LANGUAGES` carries a `dir` field per language.
+- `main.jsx` sets `document.documentElement.dir` on every language
+  change via `getDirFor(code)`.
+- The `LanguageSwitcher` shows each option's `lang` attribute, so
+  screen readers pronounce correctly even for a future Arabic locale.
+
+To verify RTL behaviour without committing a new locale, temporarily
+edit `config.js` to add:
+
+```js
+{ code: "ar", label: "Arabic", nativeLabel: "العربية", dir: "rtl", flag: "🇸🇦" }
+```
+
+…copy `src/locales/en` to `src/locales/ar`, then switch via
+`LanguageSwitcher` — the entire layout (including the
+`LanguageSwitcher` itself) will reflow RTL because `dir` on `<html>`
+cascades to every descendant.
+
+## Usage in components
 
 ```jsx
 import { useLanguage } from "../../i18n/hooks";
@@ -450,17 +524,47 @@ function HeaderActions() {
 }
 ```
 
-The included `LanguageSwitcher` (`src/components/ui/LanguageSwitcher.jsx`)
-is a self-contained dropdown that lists every language declared in
-`SUPPORTED_LANGUAGES` and persists the choice on selection. It owns its
-own click-outside / Escape behaviour and is ready to drop into Nav,
-Footer, or a settings menu.
+The included `LanguageSwitcher` is a self-contained dropdown that lists
+every language in `SUPPORTED_LANGUAGES`, persists the choice, owns
+click-outside / Escape behaviour, and announces the active option via
+`aria-selected`. Drop it into Nav, Footer, or a settings menu as-is.
 
-> **Note:** Adding i18n does **not** change any existing UI text yet.
-> Components continue to render their hard-coded strings; switching
-> the language in the switcher will only affect strings that have been
-> migrated to `t("…")` calls. The infrastructure is in place — the
-> migration is the next step.
+## Accessibility
+
+- The skip-link label is in the `layout` namespace and updates on language change.
+- Every `<input>` in `ContactForm` and the home `Contact` section has
+  a properly-associated `<label>` from translation.
+- The `LanguageSwitcher` uses `role="listbox"` with `aria-selected`
+  on options, and sets `lang` on each option's content so screen
+  readers pronounce correctly.
+- `<html lang>` is kept in sync; screen readers (VoiceOver, NVDA,
+  JAWS) switch pronunciation profiles automatically.
+
+## Testing i18n
+
+```bash
+# Static checks — parity + duplicate keys + on-disk folder mapping.
+npm run i18n:check
+
+# End-to-end Puppeteer sweep across every public route × 2 languages
+# (asserts <html lang>, <h1>, <title>, no missing-key warnings).
+# Requires the prod build (npm run build) and a working Puppeteer install.
+npm run i18n:browser
+```
+
+The browser test loads every route with each language set in
+`localStorage` and asserts that the page renders, `<html lang>` matches,
+and the `<h1>` includes Bangla characters. Run it in CI to catch
+"translation drifted" regressions.
+
+## `metadata` namespace — the SEO source of truth
+
+Every page calls `usePageMeta({ titleKey, descriptionKey })` with keys
+from `metadata.*`. The hook resolves the keys via i18next and updates
+`<title>`, `<meta name="description">`, `<meta property="og:title">`,
+and `<meta property="og:image">` on mount and on `languageChanged`.
+Adding a new translatable page means adding a single entry under
+`src/locales/<lng>/metadata/metadata.json` — no other config needed.
 
 ---
 

@@ -34,6 +34,11 @@ import {
  * `namespace` defaults to `common` (matching i18next's defaultNS). Pass
  * a namespace or array of namespaces to scope `t` the same way you
  * would with useTranslation directly.
+ *
+ * Performance: the returned object is memoised on `(t, i18n, ready, language)`
+ * so consumers destructuring any subset get a stable reference between
+ * renders. `setLanguage` keeps a stable reference via useCallback, and
+ * `languages` is a useMemo on the static SUPPORTED_LANGUAGES array.
  */
 export function useLanguage(namespace) {
   const { t, i18n, ready } = useTranslation(namespace);
@@ -69,14 +74,17 @@ export function useLanguage(namespace) {
 
   const languages = useMemo(() => SUPPORTED_LANGUAGES, []);
 
-  return {
-    t,
-    i18n,
-    ready: Boolean(ready),
-    language,
-    languages,
-    setLanguage,
-  };
+  return useMemo(
+    () => ({
+      t,
+      i18n,
+      ready: Boolean(ready),
+      language,
+      languages,
+      setLanguage,
+    }),
+    [t, i18n, ready, language, languages, setLanguage],
+  );
 }
 
 export default useLanguage;

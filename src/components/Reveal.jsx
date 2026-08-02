@@ -33,7 +33,7 @@ function prefersReducedMotion() {
 }
 
 export default function Reveal({
-  as: Tag = "div",
+  as,
   children,
   className = "",
   stagger = false,
@@ -43,8 +43,19 @@ export default function Reveal({
   rootMargin = "0px 0px -10% 0px",
   ...rest
 }) {
+  const Element = as || "div";
   const ref = useRef(null);
-  const [revealed, setRevealed] = useState(false);
+  // Lazy initialiser so reduced-motion / no-IO environments render the
+  // final state on the very first paint (no opacity-0 flash). This
+  // sidesteps the "setState in effect" lint rule while keeping the same
+  // observable behaviour: revealed == true on mount in those cases.
+  const [revealed, setRevealed] = useState(() =>
+    typeof window === "undefined"
+      ? false
+      : prefersReducedMotion() || typeof IntersectionObserver === "undefined"
+        ? true
+        : false,
+  );
 
   // Compute the delay. stagger items use index, capped at STAGGER_CAP.
   const computedDelay =
@@ -56,19 +67,10 @@ export default function Reveal({
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
-
-    // Respect prefers-reduced-motion immediately — no observer needed.
-    if (prefersReducedMotion()) {
-      setRevealed(true);
-      return;
-    }
-
-    // No-IO fallback for environments without IntersectionObserver.
-    if (typeof IntersectionObserver === "undefined") {
-      setRevealed(true);
-      return;
-    }
+    if (!el) return undefined;
+    // The lazy initialiser already short-circuited reduced-motion /
+    // no-IO. The only thing left is the normal observer path.
+    if (revealed) return undefined;
 
     const obs = new IntersectionObserver(
       (entries) => {
@@ -83,7 +85,7 @@ export default function Reveal({
     );
     obs.observe(el);
     return () => obs.disconnect();
-  }, [threshold, rootMargin]);
+  }, [threshold, rootMargin, revealed]);
 
   // The reveal class flips on once the element enters the viewport. We
   // start at opacity-0 + translate-y so the FIRST PAINT of elements
@@ -100,14 +102,14 @@ export default function Reveal({
       };
 
   return (
-    <Tag
+    <Element
       ref={ref}
       className={`reveal ${className}`.trim()}
       style={style}
       {...rest}
     >
       {children}
-    </Tag>
+    </Element>
   );
 }
 

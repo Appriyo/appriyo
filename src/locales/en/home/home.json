@@ -4,12 +4,10 @@
     "headline": "We build the system that replaces your notebook.",
     "subtext": "Appriyo builds practical software for repair shops, coaching centers, and small businesses still running on notebooks and memory — built by a team you can actually call.",
     "primaryCta": {
-      "label": "See our work",
-      "href": "/products"
+      "label": "See our work"
     },
     "secondaryCta": {
-      "label": "Talk to us",
-      "href": "/contact"
+      "label": "Talk to us"
     },
     "screenshotAlt": "Screenshot of the Amar Repair repair-shop dashboard, showing job list, customer names, and statuses."
   },

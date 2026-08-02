@@ -75,8 +75,12 @@ export const STORAGE_NAMESPACE = "appriyo:i18n:v1";
  * Namespaces registered with i18next. Each entry corresponds to one JSON
  * file per language under src/locales/<lng>/<namespace>/<namespace>.json.
  *
+ * The on-disk folder for each namespace can differ from the canonical
+ * (camelCase) namespace name; see NAMESPACE_TO_FOLDER. The keys here are
+ * what component code passes to useTranslation(ns).
+ *
  * To add a new namespace:
- *   1. Add it here.
+ *   1. Add it here AND in NAMESPACE_TO_FOLDER.
  *   2. Create the matching JSON file in src/locales/en/, src/locales/bn/,
  *      and every other supported language.
  *   3. (Optional) Add an explicit import in src/locales/<lng>/index.js
@@ -98,6 +102,29 @@ export const NAMESPACES = [
   "errors",
 ];
 
+/**
+ * Maps a canonical (camelCase) namespace name to its on-disk folder.
+ * Most namespaces match their folder name 1:1, but `productDetail` is
+ * stored under `product-detail/` to match the URL slug of the pages it
+ * describes. Centralising the mapping keeps the loader, the parity
+ * checker, and any future tooling aligned on a single source of truth.
+ */
+export const NAMESPACE_TO_FOLDER = {
+  common: "common",
+  navigation: "navigation",
+  layout: "layout",
+  home: "home",
+  services: "services",
+  solutions: "solutions",
+  products: "products",
+  productDetail: "product-detail",
+  about: "about",
+  contact: "contact",
+  metadata: "metadata",
+  legal: "legal",
+  errors: "errors",
+};
+
 /** Convenience map: language code → friendly label, useful in dropdowns. */
 export const LANGUAGE_LABELS = Object.fromEntries(
   SUPPORTED_LANGUAGES.map((l) => [l.code, l]),
@@ -118,4 +145,14 @@ export function resolveLanguage(input) {
   if (isSupportedLanguage(input)) return input;
   const base = String(input).toLowerCase().split(/[-_]/)[0];
   return isSupportedLanguage(base) ? base : DEFAULT_LANGUAGE;
+}
+
+/**
+ * Returns the writing direction ("ltr" or "rtl") for a language code.
+ * Falls back to "ltr" if the code is unknown — safer than throwing
+ * during SSR, and matches the convention that "no info = LTR."
+ */
+export function getDirFor(code) {
+  const lang = SUPPORTED_LANGUAGES.find((l) => l.code === code);
+  return lang ? lang.dir : "ltr";
 }

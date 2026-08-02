@@ -13,9 +13,11 @@
 //   8. Section       "Built with" (optional, small/muted)
 //   9. Closing CTA   "Want something like this for your business? → Contact"
 //
-// The page itself ALSO needs a working link back to the homepage, per
-// the user checklist. That lives on the closing CTA strip ("Back to
-// home" link) so it isn't easy to forget.
+// Localisation: the product's localised name and tagline come from
+// `productDetail.products.<namespaceKey>` (where `namespaceKey` is
+// supplied by the entry in src/data/products.js — e.g. "amarRepair").
+// Adding a new product is a one-line change in two places: the data
+// file (slug + namespaceKey) and the corresponding JSON files.
 import { Link } from "react-router-dom";
 import LedgerLabel from "./LedgerLabel";
 import LedgerCard from "./LedgerCard";
@@ -27,11 +29,12 @@ import { useLanguage } from "../i18n/hooks";
 
 export default function ProductPageTemplate({ product }) {
   const { t } = useLanguage("productDetail");
-  // product.shape comes from src/data/products.js (slug, name, tagline,
-  // status, screenshot). The other fields — subtext, problem,
-  // capabilities, techStack — come from the productDetail namespace.
-  const { slug, name, tagline, status, screenshot } = product;
-  const productCopy = t(`productDetail.products.${slug === "amar-repair" ? "amarRepair" : "amarBatch"}`, { returnObjects: true }) || {};
+  // product.shape comes from src/data/products.js (slug, namespaceKey,
+  // name, tagline, status, screenshot). The other fields — subtext,
+  // problem, capabilities, techStack — come from the productDetail
+  // namespace under the namespaceKey supplied by the data file.
+  const { namespaceKey, name, tagline, status, screenshot } = product;
+  const productCopy = t(`productDetail.products.${namespaceKey}`, { returnObjects: true }) || {};
   const capabilities = productCopy.capabilities ?? [];
   const techStack = productCopy.techStack ?? [];
 

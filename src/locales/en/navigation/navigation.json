@@ -14,8 +14,6 @@
     "talkToUs": "Talk to us"
   },
   "languageSwitcher": {
-    "label": "Language",
-    "english": "English",
-    "bangla": "বাংলা"
+    "label": "Language"
   }
 }

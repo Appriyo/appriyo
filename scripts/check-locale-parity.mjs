@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 // scripts/check-locale-parity.mjs
+//
 // Verify en/bn locale JSON files are in parity:
 //   * Every key path in en exists in bn.
 //   * No extra keys in bn.
 //   * No duplicate keys in either file.
-//   * The on-disk namespace folders match NAMESPACES declared in
-//     src/i18n/config.js.
+//   * The on-disk namespace folders match the NAMESPACE_TO_FOLDER
+//     export from src/i18n/config.js — single source of truth.
 //
 // Exit 0 = clean, exit 1 = mismatches found.
 
@@ -18,31 +19,46 @@ const LOCALES_DIR = path.join(__dirname, "..", "src", "locales");
 const CONFIG_FILE = path.join(__dirname, "..", "src", "i18n", "config.js");
 
 function readJsonObject(p) {
-  const raw = fs.readFileSync(p, "utf8");
-  return JSON.parse(raw);
+  return JSON.parse(fs.readFileSync(p, "utf8"));
 }
 
-function flatten(obj, prefix = "") {
-  const out = new Set();
+/**
+ * Flatten a JSON object to a Map of leaf paths → found-at-count.
+ * Using a Map (not a Set) lets us detect duplicate keys within a file
+ * — two array entries with the same object key would otherwise pass.
+ *
+ * Arrays are flattened as `items.0`, `items.1`, … so the parity check
+ * can catch "extra item in en" or "missing item in bn" too.
+ */
+function flattenWithCount(obj, prefix = "", counts = new Map()) {
   for (const [k, v] of Object.entries(obj || {})) {
     const key = prefix ? `${prefix}.${k}` : k;
+    counts.set(key, (counts.get(key) ?? 0) + 1);
     if (v && typeof v === "object" && !Array.isArray(v)) {
-      for (const sub of flatten(v, key)) out.add(sub);
-    } else {
-      out.add(key);
+      flattenWithCount(v, key, counts);
     }
   }
-  return out;
+  return counts;
 }
 
-function namespaceFromDisk(folder) {
-  // Folders are either "product-detail" (kebab) or any other name. We
-  // load by parsing the glob in src/i18n/loadResources.js which uses
-  // the last path segment as the namespace, so a folder named
-  // "product-detail" containing "product-detail.json" still loads as
-  // namespace "productDetail" — wait, no: it loads as "product-detail".
-  // The config names it "productDetail" so we surface that as a warning.
-  return folder;
+/**
+ * Parse the NAMESPACE_TO_FOLDER constant from src/i18n/config.js. We
+ * use a tolerant regex-based walker because the source is a plain JS
+ * object literal — introducing a Babel parser would be overkill for
+ * a CI script.
+ */
+function parseConfigTable() {
+  const src = fs.readFileSync(CONFIG_FILE, "utf8");
+  const match = src.match(/export const NAMESPACE_TO_FOLDER\s*=\s*\{([\s\S]*?)\}/);
+  if (!match) throw new Error("Could not locate NAMESPACE_TO_FOLDER in src/i18n/config.js");
+  const table = {};
+  const body = match[1];
+  const re = /(\w+)\s*:\s*["']([^"']+)["']/g;
+  let m;
+  while ((m = re.exec(body)) !== null) {
+    table[m[1]] = m[2];
+  }
+  return table;
 }
 
 function configNamespaces() {
@@ -55,23 +71,35 @@ function configNamespaces() {
     .filter(Boolean);
 }
 
+const ns2folder = parseConfigTable();
 const namespaces = configNamespaces();
+
 const onDisk = fs
   .readdirSync(path.join(LOCALES_DIR, "en"))
   .filter((f) => fs.statSync(path.join(LOCALES_DIR, "en", f)).isDirectory());
 
 const mismatches = [];
 
+// 1. Every namespace in NAMESPACES must have a folder mapping.
 for (const ns of namespaces) {
-  if (!onDisk.includes(ns) && !onDisk.includes("product-detail")) {
-    // surface mismatch below
+  if (!ns2folder[ns]) {
+    mismatches.push(`NAMESPACE_UNMAPPED: ${ns} (no entry in NAMESPACE_TO_FOLDER)`);
   }
-  // product-detail folder maps to productDetail namespace by loader
-  const folder = onDisk.includes(ns) ? ns : onDisk.includes("product-detail") ? "product-detail" : null;
-  if (!folder) {
-    mismatches.push(`NAMESPACE_MISSING_FOLDER: ${ns}`);
-    continue;
+}
+
+// 2. Every namespace must have a folder on disk.
+for (const ns of namespaces) {
+  const folder = ns2folder[ns];
+  if (!folder) continue;
+  if (!onDisk.includes(folder)) {
+    mismatches.push(`NAMESPACE_MISSING_FOLDER: ${ns} → ${folder}/`);
   }
+}
+
+// 3. Parity + duplicate-key check for each namespace.
+for (const ns of namespaces) {
+  const folder = ns2folder[ns];
+  if (!folder) continue;
   const enFile = path.join(LOCALES_DIR, "en", folder, `${folder}.json`);
   const bnFile = path.join(LOCALES_DIR, "bn", folder, `${folder}.json`);
   if (!fs.existsSync(enFile)) {
@@ -82,20 +110,16 @@ for (const ns of namespaces) {
     mismatches.push(`FILE_MISSING: bn/${folder}/${folder}.json`);
     continue;
   }
-  const en = readJsonObject(enFile);
-  const bn = readJsonObject(bnFile);
-  const enKeys = flatten(en);
-  const bnKeys = flatten(bn);
+  const en = flattenWithCount(readJsonObject(enFile));
+  const bn = flattenWithCount(readJsonObject(bnFile));
 
-  // Loader uses last segment of path as namespace. Since folder name and
-  // JSON filename are the same here, the loaded namespace is the folder
-  // name (kebab). Compare on disk folder name, not the configured
-  // camelCase namespace — they reconcile via the resource bundle.
-  for (const k of enKeys) {
-    if (!bnKeys.has(k)) mismatches.push(`MISSING_IN_BN: ${ns} | ${k}`);
+  for (const [k, count] of en) {
+    if (count > 1) mismatches.push(`DUPLICATE_IN_EN: ${ns} | ${k} (×${count})`);
+    if (!bn.has(k)) mismatches.push(`MISSING_IN_BN: ${ns} | ${k}`);
   }
-  for (const k of bnKeys) {
-    if (!enKeys.has(k)) mismatches.push(`EXTRA_IN_BN: ${ns} | ${k}`);
+  for (const [k, count] of bn) {
+    if (count > 1) mismatches.push(`DUPLICATE_IN_BN: ${ns} | ${k} (×${count})`);
+    if (!en.has(k)) mismatches.push(`EXTRA_IN_BN: ${ns} | ${k}`);
   }
 }
 

@@ -7,15 +7,21 @@
 // ("anything that delays reading the headline by more than ~300ms is
 // forbidden"). The screenshot card is allowed to reveal because it is
 // decorative copy that the visitor reads second.
-import { products as productsData } from "../data/products";
+//
+// Localisation notes:
+//   * The hero CTA labels come from home.hero.{primaryCta,secondaryCta}.label.
+//   * The CTA URLs are language-independent and live in src/data/homeCtas.js
+//     so they don't have to be maintained in two locales.
+import { getProductBySlug, HERO_PRODUCT_SLUG } from "../data/products";
+import { HOME_HERO_CTA } from "../data/homeCtas";
 import Button from "../components/Button";
 import ReceiptCard from "../components/ReceiptCard";
 import LedgerLabel from "../components/LedgerLabel";
 import Reveal from "../components/Reveal";
 import { useLanguage } from "../i18n/hooks";
 
-// The hero always shows the Amar Repair screenshot — see CONTENT_STRATEGY.md §3.2.
-const heroScreenshot = productsData[0].screenshot;
+const heroProduct = getProductBySlug(HERO_PRODUCT_SLUG);
+const heroScreenshot = heroProduct?.screenshot;
 
 export default function Hero() {
   const { t } = useLanguage("home");
@@ -41,10 +47,10 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <Button href={t("home.hero.primaryCta.href")} variant="primary">
+              <Button href={HOME_HERO_CTA.primaryHref} variant="primary">
                 {t("home.hero.primaryCta.label")}
               </Button>
-              <Button href={t("home.hero.secondaryCta.href")} variant="secondary">
+              <Button href={HOME_HERO_CTA.secondaryHref} variant="secondary">
                 {t("home.hero.secondaryCta.label")}
               </Button>
             </div>

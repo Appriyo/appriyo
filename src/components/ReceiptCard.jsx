@@ -13,6 +13,7 @@
 // The perforation is drawn by the `.receipt-card` class in globals.css
 // (a radial-gradient `::before` over the top border) — keep all styling
 // there so every card across the site matches.
-export default function ReceiptCard({ children, className = "", as: Tag = "div" }) {
-  return <Tag className={`receipt-card ${className}`}>{children}</Tag>;
+export default function ReceiptCard({ children, className = "", as }) {
+  const Element = as || "div";
+  return <Element className={`receipt-card ${className}`}>{children}</Element>;
 }

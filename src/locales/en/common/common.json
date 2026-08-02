@@ -1,27 +1,16 @@
 {
   "appName": "Appriyo",
-  "tagline": "",
   "loading": "Loading…",
   "comingSoon": "Coming soon",
-  "required": "required",
   "requiredMarker": "*",
   "learnMore": "Learn more",
   "learnMoreArrow": "Learn more →",
   "talkToUs": "Talk to us",
-  "letsTalk": "Let's Talk",
   "getInTouch": "Get in Touch",
-  "backToHome": "Back to home",
   "backToHomepageLabel": "// back to homepage",
   "send": "Send",
   "sending": "Sending…",
   "sendMessage": "Send message",
-  "thankYou": "Thanks — we'll be in touch.",
-  "errorGeneric": "Something went wrong. Please try again or email us directly.",
-  "errorNetwork": "Network error. Please try again or email us directly.",
-  "backToHomepage": "Back to Homepage",
-  "pageNotFoundTitle": "404",
-  "pageNotFoundHeading": "This Page Doesn't Exist",
-  "pageNotFoundBody": "You may have followed an old link or typed something wrong. That's okay.",
   "listCheckmark": "✔",
   "listEmDash": "—",
   "aria": {
@@ -31,14 +20,14 @@
     "contactForm": "Contact form",
     "languageSwitcher": "Language"
   },
-  "buttons": {
-    "getFreeConsultation": "Get a Free Consultation",
-    "tellUsYourProblem": "Tell Us Your Problem",
-    "letsBuildIt": "Let's Build It"
+  "form": {
+    "thankYou": "Thanks — we'll be in touch.",
+    "errorGeneric": "Something went wrong. Please try again or email us directly.",
+    "errorNetwork": "Network error. Please try again or email us directly."
   },
   "productStatus": {
     "live": "Live product",
-    "inDevelopment": "In development"
-  },
-  "statusLabel": "Status"
+    "inDevelopment": "In development",
+    "statusLabel": "Status"
+  }
 }

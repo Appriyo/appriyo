@@ -1,8 +1,9 @@
 {
   "notFound": {
-    "title": "Page not found",
-    "description": "The page you are looking for does not exist or has been moved.",
-    "goHome": "Go to homepage"
+    "title": "404",
+    "heading": "This Page Doesn't Exist",
+    "body": "You may have followed an old link or typed something wrong. That's okay.",
+    "backHome": "Back to Homepage"
   },
   "form": {
     "generic": "Something went wrong. Please try again or email us directly.",

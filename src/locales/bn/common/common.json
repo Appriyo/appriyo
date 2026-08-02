@@ -1,27 +1,16 @@
 {
   "appName": "অ্যাপ্রিও",
-  "tagline": "",
   "loading": "লোড হচ্ছে…",
   "comingSoon": "শীঘ্রই আসছে",
-  "required": "আবশ্যক",
   "requiredMarker": "*",
   "learnMore": "আরও জানুন",
   "learnMoreArrow": "আরও জানুন →",
   "talkToUs": "আমাদের সাথে কথা বলুন",
-  "letsTalk": "কথা বলুন",
   "getInTouch": "যোগাযোগ করুন",
-  "backToHome": "হোমে ফিরুন",
   "backToHomepageLabel": "// হোমপেজে ফিরুন",
   "send": "পাঠান",
   "sending": "পাঠানো হচ্ছে…",
   "sendMessage": "বার্তা পাঠান",
-  "thankYou": "ধন্যবাদ — আমরা শীঘ্রই যোগাযোগ করব।",
-  "errorGeneric": "কিছু সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন অথবা সরাসরি ইমেইল করুন।",
-  "errorNetwork": "নেটওয়ার্ক সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন অথবা সরাসরি ইমেইল করুন।",
-  "backToHomepage": "হোমপেজে ফিরুন",
-  "pageNotFoundTitle": "৪০৪",
-  "pageNotFoundHeading": "এই পৃষ্ঠাটি নেই",
-  "pageNotFoundBody": "হয়তো আপনি পুরোনো কোনো লিঙ্কে ক্লিক করেছেন অথবা ভুল কিছু টাইপ করেছেন। কোনো সমস্যা নেই।",
   "listCheckmark": "✔",
   "listEmDash": "—",
   "aria": {
@@ -31,14 +20,14 @@
     "contactForm": "যোগাযোগ ফর্ম",
     "languageSwitcher": "ভাষা"
   },
-  "buttons": {
-    "getFreeConsultation": "একটি বিনামূল্যে পরামর্শ নিন",
-    "tellUsYourProblem": "আপনার সমস্যা আমাদের বলুন",
-    "letsBuildIt": "আমরা এটি তৈরি করি"
+  "form": {
+    "thankYou": "ধন্যবাদ — আমরা শীঘ্রই যোগাযোগ করব।",
+    "errorGeneric": "কিছু সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন অথবা সরাসরি ইমেইল করুন।",
+    "errorNetwork": "নেটওয়ার্ক সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন অথবা সরাসরি ইমেইল করুন।"
   },
   "productStatus": {
     "live": "লাইভ পণ্য",
-    "inDevelopment": "ডেভেলপমেন্ট চলছে"
-  },
-  "statusLabel": "অবস্থা"
+    "inDevelopment": "ডেভেলপমেন্ট চলছে",
+    "statusLabel": "অবস্থা"
+  }
 }

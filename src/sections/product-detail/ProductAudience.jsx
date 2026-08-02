@@ -19,8 +19,14 @@ export function ProductAudience({ text }) {
 
 // sections/product-detail/ProductCTA.jsx
 // Props: heading, ctaLabel, ctaHref
+//
+// `ctaLabel` and `ctaHref` are intentionally required — callers must
+// pass translated strings (e.g. from productDetail.items.<id>.ctaButton).
+// There is NO English fallback: an untranslated CTA would render in
+// mixed-language English regardless of the active locale, which is the
+// exact bug this hook was hardened against.
 
-export function ProductCTA({ heading, ctaLabel = "Talk to Us", ctaHref = "/contact" }) {
+export function ProductCTA({ heading, ctaLabel, ctaHref = "/contact" }) {
   return (
     <section style={{ borderTop: "1px solid var(--color-border)", paddingBlock: "clamp(48px, 6vw, 72px)", textAlign: "center" }}>
       <div className="site-container">

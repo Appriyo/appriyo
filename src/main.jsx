@@ -15,16 +15,19 @@ import { createRoot } from "react-dom/client";
 import "./styles/globals.css";
 import "./i18n"; // initialises i18next and registers every locale resource
 import i18n from "./i18n";
+import { getDirFor } from "./i18n/config";
 import App from "./App";
 
-// Keep the <html lang> attribute in sync with the active language so
-// screen readers, browser hyphenation, and CSS `:lang()` selectors all
-// behave correctly. The `dir` attribute would matter for RTL languages —
-// Appriyo is LTR-only today but the field is plumbed through config.js
-// so adding an RTL language is a one-line change.
+// Keep <html lang> and <html dir> in sync with the active language so
+// screen readers, browser hyphenation, CSS `:lang()` selectors, and
+// directional icons all behave correctly. Today both supported languages
+// are LTR, but `dir` is plumbed through config.js so adding an RTL
+// language (Arabic, Hebrew, Urdu, …) is a config-only change.
 function syncDocumentLanguage(lng) {
   if (typeof document === "undefined") return;
-  document.documentElement.lang = lng;
+  const html = document.documentElement;
+  html.lang = lng;
+  html.dir = getDirFor(lng);
 }
 
 syncDocumentLanguage(i18n.resolvedLanguage || i18n.language);
